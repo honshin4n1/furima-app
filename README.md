@@ -5,14 +5,13 @@
 |introduction| text | null:false|
 |price| integer |null: false|
 |size| string |null: false|
-|condition | string | null: false|
+|condition| integer | default: 0, null: false|
 |explanation| text | null: false|
 |deal_state| boolean |  null: false, default: false |
 |buyer | integer | - |
 |user_id| reference | null: false, foreign_key: true|
 |brand_id | references | null: false, foreign_key: true|
 |category_id |references|null: false, foreign_key: true|
-|item_image_id |references | null: false, foreign_key: true|
 |preparation_days_id| references | null: false, foreign_key: true|
 |postage_payer_id| references | null: false, foreign_key: true|
 ### Association
@@ -23,8 +22,8 @@
  - belongs_to: category
  - belongs_to: brand
  - belongs_to: user
- - has_one: postage_payer
- - has_one: preparation_day
+ - belongs_to: postage_payer
+ - belongs_to: preparation_day
 
 
 ## users（会員）テーブル
@@ -35,7 +34,6 @@
 |nickname| string | null: false |
 ### Association
  - has_many: comments, dependent: destroy
- - has_many: item_images, dependent: destroy
  - has_many: favorites
  - has_many: evaluations
  - has_one: profile, dependent: destroy
@@ -98,7 +96,7 @@ belongs_to: user
 |Column|Type|Options|
 |------|----|-------|
 |preparation_day|string|null: false|
-|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 ### Association
  - belongs_to:item
 
@@ -152,21 +150,11 @@ belongs_to: item
 - has_many :items
 
 
-## category_brandsテーブル(中間テーブル)
-|Column|Type|Options|
-|------|----|-------|
-|brand_id|references|null: false, foreign_key: true|
-|first_category_id|references|null: false, foreign_key: true|
-### Association
-- belongs_to :brand
-- belongs_to :first_category
-
-
 ## categoriesテーブル(商品のカテゴリー)
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestry| string | foreign_key: true, null: false|
+|ancestry| string | null: false|
 ### Association
 - has_many :items
 - has_ancestry
