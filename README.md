@@ -12,8 +12,6 @@
 |user_id| reference | null: false, foreign_key: true|
 |brand_id | references | null: false, foreign_key: true|
 |category_id |references|null: false, foreign_key: true|
-|preparation_days_id| references | null: false, foreign_key: true|
-|postage_payer_id| references | null: false, foreign_key: true|
 ### Association
  - has_many: comments, dependent: destroy
  - has_many: item_images, dependent: destroy
@@ -89,7 +87,7 @@ belongs_to: item
 |postage_payer|string|null: false|
 |user|references|null: false, foreign_key: true|
 ### Association
-belongs_to: user
+belongs_to: item
 
 
 ## preparation_daysテーブル
@@ -145,7 +143,6 @@ belongs_to: item
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: true|
-|item_id|references|null: false, foreign_key: true|
 ### Association
 - has_many :items
 

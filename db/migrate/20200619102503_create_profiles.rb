@@ -12,7 +12,7 @@ class CreateProfiles < ActiveRecord::Migration[5.0]
       t.string      :house_number,      null:true
       t.string      :building_name,     null:true
       t.integer     :phone_number,      unique:true
-      t.references  :user,              null: false, foreign_key: true
+      # t.references  :user,              null: false, foreign_key: true
       t.timestamps
     end
   end

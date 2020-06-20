@@ -9,11 +9,9 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.integer     :condition,         null: false, default: 0
       t.boolean     :deal_state,        null: false
       t.integer     :buyer
-      t.references  :user,             null: false, foreign_key: true
-      t.references  :brand,            null: false, foreign_key: true
-      t.references  :category,         null: false, foreign_key: true
-      t.references  :preparation_day,  null: false, foreign_key: true
-      t.references  :postage_payer,    null: false, foreign_key: true
+      # t.references  :user,             null: false, foreign_key: true
+      # t.references  :brand,            null: false, foreign_key: true
+      # t.references  :category,         null: false, foreign_key: true
       t.timestamps
     end
   end

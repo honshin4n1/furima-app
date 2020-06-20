@@ -11,7 +11,7 @@ class CreateSendingDestinations < ActiveRecord::Migration[5.0]
       t.string     :house_number,     null: false
       t.string     :building_name
       t.integer    :phone_number,     unique: true
-      t.references :user,             null: false, foreign_key: true
+      # t.references :user,             null: false, foreign_key: true
       t.timestamps
     end
   end
