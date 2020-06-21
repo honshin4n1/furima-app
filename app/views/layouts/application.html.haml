@@ -7,4 +7,11 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    %div{id: "containar"}
+      %header.tp__header
+        = render partial: "home/header"
+      %main
+        = yield
+      %asaid{id: "appBanner"}
+      %footer
+        = render partial: "home/footer"
