@@ -64,18 +64,45 @@
         position: relative;
         display: flex;
         &__itme{
-          text-decoration: none;
-          padding: 0;
+          a{
+            color: #333;
+            text-decoration: none;
+            line-height: 32px;
+            background-position: center right;
+            background-repeat: no-repeat;
+            background-size: 18px;
+            padding-right: 30px;
+          }
+          .tree-box{
+            display: none;
+            .catTree{
+              background-color: #fff;
+              display: flex;
+              flex-direction: column;
+              position: relative;
+            }
+          }
         }
         &__item--cat{
           #catBtn{
-            background-image: url("");
+            background-image: url("material/logo/icon_category.png"); //不要かもしれない
           }
         }
       }
       .tp__right-container{
         margin-left: auto;
         display: flex;
+        &__item{
+          line-height: 38px;
+          padding: 0 0 0 16px;
+          a{
+            display: flex;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+            line-height: 32px;
+          }
+        }
       }
     }
   }
