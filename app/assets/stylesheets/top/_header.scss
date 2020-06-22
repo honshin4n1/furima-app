@@ -76,18 +76,17 @@
           .tree-box{
             display: none;
             .catTree{
-              background-color: #fff;
               display: flex;
               flex-direction: column;
               position: relative;
             }
           }
         }
-        &__item--cat{
-          #catBtn{
-            background-image: url("material/logo/icon_category.png"); //不要かもしれない
-          }
-        }
+        // &__item--cat{
+        //   #catBtn{
+        //    //不要かもしれない
+        //   }
+        // }
       }
       .tp__right-container{
         margin-left: auto;
