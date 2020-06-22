@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+.tp__header{
+  height: 100px;
+  width: 100vw;
+  &__inner{
+    height: 100px;
+    width: 1014px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    .tp__mainHeader{
+      display: flex;
+      position: relative;
+      align-items: center;
+      .tp__icon{
+        padding-bottom: 10px;
+        margin-right: 30px;
+        border-radius: 4px;
+        .logo_link{
+          height: 40px;
+          width: 140px;
+          display: block;
+          .logo_image{
+            width: 100%;
+            vertical-align: bottom;
+          }
+        }
+      }
+      .tp__search-function{
+        margin-left: auto;
+        width: 100%;
+        .search_form{
+          width: 100%;
+          display: flex;
+          margin-bottom: 5px;
+          input{
+            width: calc(100% - 26px);
+            height: 36px;
+            padding: 0 0 0 5px;
+          }
+          .search_btn{
+            width: 36px;
+            border: 0;
+            cursor: pointer;
+            background-color: #3CCACE;
+            padding: 8px;
+            .search--icon{
+              img{
+                width: 100%;
+                vertical-align: bottom;
+              }
+            }
+          }
+        }
+      }
+    }
+    .tp__header-nav{
+      font-size: 14px;
+      display: flex;
+      margin-bottom: 10px;
+      .tp__left-container{
+        position: relative;
+        display: flex;
+        &__itme{
+          text-decoration: none;
+          padding: 0;
+        }
+        &__item--cat{
+          #catBtn{
+            background-image: url("");
+          }
+        }
+      }
+      .tp__right-container{
+        margin-left: auto;
+        display: flex;
+      }
+    }
+  }
+}
