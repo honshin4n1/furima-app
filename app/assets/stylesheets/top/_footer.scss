@@ -1,12 +1,19 @@
 .tp__footer{
+  height: 355px;
   padding: 60px 0;
   color: #fff;
   background-color: #272727;
   text-align: center;
-  &__container{
+  &__contents{
     width: 840px;
     margin: 0 auto;
     display: flex;
+    .tp_content{
+      display: flex;
+      flex-direction: column;
+      width: calc(1 / 3 * 100%);
+      margin: 0 2% 0 0;
+    }
   }
   &__logo{
     width: 160px;
