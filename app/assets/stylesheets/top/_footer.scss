@@ -1,0 +1,15 @@
+.tp__footer{
+  padding: 60px 0;
+  color: #fff;
+  background-color: #272727;
+  text-align: center;
+  &__container{
+    width: 840px;
+    margin: 0 auto;
+    display: flex;
+  }
+  &__logo{
+    width: 160px;
+    margin: 0 auto;
+  }
+}
