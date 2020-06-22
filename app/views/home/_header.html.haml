@@ -3,7 +3,11 @@
     %h1.tp__icon
       = link_to image_tag('material/logo/logo.png', height: '40px', width: '140px', alt: 'フリマのアイコン'), "/"
     .tp__search-function
-    
+      = form_tag("/search", method: "get") do
+        = label_tag(:searchInput, "")
+        = text_field_tag(:searchInput, "キーワードから検索")
+        = button_tag("検索", id: "searchInput")
+
   .tp__header-nav
     %ul.tp__left-container
       %li.tp__left-container__itme.tp__left-container__item--cat
