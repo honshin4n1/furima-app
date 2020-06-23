@@ -6,10 +6,29 @@
           出品画像
         %span.require 
           必須
+        %p 最大10枚までアップロードできます
+  
       .item_image_box_input
-        %label{type: "text", class: "input-box", placeholder: "ドラッグアンドドロップまたはクリックしてファイルをダウンロード"}
-        %label{class: "input-box"}
-          %input{type: "file", class: "input-box"}
+        %label{type: "image", class: "image-box"}
+
+
+        -# %label{type: "text", class: "input-box", placeholder: "ドラッグアンドドロップまたはクリックしてファイルをダウンロード"}
+        -# %label{class: "input-box"}
+        -#   %input{type: "file", class: "input-box"}
+
+        -# .sell-main__dropbox-container.clearfix.state-image-number-10
+        -#   .sell-main__upload-items-container
+        -#     .sell-main__upload-items.sell-main__upload-items--have-item-0{ id: 'sell-main__upload-items' }
+        -#       %ul.clearfix{ id: 'output' }
+        -#         = f.label :images, class: 'sell-main__upload-label'
+        -#           .sell-main__upload-drop-box.sell-main__upload-drop-box--have-item-0{ id: 'sell-main__upload-drop-box' }
+        -#             = f.file_field :images, multiple: true, class: 'sell-main__upload-drop-file', style: 'display: none;'
+        -#             %pre.sell-main__visible-pc
+        -#               ドラッグアンドドロップ
+        -#               またはクリックしてファイルをアップロード
+        -#             %i.fas.fa-camera         
+
+
     .item_name_box        
       .item_name_box_square    
         .item_name_box_square_form  
@@ -26,7 +45,7 @@
           %span.require
             必須
         .item_explanation_square_input
-          %input{type: "text", class: "input-box_explanation", placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)例)2010年ごろに1万円商品の説明(必須)(色、素材、重さ、定価、注意点など)"}
+          %input{type: "text", class: "input-box_explanation", placeholder: "商品の説明(必須1,000文字以内)""(色、素材、重さ、定価、注意点など)例)2010年ごろに1万円商品の説明(必須)""(色、素材、重さ、定価、注意点など)"}
     .item_detail_box
       %p.exhibition-item_detail
         商品の詳細
