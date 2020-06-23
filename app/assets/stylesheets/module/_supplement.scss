@@ -16,5 +16,13 @@
     display: flex;
     justify-content: center;
     margin: 20px auto;
+    .download{
+      margin-right: 10px;
+      text-decoration: none;
+      #store_link{
+        width: 180px;
+        vertical-align: bottom;
+      }
+    }
   }
 }
