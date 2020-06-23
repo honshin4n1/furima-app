@@ -1,5 +1,10 @@
+// ---------------------------------------------------------
+// リセットCSS
 @import "reset";
+// ---------------------------------------------------------
+// 共通パーツのCSSスタイル
 @import "module/header";
 @import "module/footer";
-@import "module/exhibition-icon";
-@import "module/supplement";
+@import "module/exhibition-icon";   //出品ボタンのアイコン
+@import "module/supplement";        //アプリケーションのバナー
+// ---------------------------------------------------------
