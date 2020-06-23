@@ -1,31 +1,112 @@
 .exhibition_contents{
   height: 100vh;
   width: 100vw;
-  .exhibition_contents-box{
+  .exhibition_contents_box{
     width: 700px;
     margin: 0 auto;
-    .item_image-box{
-      height: 300px;
-    }
-    .item_name-box{
-      height: 420px;
-      .input-box_explanation{
-        height: 146px;
-        width: 616px;        
+    .item_image_box{
+      height: 200px;
+      padding: 40px;
+      .item_image_box_input{
+        height: 150px;
       }
+    }
+    .item_name_box{
+      height: 400px;
+      padding: 40px;
+      .item_name_box_square{
+        margin-bottom: 30px;
+      }    
+      .item_explanation_square{
+        .item_explanation_square_input{
+          .input-box_explanation{
+            height: 200px;
+            width: 588px;
+            padding: 15px 14px;
+          }
+        }
+      }      
     }    
-    .item_detail-box{
-      height: 450px;
-      .item_detail-box_square  {
-        height: 120px;
+    .item_detail_box{
+      padding: 40px;
+      .item_category_box_square{
+         margin-top: 20px;
+        .item_category_box_square_input{
+          height: 44px;
+          width: 616px;
+          }
+        }  
+      .item_brand_box_square{
+        .item_brand_box_square_input{
+          height: 44px;
+          width: 616px;
+        }
+      }  
+      .item_condition_box_square{
+        .item_condition_box_square_input{
+          height: 44px;
+          width: 616px;
+        }
+      }  
+    }
+    .shipping_item_box{
+      padding: 40px;
+      .item_postage_payers_box_square{
+        .item_postage_payers_box_square_input{
+          height: 44px;
+          width: 616px;  
+        }
+      }  
+      .item_shipping_origin_box_square{
+        .item_shipping_origin_box_square_input{
+          height: 44px;
+          width: 616px;
+      .item_preparation_days_box_square{
+        .item_preparation_days_box_square_input{
+          height: 44px;
+          width: 616px;  
+        }
+      }
+    
+        }
+      }
+  
+    }
+    .item_price-box{
+      height: 220px;
+      padding: 40px 40px 0px 40px;
+      .item_price-box_square{
+        %a.exhibition-item_price{
+        }
+        .item_price-box_square_form{
+        }
       }
     }
-
-    
+    .item_price-box_square_box_btn{
+      padding: 40px;
+      .form{
+        .input-box_square{
+          &__submit-btn{
+            height: 44px;
+            width: 300px;
+          }
+        }  
+      }
+    }
   }
 }
+.submit-btn{
+  height: 44px;
+  width: 300px;
+}
 
-
+.select{
+  height: 44px;
+  width: 616px;
+}
+.exhibition-item_detail{
+  font-size: 14px;
+}
 .input-box{
   height: 44px;
   width: 616px;
@@ -36,45 +117,3 @@
 .label{
   font-size: 14px;
 }
-
-
-
-
-  //     %p.exhibition-item_detail
-  //     .form.new.exhibition-item_category
-  //       %a.label
-  //       %span.require
-  //       .input-box
-  //     .form.new.exhibition-item_brand
-  //       %a.label
-  //       %span.require
-  //       .input-box
-  //     .form.new.exhibition-item_condition
-  //       %a.label
-  //       %span.require
-  //       .input-box
-  // .item_postage_payers-box
-  //   .item_postage_payers-box_square          
-  //     %p.exhibition-item_postage
-  //     .form.new.exhibition-item_postage_payers
-  //       %a.label
-  //       %span.require
-  //       .input-box
-  //     .form.new.exhibition-item_shipping_origin
-  //       %a.label
-  //       %span.require
-  //       .input-box    
-  //     .form.new.exhibition-item_shipping_origin
-  //       %a.label
-  //       %span.require
-  //       .input-box
-  //   .item_price-box_square              
-  //     %a.exhibition-item_price                
-  //     .form.new.exhibition-item_price
-  //       %a.label
-  //       %span.require
-  // .form-box        
-  //   .form
-  //     %form.new.exhibition-item_start
-  //       .input-box
-  //       .return-box  
