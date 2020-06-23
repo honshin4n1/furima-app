@@ -1,72 +1,74 @@
 .main-containar
   .header-containar
-    = link_to "#" do
-      %image{alt: "FURIMA logo", class: "header-containar__logo-img", src: "/assets/material/logo/logo.png"}
+    = link_to "#", class: "header-containar__link" do
+      %image{alt: "FURIMA logo", class: "header-containar__link__logo-img", src: "/assets/material/logo/logo.png"}
   .user-information-registration
     .user-information-registration__text
       会員情報入力
-    .user-informaition-registration__form
+    .user-information-registration__form
       %form#registration-form
         .form-group
-          %label 
+          %label.label-name
             ニックネーム
-            %span.form-require 
-              必須
-            %br/
-            %input{type: "text", name: "nickname", class: "input-normal", placeholder: "例) フリマ太郎", autocomplete: "nickname"}
+          %span.form-require 
+            必須
+          %br/
+          %input{type: "text", name: "nickname", class: "input-normal", placeholder: "例) フリマ太郎", autocomplete: "nickname"}
         .form-group
-          %label 
+          %label.label-name 
             メールアドレス
-            %span.form-require
-              必須
-            %br/
-            %input{type: "email", name: "email", class: "input-normal", placeholder: "PC・携帯どちらでも可", autocomplete: "email"}
+          %span.form-require
+            必須
+          %br/
+          %input{type: "email", name: "email", class: "input-normal", placeholder: "PC・携帯どちらでも可", autocomplete: "email"}
         .form-group
-          %label
+          %label.label-name
             パスワード
-            %span.form-require
-              必須
-            %br/
-            %input{type: "password", name: "password",class: "input-normal", placeholder: "7文字以上の半角英数", autocomplete: "new-password", minlength: "7"}
-            %p.password-info
-              ※ 英字と数字の両方を含めて設定してください
+          %span.form-require
+            必須
+          %br/
+          %input{type: "password", name: "password",class: "input-normal", placeholder: "7文字以上の半角英数", autocomplete: "new-password", minlength: "7"}
+          %p.password-info
+            ※ 英字と数字の両方を含めて設定してください
         .form-group
-          %label
+          %label.label-name
             パスワード確認
-            %span.form-require
-              必須
-            %br/
-            %input{type: "password", name: "password_confirmation", class: "input-normal", placeholder: "再度入力", autocomplete: "new-password", minlength: "7"}
+          %span.form-require
+            必須
+          %br/
+          %input{type: "password", name: "password_confirmation", class: "input-normal", placeholder: "再度入力", autocomplete: "new-password", minlength: "7"}
         .form-group
-          .identification
+          %p.identification
             本人確認
-            %p.identification__explanation
-              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          %p.identification-explanation
+            安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
         .form-group
-          %label
+          %label.label-name
             お名前(全角)
           %span.form-require
             必須
-            %br/
+          %br/
+          .form-group__set-input
             %input{type: "text", name: "first_name", class: "input-half", placeholder: "例)鈴木"}
             %input{type: "text", name: "family_name", class: "input-half", placeholder: "例)花子"}
         .form-group
-          %label
+          %label.label-name
             お名前カナ(全角)
           %span.form-require
             必須
-            %br/
+          %br/
+          .form-group__set-input
             %input{type: "text", name: "first_name_kana", class: "input-half", placeholder: "例)スズキ"}
             %input{type: "text", name: "family_name_kana", class: "input-half", placeholder: "例)ハナコ"}
         .form-group
-          %label 
+          %label.label-name 
             生年月日
           %span.form-require
             必須
-            %br/
+          %br/
           .birthday
-            .birthday__select
-              %select{name: "year", class: "birthday__select__tag"}
+            .birthday-select
+              %select{name: "year", class: "birthday-select__tag"}
                 %option{value: ""} --
                 %option{value: "2020"} 2020 
                 %option{value: "2019"} 2019 
@@ -80,10 +82,10 @@
                 %option{value: "2011"} 2011 
                 %option{value: "2010"} 2010
                 %option{value: "2009"} 2009 
-              %span.birthday__select__text
-                年
-            .birthday__select
-              %select{name: "month", class: "birthday__select__tag"}
+            %p.birthday-select__text
+              年
+            .birthday-select
+              %select{name: "month", class: "birthday-select__tag"}
                 %option{value: ""} --
                 %option{value: "1"} 1 
                 %option{value: "2"} 2 
@@ -97,10 +99,10 @@
                 %option{value: "10"} 10 
                 %option{value: "11"} 11
                 %option{value: "12"} 12 
-              %span.birthday__select__text
-                月
-            .birthday__select
-              %select{name: "day", class: "birthday__select__tag"}
+            %p.birthday-select__text
+              月
+            .birthday-select
+              %select{name: "day", class: "birthday-select__tag"}
                 %option{value: ""} --
                 %option{value: "1"} 1 
                 %option{value: "2"} 2 
@@ -133,21 +135,23 @@
                 %option{value: "29"} 29
                 %option{value: "30"} 30 
                 %option{value: "31"} 31 
-              %span.birthday__select__text
-                日
-          %p.form-info
-            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-          %button{type: "sumit", id: "registration-btn"}
-            登録する
+            %p.birthday-select__text
+              日
+        %p.form-info
+          ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        %br/
+        %button{type: "sumit", class: "registration-btn"}
+          登録する
   .footer-containar
-    %p.footer-containar__info
-      プライバシーポリシー
-      %span
-      フリマ用規約
-      %span
-      特定商取引に関する表記
-    = link_to "#" do
-      %image{alt: "FURIMA logo-white", class: "footer-containar__logo-img", src: "/assets/material/logo/logo-white.png"}
+    .footer-containar__info
+      %p.footer-containar__info__text
+        プライバシーポリシー
+      %p.footer-containar__info__text
+        フリマ用規約
+      %p.footer-containar__info__text
+        特定商取引に関する表記
+    = link_to "#", clas: "footer-containar__link" do
+      %image{alt: "FURIMA logo-white", class: "footer-containar__link__logo-img", src: "/assets/material/logo/logo-white.png"}
     %p.footer-containar__inc
       © Furima, Inc.
     
