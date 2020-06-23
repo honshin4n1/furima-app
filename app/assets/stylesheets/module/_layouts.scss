@@ -12,11 +12,14 @@
     background-color: #f8f8f8;
   }
   #appBanner{
-    background-image: url("material/pict/bg-appBanner-pict.jpg");
-    padding: 100px 40px;
     position: relative;
+    padding: 100px 40px;
+    background-image: url("material/pict/bg-appBanner-pict.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    // height: 400px;
+    // width: 100vw;
   }
   .tp__footer{
     height: 355px;
