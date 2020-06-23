@@ -1,22 +1,19 @@
-.nav-ber
-  .nav-ber__box
-    %ol
-      %li
-      %li
+.nav-bar
+  %ol
+    %li.nav-var-merukari
+      メルカリ
+    %li.icon-arrow-right
+      >
+    %li.nav-ber-mypage
+      マイページ
 
 .mypage
-  .side-ber
-    .side-ber-box
-      .side-ber-box__list
-        .side-ber-box__list__head
-          .side-ber-box__list__head__list
-        .side-ber-box__list__config
-          .side-ber-box__list__config__list
+  =render 'side-bar'
 
   .userpage
     %a.userpage-box
       %img{src:"#", width:"60",height:"60",style:"user-select: auto;"}
-      %H2.userpage-box__name
+      %H2.userpage-box-name
         test
       .userpage-box__number
         %h2.userpage-box__number__evaluation
@@ -26,7 +23,7 @@
   
   .info
     .info-box
-      .info-box__rlght
+      .info-box__right
         お知らせ
       .info-box__left
         やることリスト
@@ -37,18 +34,18 @@
           .info-content__list__body__text
             お買い物に使える！1,000円分のポイントが貰えるキャンペーン開催中！今すぐ参加しよう♪
           .info-content__list__body__time
-             = link_to "#",class: "clock-icon"  do
+            = link_to "#", class: "clock-icon" do
               %i.far.fa-clock
             .info-content__list__body__time__hour
               5時間前
-         = link_to "#",class: "nav_item"  do
+        = link_to "#", class: "nav_item"  do
           %i.fas.fa-chevron-right
     .info-list
       %a.list_box__list__text 一覧を見る
   
   .purchased
     %h2.purchased__text
-        購入した商品
+      購入した商品
     .purchased__box
       .purchased__box__active
         取引中
@@ -61,10 +58,10 @@
         .purchased__content__finish
           取引完了
     = link_to "#",class: "nav_item"  do
-          %i.fas.fa-chevron-right
+      %i.fas.fa-chevron-right
     .purchased__list
       .purchased__list__text
-          一覧を見る
+        一覧を見る
 
 
 
