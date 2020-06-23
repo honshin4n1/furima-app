@@ -154,36 +154,34 @@
       %image{alt: "FURIMA logo-white", class: "footer-containar__link__logo-img", src: "/assets/material/logo/logo-white.png"}
     %p.footer-containar__inc
       © Furima, Inc.
-    
 
 
 
 
-
-
-
-
-
-
--#     = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
--# .form-group
+-# 今後の作業で参考にしたい     
+ 
+-#  %h2 Sign up
+-# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+-#   = render "devise/shared/error_messages", resource: resource
 -#   .field
--#     = f.label :emil, 'メール'
-        -#     %br/
-        -#     = f.email_field :email, autofocus: true, autocomplete: "email"
-        -# .form-group
-        -#   .field
-        -#     = f.label :password
-        -#     - if @minimum_password_length
-        -#       %em
-        -#         (#{@minimum_password_length} characters minimum)
-        -#     %br/
-        -#     = f.password_field :password, autocomplete: "new-password"
-        -# .form-group
-        -#   .field
-        -#     = f.label :password_confirmation
-        -#     %br/
-        -#     = f.password_field :password_confirmation, autocomplete: "new-password"
-        -#   .actions
-        -#     = f.submit "Sign up"
-        -# = render "devise/shared/links"
+-#     = f.label :name
+-#     %br/
+-#     = f.text_field :name, autofocus: true, autocomplete: "name"
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :password
+-#     - if @minimum_password_length
+-#       %em
+-#         (#{@minimum_password_length} characters minimum)
+-#     %br/
+-#     = f.password_field :password, autocomplete: "new-password"
+-#   .field
+-#     = f.label :password_confirmation
+-#     %br/
+-#     = f.password_field :password_confirmation, autocomplete: "new-password"
+-#   .actions
+-#     = f.submit "Sign up"
+-# = render "devise/shared/links"
