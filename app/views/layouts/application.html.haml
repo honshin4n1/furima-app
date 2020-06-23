@@ -9,10 +9,11 @@
   %body
     %div{id: "containar"}
       %header.tp__header
-        = render partial: "top/header"
+        = render partial: "module/header"
       %main
         = yield
       %asaid{id: "appBanner"}
+        = render partial:"module/supplement"
       %footer.tp__footer
-        = render partial: "top/footer"
-      =render partial: "top/exhibition-icon"
+        = render partial: "module/footer"
+      =render partial: "module/exhibition-icon"

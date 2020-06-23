@@ -28,6 +28,7 @@
       %li
         = link_to 'お知らせ', "#", id: "information"
 .tp__footer__logo
-  = link_to image_tag('material/logo/logo-white.png', height: '46px', width: '160px', alt: 'フリマのアイコン', class: "logo_image"), "/", class: "logo_link"
+  = link_to  "/", class: "logo_link" do
+    = image_tag('material/logo/logo-white.png', alt: 'フリマのアイコン', class: "logo_image")
 %p @FURIMA
 
