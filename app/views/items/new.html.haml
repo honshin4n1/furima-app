@@ -1,3 +1,6 @@
+.header-containar
+  = link_to "#", class: "header-containar__link" do
+    %image{alt: "FURIMA logo", class: "header-containar__link__logo-img", src: "/assets/material/logo/logo.png"}
 .exhibition_contents
   .exhibition_contents_box
     .item_image_box
@@ -37,7 +40,7 @@
           %span.require
             必須
         .item_name_box_square__input
-          %input{type: "text", class: "input-box", placeholder: "40文字まで"}
+          %input{type: "text", class: "input-box_item_name", placeholder: "40文字まで"}
       .item_explanation_square      
         .item_explanation_box_square_form
           %a.label
@@ -45,7 +48,7 @@
           %span.require
             必須
         .item_explanation_square_input
-          %input{type: "text", class: "input-box_explanation", placeholder: "商品の説明(必須1,000文字以内)""(色、素材、重さ、定価、注意点など)例)2010年ごろに1万円商品の説明(必須)""(色、素材、重さ、定価、注意点など)"}
+          %input{type: "text", class: "input-box_explanation", placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)例)2010年ごろに1万円商品の説明(必須)(色、素材、重さ、定価、注意点など)"}
     .item_detail_box
       %p.exhibition-item_detail
         商品の詳細
@@ -190,3 +193,16 @@
         .input-box_square
           %input{type: "submit", value: "下書きに保存する", class: "submit-btn"}
         .return-box  
+
+.footer-containar
+  .footer-containar__info
+    %p.footer-containar__info__text
+      プライバシーポリシー
+    %p.footer-containar__info__text
+      フリマ用規約
+    %p.footer-containar__info__text
+      特定商取引に関する表記
+  = link_to "#", clas: "footer-containar__link" do
+    %image{alt: "FURIMA logo-white", class: "footer-containar__link__logo-img", src: "/assets/material/logo/logo-white.png"}
+  %p.footer-containar__inc
+    © Furima, Inc.        
