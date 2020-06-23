@@ -12,7 +12,8 @@
         = render partial: "module/header"
       %main.tp__main
         = yield
-      %asaid{id: "appBanner"}
+      -# aside要素はリセットCSSの関係か表示が崩れるので使用できない。
+      %div{id: "appBanner"}
         = render partial:"module/supplement"
       %footer.tp__footer
         = render partial: "module/footer"
