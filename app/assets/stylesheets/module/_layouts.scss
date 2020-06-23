@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+#containar{
+  height: 100vh;
+  width: 100vw;
+  .tp__header{
+    height: 100px;
+    width: 100%;
+  }
+  .tp__main{
+    background-color: #f8f8f8;
+  }
+  #appBanner{
+    background-image: url("material/pict/bg-appBanner-pict.jpg");
+    padding: 100px 40px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+  }
+  .tp__footer{
+    height: 355px;
+    padding: 60px 0;
+    color: #fff;
+    background-color: #272727;
+    text-align: center;
+  }
+}
