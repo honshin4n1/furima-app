@@ -11,15 +11,15 @@
   =render 'side-bar'
 
   .userpage
-    %a.userpage-box
-      %img{src:"#", width:"60",height:"60",style:"user-select: auto;"}
+    = link_to "#",class: "userpage-box"  do
+      %img{src:"/assets/light.jpg", width:"60",height:"60",style:"user-select: auto;"}
       %H2.userpage-box-name
         test
       .userpage-box__number
-        %h2.userpage-box__number__evaluation
-          評価 5
-        %h2.userpage-box__number__items
-          出品数 5
+        .userpage-box__number__evaluation
+          評価  5
+        .userpage-box__number__items
+          出品数  5
   
   .info
     .info-box
@@ -29,7 +29,7 @@
         やることリスト
     .info-content
       .info-content__list
-        %img{src:"#", width:"40",height:"40"}
+        %img{src:"/assets/small-logo.png", width:"40",height:"40"}
         .info-content__list__body
           .info-content__list__body__text
             お買い物に使える！1,000円分のポイントが貰えるキャンペーン開催中！今すぐ参加しよう♪
@@ -40,25 +40,29 @@
               5時間前
         = link_to "#", class: "nav_item"  do
           %i.fas.fa-chevron-right
+
     .info-list
-      %a.list_box__list__text 一覧を見る
+      = link_to "#", class: "list_box__list__text" do 
+        一覧を見る
   
   .purchased
-    %h2.purchased__text
+    %h2.purchased__text 
       購入した商品
     .purchased__box
       .purchased__box__active
         取引中
       .purchased__box__later
         過去の取引
-    .purchased__content
-      %img{src:"#", width:"40",height:"40"}
-      .purchased__content__text
-        「The RSpec Book/豊田 祐司, クイープ, David Cheli...」を購入しました。取引きが完了しました
-        .purchased__content__finish
-          取引完了
-    = link_to "#",class: "nav_item"  do
-      %i.fas.fa-chevron-right
+    .purchased-content
+      .purchased-content__list
+        %img{src:"#", width:"40",height:"40"}
+        .purchased-content__list__body
+          .purchased-contentlist__body__text
+            「The RSpec Book/豊田 祐司, クイープ, David Cheli...」を購入しました。取引きが完了しました
+          .purchased__content__finish
+            取引完了
+      = link_to "#",class: "nav_item"  do
+        %i.fas.fa-chevron-right
     .purchased__list
       .purchased__list__text
         一覧を見る
