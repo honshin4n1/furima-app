@@ -106,8 +106,6 @@
           .item_shipping_origin_box_square_input
             = form_for '' do |f|
               = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択してください", class: 'input'
-
-
           .item_preparation_days_box_square
             .text_form
               %a.label
@@ -115,7 +113,7 @@
               %span.require
                 必須
             .item_preparation_days_box_square_input
-              %select{name:  "category"}
+              %select{name:  "preparation_days"}
                 %option{value:  ""} 選択してください
                 %option{value:  "1~2日で発送"} 1~2日で発送
                 %option{valu:  "2~3日で発送"} 2~3日で発送
