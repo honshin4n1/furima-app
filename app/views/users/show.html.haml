@@ -55,18 +55,17 @@
         過去の取引
     .purchased-content
       .purchased-content__list
-        %img{src:"#", width:"40",height:"40"}
+        %img{src:"/assets/rspec.jpg", width:"40",height:"40"}
         .purchased-content__list__body
-          .purchased-contentlist__body__text
+          .purchased-content__list__body__text
             「The RSpec Book/豊田 祐司, クイープ, David Cheli...」を購入しました。取引きが完了しました
-          .purchased__content__finish
+          .purchased-content__list__body__finish
             取引完了
-      = link_to "#",class: "nav_item"  do
-        %i.fas.fa-chevron-right
+        = link_to "#",class: "nav_item"  do
+          %i.fas.fa-chevron-right
     .purchased__list
-      .purchased__list__text
+      = link_to "#", class: "purchased__list__text" do 
         一覧を見る
-
 
 
     
