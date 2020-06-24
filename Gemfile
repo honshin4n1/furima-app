@@ -78,3 +78,4 @@ gem 'fog-aws'
 gem 'kaminari'
 
 gem 'ancestry'
+gem 'active_hash'
