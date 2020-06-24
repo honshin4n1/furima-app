@@ -2,6 +2,10 @@
 // リセットCSS
 @import "reset";
 // ---------------------------------------------------------
+// Aqwesomeアイコン
+@import "font-awesome-sprockets";
+@import "font-awesome";
+// ---------------------------------------------------------
 // 共通パーツのCSS
 @import "module/header";
 @import "module/footer";
