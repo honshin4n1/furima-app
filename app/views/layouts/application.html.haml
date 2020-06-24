@@ -9,12 +9,12 @@
   %body
     %div{id: "containar"}
       %header.tp__header
-        = render partial: "module/header"
+        = render "module/header"
       %main.tp__main
         = yield
       -# aside要素はリセットCSSの関係か表示が崩れるので使用できない。
       %div{id: "appBanner"}
-        = render partial:"module/supplement"
+        = render "module/supplement"
       %footer.tp__footer
-        = render partial: "module/footer"
-      =render partial: "module/exhibition-icon"
+        = render "module/footer"
+      =render "module/exhibition-icon"
