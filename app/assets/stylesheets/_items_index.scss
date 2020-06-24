@@ -17,10 +17,25 @@
 }
 .performance{
   background-image: url("material/pict/bg-topMiddleDl-pict.jpg");
+  background-position: bottom;
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+
 }
-.characteristics{}
-.pickupCategories.pickup__cont{}
-.pickupBrands.pickup__cont{}
+.characteristics{
+  padding: 60px 100px;
+  background-color: #fff;
+}
+.pickup__cont{
+  padding: 80px 0 0;
+  background-color: #f8f8f8;
+  height: 100%;
+}
+.pickupBrands{
+  padding-bottom: 80px;
+}
 
 
 
