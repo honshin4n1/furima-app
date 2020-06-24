@@ -6,8 +6,16 @@
       %br フリマアプリです
       = render "module/appStoreIcon"
 %section.whyChoose
-  %h2.wc__title
-  %ul.wc__list
+  %h2.wc__title フリマが選ばれる３つの理由
+  %ul.wc__lists
+    %li.list
+      .list__picture
+        %span.number 1
+        = image_tag('material/pict/pict-reason-01.jpg')
+      %h3.list__text
+      %p.list__description スマホで入力するだけで簡単い出品できる！
+    %li.list
+    %li.list.list--last
 %section.performance
 %section.characteristics
 %section.pickupCategories.pickup__cont
