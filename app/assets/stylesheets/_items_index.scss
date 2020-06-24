@@ -178,17 +178,7 @@
     }
   }
 }
-
-.pickupCategories{
-  padding: 80px;
-  background-color: #f8f8f8;
-  height: 100%;
-}
-
-.pickupBrands{
-  padding-bottom: 80px;
-}
-
+// CSSの順番を変更しないこと
 .pickup__cont{
   padding: 80px 0 0;
   background-color: #f8f8f8;
@@ -272,6 +262,17 @@
     }
   }
 }
+
+.pickupCategories{
+  padding: 80px;
+  background-color: #f8f8f8;
+  height: 100%;
+}
+
+.pickupBrands{
+  padding-bottom: 80px;
+}
+
 
 // ***********************************************************
 // -----------------------------------------------------------
