@@ -1,0 +1,63 @@
+.main-containar
+  .header-containar
+    = link_to "#", class: "header-containar__link" do
+      = image_tag "/assets/material/logo/logo.png", class: "header-containar__link__logo-img", alt: "FURIMA logo"
+  .body-containar
+    .user-signup
+      %p.user-signup__text
+        アカウントをお持ちでない方はこちら
+      = link_to "#", class: "user-signup__link" do
+        新規会員登録  
+    .login-selection
+      .login-selection__sns
+        = link_to "#", class: "login-selection__sns__link login-selection__sns__link--google" do
+          = icon('fab', 'google', class: "icon-google")
+          Googleでログイン
+        = link_to "#", class: "login-selection__sns__link login-selection__sns__link--facebook" do
+          = icon('fab', 'facebook-square', class: "icon-facebook")
+          Facebookでログイン
+        = link_to "#", class: "login-selection__sns__link login-selection__sns__link--apple" do
+          = icon('fab', 'apple', class: "icon-apple")
+          Appleでログイン
+      .login-form
+        %form
+          .form-group
+            %input{type: "email", name: "email", class: "input-normal", placeholder: "メールアドレス", autocomplete: "email"}
+          .form-group
+            %input{type: "password", name: "password",class: "input-normal", placeholder: "パスワード", autocomplete: "current-password"}
+          %button{type: "sumit", class: "registration-btn"}
+            ログイン
+  .footer-containar
+    .footer-containar__info
+      %p.footer-containar__info__text
+        プライバシーポリシー
+      %p.footer-containar__info__text
+        フリマ用規約
+      %p.footer-containar__info__text
+        特定商取引に関する表記
+    = link_to "#", clas: "footer-containar__link" do
+      = image_tag "/assets/material/logo/logo-white.png", class: "footer-containar__link__logo-img", alt: "FURIMA logo-white"
+    %p.footer-containar__inc
+      © Furima, Inc.
+
+
+
+-# 今後の作業で参考にしたい
+
+-# %h2 Log in
+-# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :password
+-#     %br/
+-#     = f.password_field :password, autocomplete: "current-password"
+-#   - if devise_mapping.rememberable?
+-#     .field
+-#       = f.check_box :remember_me
+-#       = f.label :remember_me
+-#   .actions
+-#     = f.submit "Log in"
+-# = render "devise/shared/links"
