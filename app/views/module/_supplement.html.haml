@@ -1,8 +1,4 @@
 .sup__inner
   %h2.sup__inner__title 誰でも簡単、人生を変えるフリマアプリ
   %p.sup__inner__text 今すぐ無料ダウンロード
-  .sup__inner__icon
-    = link_to "#", class: "download" do
-      = image_tag('material/icon/app-store.svg', alt: 'appleのアイコン', class: "apple_store", id: "store_link")
-    = link_to "#", class: "download" do
-      = image_tag('material/icon/google-play.svg', alt: 'googleのアイコン', class: "google_play", id: "store_link")
+  = render "module/appStoreIcon"
