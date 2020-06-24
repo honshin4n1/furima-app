@@ -5,6 +5,7 @@ body{
 
 a{
   text-decoration: none;
+  color: #333;
 }
 
 .nav-bar{
@@ -34,14 +35,14 @@ a{
       font-size: 10px;
       color: #888;
     }
-    .nav-ber-mypage{
+    .nav-ber-active{
       font-weight: 600;
     }
   }
 }
 
 
-.mypage{
+.weaper{
   margin: 40px auto 0;
   width: 1020px;
   background-color: #f5f5f5;
@@ -60,7 +61,6 @@ a{
           padding: 16px;
           background: #fff;
           font-size: 14px;
-          color: #333;
           i{
             position: absolute;
             top:0px;
@@ -82,7 +82,6 @@ a{
           padding: 16px;
           background: #fff;
           font-size: 14px;
-          color: #333;
           i{
             position: absolute;
             top:0px;
@@ -237,7 +236,6 @@ a{
         display: block;
         height: 56px;
         background: #eee;
-        color: #333;
         line-height: 56px;
         text-align: center;
       }
