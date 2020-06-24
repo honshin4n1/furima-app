@@ -11,9 +11,48 @@
   padding: 0 60px;
   display: flex;
   align-items: center;
+  .fi__content{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 35px 0 0 0;
+    .content__title{
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 60px;
+      line-height: 1.2;
+      color: #fff;
+    }
+    .content__text{
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 18px;
+      color: #fff;
+      line-height: 1.8;
+      margin: 16px 0 0 0;
+    }
+    .appStore__container{
+      margin: 24px 0 0 0;
+      justify-content: left;
+    }
+  }
 }
-.why_choose{
+.whyChoose{
   padding: 60px 20px;
+  .wc__title{
+    text-align: center;
+    font-size: 26px;
+    line-height: 1.4;
+    font-weight: bold;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    position: relative;
+  }
+  .wc__list{
+    text-align: center;
+    display: flex;
+    max-width: 1020px;
+    width: 100%;
+    margin: auto 0;
+  }
 }
 .performance{
   background-image: url("material/pict/bg-topMiddleDl-pict.jpg");
