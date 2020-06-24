@@ -51,7 +51,7 @@
     display: flex;
     max-width: 1020px;
     width: 100%;
-    margin: auto 0;
+    margin: 0 auto;
     .list{
       width: 30%;
       margin: 16px 5% 0 0;
@@ -62,12 +62,35 @@
       &__picture{
         position: relative;
         margin-bottom: 20px;
+        .number{
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 4%;
+          font-size: 30px;
+          text-align: center;
+          margin: 0 5px 0 0;
+          padding: 10px 20px;
+          background-color: #3CCACE;
+          color: #fff;
+        }
+        img{
+          width: 100%;
+          vertical-align: bottom;
+        }
       }
       &__text{
         font-weight: bold;
         font-size: 24px;
         line-height: 50px;
         margin: 0 0 0 2px;
+        span{
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 50px;
+          margin: 0 0 0 2px;
+        }
       }
       &__description{
         font-size: 18px;
@@ -87,7 +110,13 @@
   height: 400px;
   display: flex;
   align-items: center;
-
+  &__inner{
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    text-align: left;
+    max-width: 1040px;
+    width: 100%;
+  }
 }
 .characteristics{
   padding: 60px 100px;
