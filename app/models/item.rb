@@ -8,4 +8,5 @@ class Item < ApplicationRecord
   # belongs_to :user
   # has_one :postage_payer
   # has_one :preparation_day
+  belongs_to_active_hash :prefecture
 end
