@@ -1,0 +1,28 @@
+.logout{
+  width: 700px;
+  height: 179px;
+  background-color: #fff;
+  float: right;
+  form{
+    padding: 64px;
+    border-top: 1px solid #f5f5f5;
+    .logout-content{
+      max-width: 320px;
+      margin: 0 auto;
+      button{
+        background: #3CCACE;
+        border: 1px solid #3CCACE;
+        color: #fff;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border-radius: 4px;
+        a{
+          text-decoration: none;
+          color: #fff;
+          padding: 18px 118px;
+        }
+      }
+    }
+  }
+}

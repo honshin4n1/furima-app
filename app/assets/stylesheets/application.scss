@@ -1,6 +1,34 @@
+// ---------------------------------------------------------
+// リセットCSS
 @import "reset";
+// ---------------------------------------------------------
+// Aqwesomeアイコン
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "users";
-@import "items/new";
-@import "items/show";
+
+@import "items/new";                 //商品出品ページ
+@import "items/show";                //商品詳細ページ
+// ---------------------------------------------------------
+// 共通パーツのCSS
+@import "module/header";
+@import "module/footer";
+@import "module/exhibition-icon";    //出品ボタンのアイコン
+@import "module/supplement";         //アプリケーションのバナー
+@import "module/layouts";            //レイアウト用
+@import "module/app_store";          //app_store_icon用
+@import "module/side-bar";           //サイドバー
+// ---------------------------------------------------------
+//＊＊＊＊ 商品関連 ＊＊＊＊
+@import "items/index";    // トップページのビュー
+@import "items/new";      // 商品出品ページのビュー
+@import "items/purchase"; // 商品購入確認ページのビュー
+// ---------------------------------------------------------
+//＊＊＊＊ ユーザー関連 ＊＊＊＊
+@import "users/registrations";
+@import "users/login";
+@import "users/show";                //ユーザーマイページ
+@import "logouts/index";             //ログアウトページ
+// ---------------------------------------------------------
+//＊＊＊＊ カード関連 ＊＊＊＊
+@import "cards/new";                 //クレジットカード登録ページ
+// ---------------------------------------------------------

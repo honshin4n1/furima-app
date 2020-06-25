@@ -4,6 +4,8 @@ class ItemsController < ApplicationController
   end
 
   def new
+    # レイヤーを変更
+    render layout: "nothing"
   end
 
   def create
@@ -13,5 +15,11 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def purchase
+
+
+    # レイヤーを変更
+    render layout: "nothing"
+  end
 
 end

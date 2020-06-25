@@ -29,13 +29,13 @@
     text-align: center;
   }
   &__form {
-    padding: 24px 16px 40px;
+    padding: 0 16px 50px;
   }
 }
 
 .form-group {
   width: 60%;
-  height: 30%;
+  height: 40%;
   margin: 40px auto;
   &__set-input {
     display: flex;
@@ -60,7 +60,7 @@
 }
 
 .input-normal {
-  height: 30px;
+  height: 60px;
   width: 90%;
   padding: 10px 16px 8px;
   border: 1px solid #ccc;
@@ -84,7 +84,7 @@
 }
 
 .input-half {
-  height: 30px;
+  height: 60px;
   width: 100%;
   padding: 10px 16px 8px;
   border-radius: 4px;
@@ -101,7 +101,7 @@
 .birthday-select {
   width: 22%;
   &__tag {
-    height: 50px;
+    height: 60px;
     width: 100%;
     border-radius: 4px;
     border: 1px solid #ccc;
@@ -135,7 +135,6 @@
 }
 
 .footer-containar {
-  height: 150px;
   width: 70%;
   margin: 0 auto;
   padding: 40px 0;
@@ -151,7 +150,7 @@
   &__link {
     line-height: 200px;
     &__logo-img {
-      height: 50px;
+      height: 100px;
       width: 185px;
       padding-top: 40px;
     }
@@ -159,99 +158,4 @@
   &__inc {
     font-size: 12px;
   }
-}
-
-// ログイン画面
-
-.body-containar {
-  width: 700px;
-  margin: 0 auto;
-  padding: 24px 16px 40px;
-  background-color: #fff;
-}
-
-.user-signup {
-  height: 60%;
-  text-align: center;
-  padding: 40px 50px;
-  margin: 0 auto;
-  &__text {
-    font-size: 14px;
-  }
-  &__link {
-    display: block;
-    line-height: 50px;
-    width: 58%;
-    font-size: 14px;
-    text-decoration: none;
-    color: #fff;
-    border-radius: 4px;
-    background-color: #3CCACE;
-    margin: 0 auto;
-  }
-}
-
-.login-selection {
-  margin: 0 auto;
-  &__sns {
-    padding: 40px 50px;
-
-    &__link { 
-      width: 58%;
-      line-height: 50px;
-      font-size: 14px;
-      margin: 20px auto;
-      display: block;
-      text-align: center;
-      border-radius: 4px;
-      text-decoration: none;
-      border:  solid 1px #979797;
-      position: relative;
-      &--google {
-        color: #333;
-
-      }
-      &--facebook {
-        color: #fff;
-        background-color: #385185;
-
-      }
-      &--apple {
-        color: #fff;
-        background-color: #000;
-
-      }
-    }
-  }
-}
-
-.icon-google {
-  position: absolute;
-  top: 25%;
-  left: 14px;
-  font-size: 25px;
-  color: #2962ff;;
-
-
-}
-
-.icon-facebook {
-  position: absolute;
-  top: 20%;
-  left: 14px;
-  font-size: 30px;
-
-}
-
-.icon-apple {
-  position: absolute;
-  top: 20%;
-  left: 14px;
-  font-size: 30px;
-
-}
-
-.login-form {
-  padding: 0 50px 40px;
-
 }

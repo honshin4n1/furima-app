@@ -1,0 +1,68 @@
+.nav-bar
+  %ol
+    %li.nav-var-merukari
+      =link_to "#", class: "nav-var-merukari-text" do
+        メルカリ
+    %i.fas.fa-chevron-right
+    %li.nav-ber-active
+      マイページ
+
+.mypagewrapper
+  =render 'module/side-bar'
+
+  .userpage
+    = link_to "#",class: "userpage-box"  do
+      %img{src:"/assets/light.jpg",style:"user-select: auto;"}
+      %H2.userpage-box-name
+        test
+      .userpage-box__number
+        .userpage-box__number__evaluation
+          評価  5
+        .userpage-box__number__items
+          出品数  5
+  
+  .info
+    .info-box
+      .info-box__right
+        お知らせ
+      .info-box__left
+        やることリスト
+    .info-content
+      .info-content__list
+        %img{src:"/assets/small-logo.png"}
+        .info-content__list__body
+          .info-content__list__body__text
+            お買い物に使える！1,000円分のポイントが貰えるキャンペーン開催中！今すぐ参加しよう♪
+          .info-content__list__body__time
+            = link_to "#", class: "clock-icon" do
+              %i.far.fa-clock
+            .info-content__list__body__time__hour
+              5時間前
+        = link_to "#", class: "nav_item"  do
+          %i.fas.fa-chevron-right
+
+    .info-list
+      = link_to "#", class: "list_box__list__text" do 
+        一覧を見る
+  
+  .purchased
+    %h2.purchased__text 
+      購入した商品
+    .purchased__box
+      .purchased__box__active
+        取引中
+      .purchased__box__later
+        過去の取引
+    .purchased-content
+      .purchased-content__list
+        %img{src:"/assets/rspec.jpg"}
+        .purchased-content__list__body
+          .purchased-content__list__body__text
+            「The RSpec Book/豊田 祐司, クイープ, David Cheli...」を購入しました。取引きが完了しました
+          .purchased-content__list__body__finish
+            取引完了
+        = link_to "#",class: "nav_item"  do
+          %i.fas.fa-chevron-right
+    .purchased__list
+      = link_to "#", class: "purchased__list__text" do 
+        一覧を見る
