@@ -61,25 +61,25 @@
           -# 送料込み
           -# - else
           -# 着払い
-
       .item_center
-      -# ユーザーが出品者の場合
-      - if user_signed_in? && current_user.id == @item.user_id
-      - if user_signed_in? && current_user.id == @item.user_id
-        .item_center_box
-          = link_to "商品の編集", class: "item_exhibition_edit"
-          %p.item_center_box__text or
-          = link_to "出品を一時停止する",  class: "item_exhibition_stop"
-          = link_to "この商品を削除する",  class: "item_exhibition_delete"
-
       %button{type: "sumit", class: "item_buy_btn"} 購入画面に進む
-      -# = link_to "購入画面に進む", "#", class: "item_btn"
-
       .item_detail_show
         %span.detail_show__text
           詳細内容です。
           -# = @item.introduction
-        .item_detail_show__btn_box
+      .item_btn_box
+        .item_btn_box__left
+          %button{ type: 'button', name: 'like!', class: 'iine_btn' }
+            %span いいね!
+          = link_to '/' do
+            %i.far.fa-flag
+              %span.safety_gray 不適切な商品の報告
+        .item_btn_box__right
+          = link_to '/' do
+            %i.fas.fa-shopping-bag
+              %span.safety_blue あんしん・あんぜんへの取り組み
+
+
   -# メッセージ機能、お気に入り機能は必須ではないためコメントアウトしてください。      
   .item_comment_box    
     .item_message_box_detail
@@ -142,3 +142,18 @@
     %p.footer-containar__inc
       © Furima, Inc.
 © 2020 GitHub, Inc.                  
+
+
+
+
+
+
+
+      -# ユーザーが出品者の場合
+      - if user_signed_in? && current_user.id == @item.user_id
+      - if user_signed_in? && current_user.id == @item.user_id
+        .item_center_box
+          = link_to "商品の編集", class: "item_exhibition_edit"
+          %p.item_center_box__text or
+          = link_to "出品を一時停止する",  class: "item_exhibition_stop"
+          = link_to "この商品を削除する",  class: "item_exhibition_delete"
