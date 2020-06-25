@@ -67,12 +67,7 @@
           -# 着払い
       .item_center
         .item_center_user
-        -# ユーザーが出品者の場合
-        -# - if user_signed_in? && current_user.id == @item.user_id
-        -#   = link_to "商品の編集", class: "item_exhibition_edit"
-        -#   %p.item_center_box__text or
-        -#   = link_to "出品を一時停止する",  class: "item_exhibition_stop"
-        -#   = link_to "この商品を削除する",  class: "item_exhibition_delete"
+
 
       %button{type: "sumit", class: "item_buy_btn"} 購入画面に進む
       .item_detail_show
@@ -90,7 +85,6 @@
           = link_to '/' do
             %i.fas.fa-shopping-bag
               %span あんしん・あんぜんへの取り組み
-
 
   -# メッセージ機能、お気に入り機能は必須ではないためコメントアウトしてください。      
   .item_comment_box    
