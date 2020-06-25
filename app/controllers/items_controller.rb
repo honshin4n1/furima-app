@@ -6,6 +6,8 @@ class ItemsController < ApplicationController
   
   def new
 
+    # レイヤーを変更
+    render layout: "users"
   end
 
   def create
