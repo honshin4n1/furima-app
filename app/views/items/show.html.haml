@@ -1,4 +1,7 @@
 .main-containar
+  .header-containar
+    = link_to "#", class: "header-containar__link" do
+      = image_tag "/assets/material/logo/logo.png", class: "header-containar__link__logo-img", alt: "FURIMA logo"
   .item_detail_contents
     %h1.item_detail_contents__box
       .item_name
@@ -6,13 +9,17 @@
         -# = @item.name
       .item_square
         .item_square__image
-          -# = @item.image
+        -# = @product.images.each do |image|
+        -#   = image_tag image, class: 'image_box', size: '300x300'
         .item_square__text
           %table.item_square__table
             %tbody
               %tr
                 %th 出品者
                 %td
+                  -#  = link_to '/' do
+                  -#   = @user.nickname
+                  田中
               %tr
                 %th カテゴリー
                 %td
@@ -55,41 +62,73 @@
           -# - else
           -# 着払い
       .item_center
-      = link_to '購入画面に進む',  class: 'itembuy-price-box', id: 'itembuy-price-box__decoration'
-
+      %button{type: "sumit", class: "item_buy_btn"} 購入画面に進む
       -# = link_to "購入画面に進む", "#", class: "item_btn"
 
-      .item_detail
-        %span.detail_text
+      .item_detail_show
+        %span.detail_show__text
           詳細内容です。
-          = @item.introduction
+          -# = @item.introduction
+        .item_detail_show__btn_box
+  -# メッセージ機能、お気に入り機能は必須ではないためコメントアウトしてください。      
+  .item_comment_box    
+    .item_message_box_detail
+      %p.item_message_box_detail__text
+      -# - if @comments
+      -#   - @comments.each do |comment|
+      -#     %p
+      -#       %strong
+      -#         = link_to comment.user.nickname, "/users/#{comment.user_id}"
+      -#         ：
+      -#       = comment.text
+    .item_message_box_note  
+      %span.item_message_box_note__text 
+      不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    .item_message_box_input
+      %input{type: "text", class: "comment_input"}
+      %button{type: "sumit", class: "comment_btn"} コメントする 
+  
+  .items_media_box   
+    %ul.items_media_box__list
+      %li
+        = link_to '/' do
+          %i.fab.fa-facebook-square
+      %li
+        = link_to '/' do
+          %i.fab.fa-twitter-square
+      %li
+        = link_to '/' do
+          %i.fab.fa-line
+  .item_user_list
+    -# - @items.each do |item|
+    -#   = render partial: "item", locals: { item: item }
 
-      .item_message_box
-        %span.message
-          買いたいです
-          -# %p ＜コメント一覧＞
-          -# - if @comments
-          -#   - @comments.each do |comment|
-          -#     %p
-          -#       %strong
-          -#         = link_to comment.user.nickname, "/users/#{comment.user_id}"
-          -#         ：
-          -#       = comment.text
-      .item_media_box
-        %ul.item_media_box__list
-          %li
-            = link_to '/' , class: "icon_btn" do
-              %i.fab.fa-facebook-square
-          %li
-            = link_to '/' , class: "icon_btn" do
-              %i.fab.fa-twitter-square
-          %li
-            = link_to '/' , class: "icon_btn" do
-              %i.fab.fa-line
-          %li
-            = link_to '/' , class: "icon_btn" do
-              %i.fab.fa-pinterest-square
-
-      .item_list
-        -# - @items.each do |item|
-        -#   = render partial: "item", locals: { item: item }
+  .item_user_profile
+    %section.item_user_profile__box
+    %h2.item_user_profile__head
+      = link_to '/' do
+        -# {@user.nickname}さんのその他の出品
+    .item_user_profile__content
+      -# - @item.each do |item|
+        .item_user_profile__box
+          %section.item_user_profile__items
+            = link_to '#' do
+              .item_user_profile__body
+                %h3.item_user_profile__name 
+                  = item.name
+                .itembuy-user-profile__num
+                  .item_user_profile__price
+                    = item.price.jpy  
+  .footer-containar
+    .footer-containar__info
+      %p.footer-containar__info__text
+        プライバシーポリシー
+      %p.footer-containar__info__text
+        フリマ用規約
+      %p.footer-containar__info__text
+        特定商取引に関する表記
+    = link_to "#", clas: "footer-containar__link" do
+      = image_tag "/assets/material/logo/logo-white.png", class: "footer-containar__link__logo-img", alt: "FURIMA logo-white"
+    %p.footer-containar__inc
+      © Furima, Inc.
+© 2020 GitHub, Inc.                  
