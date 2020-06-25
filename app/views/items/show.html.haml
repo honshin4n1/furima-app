@@ -1,0 +1,95 @@
+.main-containar
+  .item_detail_contents
+    %h1.item_detail_contents__box
+      .item_name
+        サッカーボール10個
+        -# = @item.name
+      .item_square
+        .item_square__image
+          -# = @item.image
+        .item_square__text
+          %table.item_square__table
+            %tbody
+              %tr
+                %th 出品者
+                %td
+              %tr
+                %th カテゴリー
+                %td
+                  -# = @item.category
+                  メンズ
+              %tr
+                %th ブランド
+                %td
+                  -# = @item.brand
+                  NIKE
+              %tr
+                %th 商品の状態
+                %td
+                  -# = @item.condition
+                  新品・未使用
+              %tr
+                %th 配送料の負担
+                %td
+                  -# = @item.postage_payr
+                  送料込み（出品者負担）
+              %tr
+                %th 配送元地域
+                %td
+                  -# = @item.prefecture
+                  福岡県
+              %tr
+                %th 発送日の目安
+                %td
+                  -# = @item.preparation_day
+                  1~2日で発送
+      .item_price
+        %span.item_price__bold
+          ¥1,000円
+        -# = @item.price
+        %span.item_price__tax 税込
+        %span.item_price__fee 
+          -# 送料込み
+          -# - if
+          -# 送料込み
+          -# - else
+          -# 着払い
+      .item_center
+      = link_to '購入画面に進む',  class: 'itembuy-price-box', id: 'itembuy-price-box__decoration'
+
+      -# = link_to "購入画面に進む", "#", class: "item_btn"
+
+      .item_detail
+        %span.detail_text
+          詳細内容です。
+          = @item.introduction
+
+      .item_message_box
+        %span.message
+          買いたいです
+          -# %p ＜コメント一覧＞
+          -# - if @comments
+          -#   - @comments.each do |comment|
+          -#     %p
+          -#       %strong
+          -#         = link_to comment.user.nickname, "/users/#{comment.user_id}"
+          -#         ：
+          -#       = comment.text
+      .item_media_box
+        %ul.item_media_box__list
+          %li
+            = link_to '/' , class: "icon_btn" do
+              %i.fab.fa-facebook-square
+          %li
+            = link_to '/' , class: "icon_btn" do
+              %i.fab.fa-twitter-square
+          %li
+            = link_to '/' , class: "icon_btn" do
+              %i.fab.fa-line
+          %li
+            = link_to '/' , class: "icon_btn" do
+              %i.fab.fa-pinterest-square
+
+      .item_list
+        -# - @items.each do |item|
+        -#   = render partial: "item", locals: { item: item }

@@ -2,8 +2,8 @@
   .header-containar
     = link_to "#", class: "header-containar__link" do
       = image_tag "/assets/material/logo/logo.png", class: "header-containar__link__logo-img", alt: "FURIMA logo"
-  .exhibition_contents
-    .exhibition_contents__box
+  .item_contents
+    .item_contents__box
       .item_image_box
         .item_image_box__form
           %a.label
@@ -136,7 +136,6 @@
             %input{type: "submit", value: "下書きに保存", class: "submit-btn-white"}
           .return-btn   
             = link_to "もどる", '#'
-
   .footer-containar
     .footer-containar__info
       %p.footer-containar__info__text

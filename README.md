@@ -22,6 +22,7 @@
  - belongs_to: user
  - belongs_to: postage_payer
  - belongs_to: preparation_day
+ - belongs_to_active_hash :prefecture
 
 
 ## users（会員）テーブル
