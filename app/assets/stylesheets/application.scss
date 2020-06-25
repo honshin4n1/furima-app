@@ -14,9 +14,13 @@
 @import "module/layouts";            //レイアウト用
 @import "module/app_store";            //app_store_icon用
 // ---------------------------------------------------------
-// トップページのビュー
-@import "items/index";
+//＊＊＊＊ 商品関連 ＊＊＊＊
+@import "items/index";    // トップページのビュー
+@import "items/new";      // 商品出品ページのビュー
 // ---------------------------------------------------------
-@import "users";
-@import "items";
+//＊＊＊＊ ユーザー関連 ＊＊＊＊
+@import "users/registrations";
+@import "users/login";
+// ---------------------------------------------------------
+
 
