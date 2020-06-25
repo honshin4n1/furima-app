@@ -1,0 +1,268 @@
+// 商品詳細ページ
+.item_detail_contents{
+  height: 100%;
+  width: 100%;
+  &__box{
+    width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+  }
+}
+
+.item_name{
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.item_square{
+  display: flex;
+  &__photo{
+    width: 300px;
+    margin: 25px; 
+  }
+  &__carousel{
+    height: 300px;
+  }
+  &__carousel_sub{
+    height: 60px;
+  }
+  &__table{
+    float: right;
+    max-width: 300px;
+    height: 420px;
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #f5f5f5;
+    th{
+      width: 50%;
+      text-align: left;
+      font-weight: 400;
+      background: #fafafa;
+      padding: 8px
+    }
+    td{
+      width: 50%;
+      background: #fff;
+      padding: 8px;
+      border-collapse: collapse;
+      border: 1px solid #f5f5f5;  
+    }
+  }
+}
+  
+.item_price{
+  width: 620px;
+  margin-top: 24px;
+  text-align: center;
+  &__bold{
+    font-size: 50px;
+    &__tax{
+      font-size: 10px;
+    }
+    &__fee{
+      font-size: 16px;
+    }
+  }
+}
+
+.item_center{
+  height: 50px;
+}
+
+.item_buy_btn {
+  display: block;
+  width: 100%;
+  line-height: 50px;
+  font-size: 24px;
+  border-radius: 4px;
+  color: #fff;
+  margin: 0 auto;
+  background-color: #ea352d;
+  border: 0;
+  cursor: pointer;
+}
+
+.item_detail_show{
+  padding: 32px 0;
+  &__btn_box{
+    height: 50px;
+  }
+}
+.item_btn_box{
+  width: 100%;
+  &__left{
+    float: left;
+    button{
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 40px;
+      color: #333;
+      border: 1px solid #f5f5f5;
+      background: #f5f5f5;
+      span{
+        margin: 1px 0 0 8px;
+        color: gray;
+      }
+    }
+  }
+  &__right{
+    margin-top: 8px;
+    float: right;
+    font-size: 14px;
+    span{
+      font-weight: 400;
+      color: skyblue;
+      font-weight: bold;
+    }
+  }
+}
+
+.far.fa-flag{
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 40px;
+  color: #333;
+  border: 1px solid #f5f5f5;
+  background: #f5f5f5;
+  margin-left: 16px;
+  span{
+    margin: 1px 0 0 8px;
+  }
+}
+
+.fas.fa-shopping-bag{
+  display: inline-block;
+  color: skyblue;
+  margin-left: 16px;
+}
+
+.item_comment_box{
+  width: 700px;
+  margin: 0 auto;
+  padding: 24px 40px 40px;
+  background-color: #fff;
+  margin-top: 10px;
+}
+
+.item_message_box_note{
+  background-color: lightyellow;
+  text-align: center;
+  padding: 8px;
+  margin: 0 auto;
+  margin-top: 40px;
+  &__text{
+    font-size: 14px;
+    line-height: 1px;
+  }
+}
+
+.item_message_box_input{
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.comment_input{
+  width: 100%;
+  height: 100px;
+  margin: 8px 0;
+  background-color: #fff;
+  border: solid 1px #ddd;
+  border-radius: 4px;
+}
+
+.comment_btn{
+  width: 100%;
+  height: 50px;
+  background-color: #ddd;
+  border: solid 1px #ddd;
+  border-radius: 4px;
+}
+
+.items_media_box{
+  margin: 32px auto;
+  padding: 24px 40px 40px;
+  width: 700px;
+  clear: both;
+  background-color: #fff;
+  text-align: center; 
+  li{
+    margin: 16px 8px 8px 0;
+    font-size: 44px;
+    display: inline-block;
+    vertical-align: middle;
+    .fab.fa-facebook-square{
+      color:  #385185;
+    }
+    .fab.fa-twitter-square{
+      color: #5d9dc9;
+    }
+    .fab.fa-line{
+      color: green;
+    }
+    .fab.fa-pinterest-square{
+      color: #aa262a;
+    }
+  }
+}
+
+.item_user_profile{
+  width: 700px;
+  margin: 0 auto;
+  h2{
+    font-size: 22px;
+    margin: 24px 0 8px;
+  }
+  &__content{
+    text-decoration: none;
+    width: 800px;
+    section{
+      a{
+        display: block;
+        color: #333;
+        text-decoration: none;
+      }
+    }
+  }
+  &__box{
+    background: #fff;
+    width: 220px;
+    margin: 0 20px 20px 0;
+    display: inline-block;
+  }
+  &__body{
+    padding: 16px;
+    height: 110px;
+    width: 220px;
+    background-color: #ffffff;
+    h3{
+      overflow: hidden;
+      position: relative;
+      font-weight: 400;
+      height: 3em;
+      line-height: 1.5;
+      word-break: break-word;
+      white-space: normal;
+      font-size: 16px;
+      color: #333;
+    }
+  }
+  &__price{
+    font-size: 17px;
+    font-weight: 600;
+    color: #333;
+  }
+}
+
+#bread-bottom{
+  background: #f5f5f5;
+  li{
+    display: inline-block;
+  }
+}
+
+#itembuy-price-box__decoration{
+  text-decoration: none;
+}
