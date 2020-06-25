@@ -3,14 +3,18 @@
     = link_to "#", class: "header-containar__link" do
       = image_tag "/assets/material/logo/logo.png", class: "header-containar__link__logo-img", alt: "FURIMA logo"
   .item_detail_contents
-    %h1.item_detail_contents__box
-      .item_name
+    .item_detail_contents__box
+      %p.item_name
         サッカーボール10個
         -# = @item.name
       .item_square
-        .item_square__image
-        -# = @product.images.each do |image|
-        -#   = image_tag image, class: 'image_box', size: '300x300'
+        .item_square__photo
+          .item_square__carousel{ id: 'main' }
+            -# = @item.images.each do |image|
+            -#   = image_tag image, class: 'image-carousel', size: '300x300'
+          .item_square__carousel_sub{id: 'sub'}
+            -# = @item.images.each do |image|
+            -#   = image_tag image, class: 'image_carousel_reserve', size: '60x60'
         .item_square__text
           %table.item_square__table
             %tbody
@@ -24,7 +28,7 @@
                 %th カテゴリー
                 %td
                   -# = @item.category
-                  メンズ
+                  メンズ/トップス/Tシャツ
               %tr
                 %th ブランド
                 %td
@@ -39,7 +43,7 @@
                 %th 配送料の負担
                 %td
                   -# = @item.postage_payr
-                  送料込み（出品者負担）
+                  送料込
               %tr
                 %th 配送元地域
                 %td
@@ -63,7 +67,7 @@
           -# 着払い
       .item_center
         .item_center_user
-        -# -# ユーザーが出品者の場合
+        -# ユーザーが出品者の場合
         -# - if user_signed_in? && current_user.id == @item.user_id
         -#   = link_to "商品の編集", class: "item_exhibition_edit"
         -#   %p.item_center_box__text or
@@ -77,21 +81,22 @@
           -# = @item.introduction
       .item_btn_box
         .item_btn_box__left
-          %button{ type: 'button', name: 'like!', class: 'iine_btn' }
+          %button{ type: 'button', name: 'like!'}
             %span いいね!
           = link_to '/' do
             %i.far.fa-flag
-              %span.safety_gray 不適切な商品の報告
+              %span 不適切な商品の報告
         .item_btn_box__right
           = link_to '/' do
             %i.fas.fa-shopping-bag
-              %span.safety_blue あんしん・あんぜんへの取り組み
+              %span あんしん・あんぜんへの取り組み
 
 
   -# メッセージ機能、お気に入り機能は必須ではないためコメントアウトしてください。      
   .item_comment_box    
     .item_message_box_detail
       %p.item_message_box_detail__text
+        ※こちらにコメントが表示されます
       -# - if @comments
       -#   - @comments.each do |comment|
       -#     %p
