@@ -1,0 +1,66 @@
+.main-containar
+  .header-containar
+    = link_to "#", class: "header-containar__link" do
+      = image_tag "material/logo/logo.png", class: "header-containar__link__logo-img", alt: "FURIMA logo"
+  .middle-containar
+    .confirm-purchase-details
+      %p.confirm-purchase-details__title
+        購入内容の確認
+    .group-container
+      .item-info
+        .item-info__img-box
+          = image_tag "#", class: "item-info__img-box__img", alt: "#商品画像"
+        .item-info__text
+          %P.item-info__text__name
+            商品名
+          %span.item-info__text__postage-payer
+            送料込み (税込み)
+          %span.item-info__text__price
+            ¥5000
+    .group-container
+      .payment
+        %P.payment__title
+          支払い金額
+        %P.payment__price
+          ¥5000
+    .group-container
+      .method-of-payment
+        %p.method-of-payment__title
+          支払い方法
+          = link_to "#", class: "method-of-payment__title__change" do
+            変更する >
+        %p.method-of-payment__card
+          クレジットカード
+        %p.method-of-payment__number
+          ************0000
+        %p.method-of-payment__date
+          有効期限 04/24
+        = image_tag "#", class: "method-of-payment__logo", alt: "カードロゴ"
+    .group-container
+      .delivery-address
+        %p.delivery-address__title
+          配送先
+          = link_to "#", class: "delivery-address__title__change" do
+            変更する >
+        %p.buyer-post-code
+          〒810-0000
+        %p.buyer-address
+          都道府県 市区町村 番地 建物名
+        %p.buyer-name
+          フリマ太郎
+    .group-container
+      %form
+        %button{type: "sumit", class: "purchase-btn"}
+          購入する
+  .footer-containar
+    .footer-containar__info
+      %p.footer-containar__info__text
+        プライバシーポリシー
+      %p.footer-containar__info__text
+        フリマ用規約
+      %p.footer-containar__info__text
+        特定商取引に関する表記
+    = link_to "#", clas: "footer-containar__link" do
+      = image_tag "material/logo/logo-white.png", class: "footer-containar__link__logo-img", alt: "FURIMA logo-white"
+    %p.footer-containar__inc
+      © Furima, Inc.
