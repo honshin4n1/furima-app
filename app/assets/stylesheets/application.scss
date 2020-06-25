@@ -9,10 +9,10 @@
 // 共通パーツのCSS
 @import "module/header";
 @import "module/footer";
-@import "module/exhibition-icon";   //出品ボタンのアイコン
-@import "module/supplement";        //アプリケーションのバナー
+@import "module/exhibition-icon";    //出品ボタンのアイコン
+@import "module/supplement";         //アプリケーションのバナー
 @import "module/layouts";            //レイアウト用
-@import "module/app_store";            //app_store_icon用
+@import "module/app_store";          //app_store_icon用
 // ---------------------------------------------------------
 //＊＊＊＊ 商品関連 ＊＊＊＊
 @import "items/index";    // トップページのビュー
