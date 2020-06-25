@@ -17,9 +17,8 @@
 .byebug_history
 
 public/uploads/*
-
 config/secrets.yml
 
-# .gitignore
 # .DS_Store banished!
 .DS_Store
+
