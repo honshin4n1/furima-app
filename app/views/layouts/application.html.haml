@@ -7,4 +7,14 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    %div{id: "containar"}
+      %header.tp__header
+        = render "module/header"
+      %main.tp__main
+        = yield
+      -# aside要素はリセットCSSの関係か表示が崩れるので使用できない。
+      %div{id: "appBanner"}
+        = render "module/supplement"
+      %footer.tp__footer
+        = render "module/footer"
+      =render "module/exhibition-icon"

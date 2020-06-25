@@ -1,0 +1,153 @@
+.main-containar
+  .header-containar
+    = link_to "#", class: "header-containar__link" do
+      = image_tag "/assets/material/logo/logo.png", class: "header-containar__link__logo-img", alt: "FURIMA logo"
+  .exhibition_contents
+    .exhibition_contents__box
+      .item_image_box
+        .item_image_box__form
+          %a.label
+            出品画像
+          %span.require 
+            必須
+          %p 最大10枚までアップロードできます
+        .item_image_box__input
+          %form{enctype:  "multipart/form-data", method: "post"}
+            #dragDropArea
+              .drag-drop-inside
+                = icon('fas', 'camera', class: 'icon')
+                %p.drag-drop-info ドラッグアンドドロップ
+                %p.drag-drop-info またはクリックしてファイルをアップロード
+                %p.drag-drop-buttons
+                  %input#fileInput{accept: "image/*", name: "photo", onchange: "photoPreview(event)", type: "file", value: "ファイルを選択"}
+                #previewArea
+      .item_name_box        
+        .item_name_box__square    
+          .text_form  
+            %a.label
+              商品名
+            %span.require
+              必須
+          .item_name_box__square__input
+            %input{type: "text", class: "input-box_item_name", placeholder: "40文字まで"}
+        .item_explanation_square      
+          .text_form
+            %a.label
+              商品の説明
+            %span.require
+              必須
+          .item_explanation_square__input
+            %input{type: "text", class: "input-box_explanation", placeholder: "商品の説明(必須1,000文字以内)"}
+            -# (色、素材、重さ、定価、注意点など)例)2010年ごろに1万円商品の説明(必須)(色、素材、重さ、定価、注意点など)
+      .item_detail_box
+        %p.exhibition-item_detail
+          商品の詳細
+        .item_category_box_square  
+          .text_form
+            %a.label
+              カテゴリー
+            %span.require
+              必須
+          .item_category_box_square__input
+            %select{name: "category"}
+              %option{value: ""} 選択してください
+              %option{value: "レディース"} レディース
+              %option{value: "メンズ"} メンズ
+              %option{value: "ベビー・キッズ"} ベビー・キッズ
+              %option{value: "インテリア・住まい・小物"} インテリア・住まい・小物
+              %option{value: "本・音楽・ゲーム"} 本・音楽・ゲーム
+        .item_brand_box_square  
+          .text_form  
+            %a.label
+              ブランド
+            %span.require
+              必須
+          .item_brand_box_square_input  
+            %select{name: "brand"}
+              %option{value: ""} 選択してください
+              %option{value: "シャネル"} シャネル
+              %option{value: "ヴィトン"} ヴィトン
+              %option{value: "エルメス"} エルメス
+        .item_condition_box_square
+          .text_form
+            %a.label
+              商品の状態
+            %span.require
+              必須
+          .item_condition_box_square_input
+            %select{name: "category"}
+              %option{value:  ""} 選択してください
+              %option{value:  "新品、未使用"} 新品、未使用
+              %option{value:  "未使用に近い"} 未使用に近い
+              %option{value:  "目立った傷や汚れなし"} 目立った傷や汚れなし
+              %option{value:  "やや傷や汚れあり"} やや傷や汚れあり
+              %option{value:  "傷や汚れあり"} 傷や汚れあり
+              %option{value:  "全体的に状態が悪い"} 全体的に状態が悪い
+      .shipping_item_box
+        %p.text_label
+          発送について    
+        .item_postage_payers_box_square
+          .text_form
+            %a.label
+              配送料の負担
+            %span.require
+              必須
+          .item_postage_payers_box_square__input
+            %select{name: "category"}
+              %option{value: ""} 選択してください
+              %option{value: "送料込み(出品者負担)"} 送料込み(出品者負担)
+              %option{value: "着払い(購入者負担)"} 着払い(購入者負担)   
+        .item_shipping_origin_box_square
+          .text_form
+            %a.label
+              発送元の地域
+            %span.require
+              必須
+          .item_shipping_origin_box_square_input
+            = form_for '' do |f|
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択してください", class: 'input'
+
+
+          .item_preparation_days_box_square
+            .text_form
+              %a.label
+                発送まで日数
+              %span.require
+                必須
+            .item_preparation_days_box_square_input
+              %select{name:  "category"}
+                %option{value:  ""} 選択してください
+                %option{value:  "1~2日で発送"} 1~2日で発送
+                %option{valu:  "2~3日で発送"} 2~3日で発送
+                %option{value:  "4~7日で発送"} 4~7日で発送
+      .item_price-box
+        .item_price-box_square
+          %a.exhibition-item_price
+            価格（¥300〜9,999,999）
+          .text_form
+            %a.label
+              販売価格
+            %span.require
+              必須
+      .item_exhibition_box
+        .item_exhibition_box__input
+          %form.new.exhibition
+          .btn-box
+            %input{type: "submit", value: "出品する", class: "submit-btn-red"}
+          .btn-box
+            %input{type: "submit", value: "下書きに保存", class: "submit-btn-white"}
+          .return-btn   
+            = link_to "もどる", '#'
+
+  .footer-containar
+    .footer-containar__info
+      %p.footer-containar__info__text
+        プライバシーポリシー
+      %p.footer-containar__info__text
+        フリマ用規約
+      %p.footer-containar__info__text
+        特定商取引に関する表記
+    = link_to "#", clas: "footer-containar__link" do
+      = image_tag "/assets/material/logo/logo-white.png", class: "footer-containar__link__logo-img", alt: "FURIMA logo-white"
+    %p.footer-containar__inc
+      © Furima, Inc.        
