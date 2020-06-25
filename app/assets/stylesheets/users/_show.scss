@@ -3,11 +3,6 @@ body{
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 
-a{
-  text-decoration: none;
-  color: #333;
-}
-
 .nav-bar{
   position: relative;
   border-top: 1px solid #eee;
@@ -29,6 +24,10 @@ a{
       display: inline-block;
       font-size: 14px;
       line-height: 1.2;
+      a{
+        text-decoration: none;
+        color: #333;
+      }
     }
     i{
       margin: 0 8px;
@@ -40,7 +39,6 @@ a{
     }
   }
 }
-
 
 .weaper{
   margin: 40px auto 0;
@@ -57,6 +55,8 @@ a{
         border-top: 1px solid #eee;
         position: relative;
         a{
+          text-decoration: none;
+          color: #333;
           display: block;
           padding: 16px;
           background: #fff;
@@ -78,6 +78,8 @@ a{
         border-top: 1px solid #eee;
         position: relative;
         a{
+          text-decoration: none;
+          color: #333;
           display: block;
           padding: 16px;
           background: #fff;
@@ -151,7 +153,7 @@ a{
         height: 74px;
         width: 50%;
         background-color: #fff;
-        border-top: 2px solid #7fffd4;
+        border-top: 2px solid #3CCACE;
         display: inline-block;
         line-height: 74px;
       }
@@ -222,14 +224,15 @@ a{
             font-size: 15px;
           }
         }
-
-        
       }
     }
+
     .info-list{
       height: 75px;
       width: 700px;
       a{
+        text-decoration: none;
+        color: #333;
         margin-top: 16px;
         margin-left: 16px;
         width: 668px;
@@ -274,10 +277,9 @@ a{
         height: 74px;
         width: 50%;
         background-color: #fff;
-        border-top: 2px solid #7fffd4;
+        border-top: 2px solid #3CCACE;
         display: inline-block;
         line-height: 74px;
-
       }
     }
     .purchased-content{
@@ -342,6 +344,7 @@ a{
       height: 75px;
       width: 700px;
       a{
+        text-decoration: none;
         margin-top: 16px;
         margin-left: 16px;
         width: 668px;

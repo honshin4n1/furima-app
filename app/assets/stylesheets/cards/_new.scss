@@ -1,0 +1,137 @@
+.card-info{
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.card-required{
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  background: red;
+}
+
+.credit-card-number{
+  width: 300px;
+  margin: 8px 0 0;
+  height: 28px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.card{
+  float: right;
+  width: 700px;
+  height: 562px;
+  background-color: #fff;
+  &__title{
+    font-size: 24px;
+    padding: 8px 24px;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+    font-weight: bold;
+  }
+  &__content{
+    padding: 40px 40px 64px;
+    &__form{
+      max-width: 343px;
+      margin: 0 auto;
+      .card-type{
+        margin: 8px 0 0;
+        font-size: 0;
+        li{
+          margin: 0;
+          display: inline-block;
+          margin: 0 8px 0 0;
+        }
+      }
+      .expiration-date{
+        margin-top: 32px;
+        width: 343px;
+        height: 70px;
+        background-color: #fff;
+        .expiration-date__form{
+        }
+      }
+      .securitycode{
+        margin-top: 32px;
+        width: 343px;
+        height: 75px;
+        .securitycode__form{
+        }
+      }
+      .what-securitycode{
+        position: relative;
+        margin: 8px 0 0;
+        &__text{
+          text-align: right;
+          color: #0099e8;
+          span{
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #0099e8;
+            color: #fff;
+            line-height: 16px;
+            font-size: 12px;
+            text-align: center;
+          }
+          label{
+            font-size: 14px;
+          }
+        }
+      }
+      .card-button{
+        width: 343px;
+        color: #888;
+        font-size: 15px;
+        height: 70px;
+        margin-top: 28px;
+        .card-registration-btn{
+          display: block;
+          height: 50px;
+          width: 343px;
+          line-height: 50px;
+          font-size: 14px;
+          border-radius: 4px;
+          color: #fff;
+          background-color: #3CCACE;
+          border: 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+
+.expiration{
+  display: flex;
+  height: 100%;
+  .expiration-select{
+    width: 170px;
+    margin: 8px 0 0;
+    &__tag {
+      height: 50px;
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      padding: 0 10px;
+    }
+  }
+  &__text{
+    line-height: 70px;
+    padding: 0 5px;
+  }
+}
+
+
+
