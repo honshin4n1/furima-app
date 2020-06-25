@@ -203,14 +203,19 @@ select{
   height: 44px;
   width: 360px;
   text-align: center;
+  a{
+    text-decoration: none;
+    font-size: 12px;
+  }
 }
 
-// a{
-//   text-decoration: none;
-//   font-size: 12px;
-// }
+.text_item_new{
+  font-size: 14px;
+  color: darkgray;
+  margin-bottom: 20px;
+}
 
-// p{
-//   font-size: 14px;
-//   color: darkgray;
-// }
+.text_item_bow{
+  font-size: 14px;
+  color: darkgray;
+}
