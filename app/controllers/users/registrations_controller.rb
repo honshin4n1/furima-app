@@ -60,11 +60,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  def new
-    @user = User.new
-  end
+  # def new
+  #   @user = User.new
+  # end
 
-  def create
-    render :new_sending_destination
-  end
+  # def create
+  #   render :new_sending_destination
+  # end
 end
