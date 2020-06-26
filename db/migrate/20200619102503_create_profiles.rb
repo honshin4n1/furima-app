@@ -6,12 +6,18 @@ class CreateProfiles < ActiveRecord::Migration[5.0]
       t.string      :first_name_kana,   null:false
       t.string      :family_name_kana,  null:false
       t.string      :introduction,      null:true
-      t.integer     :post_code,         null:true
-      t.string      :prefecture,        null:true   #stringに修正
-      t.string      :city,              null:true
-      t.string      :house_number,      null:true
-      t.string      :building_name,     null:true
-      t.integer     :phone_number,      unique:true
+      t.integer     :year,              null:true
+      t.integer     :month,             null:true
+      t.integer     :day,               null:true
+      # ---------プロフィール画面が完成したら必要--------------
+      # t.integer     :post_code,         null:true
+      # t.string      :prefecture,        null:true   #stringに修正
+      # t.string      :city,              null:true
+      # t.string      :house_number,      null:true
+      # t.string      :building_name,     null:true
+      # t.string      :phone_number,      unique:true
+      # ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
       # t.references  :user,              null: false, foreign_key: true
       t.timestamps
     end
