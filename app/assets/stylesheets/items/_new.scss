@@ -141,7 +141,7 @@ select{
   font-weight: bold;
   padding: 2px 4px;
   border: 1px solid #fff;
-  background: #ea352d;
+  background: #3CCACE;
   color: #fff;
 }
 
@@ -160,6 +160,9 @@ select{
   height: 44px;
   width: 360px;
   text-align: center;
+  a{
+    text-decoration: none;
+  }
 }  
 
 .text_item_new{
