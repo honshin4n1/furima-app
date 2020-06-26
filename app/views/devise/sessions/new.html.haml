@@ -1,12 +1,12 @@
 .main-containar
   .header-containar
-    = link_to "#", class: "header-containar__link" do
+    = link_to "/", class: "header-containar__link" do
       = image_tag "material/logo/logo.png", class: "header-containar__link__logo-img", alt: "FURIMA logo"
   .body-containar
     .user-signup
       %p.user-signup__text
         アカウントをお持ちでない方はこちら
-      = link_to "#", class: "user-signup__link" do
+      = link_to new_user_registration_path, class: "user-signup__link" do
         新規会員登録  
     .login-selection
       .login-selection__sns
@@ -35,7 +35,7 @@
         フリマ用規約
       %p.footer-containar__info__text
         特定商取引に関する表記
-    = link_to "#", clas: "footer-containar__link" do
+    = link_to "/", clas: "footer-containar__link" do
       = image_tag "material/logo/logo-white.png", class: "footer-containar__link__logo-img", alt: "FURIMA logo-white"
     %p.footer-containar__inc
       © Furima, Inc.
