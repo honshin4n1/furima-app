@@ -5,7 +5,6 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.text        :introduction,      null: false
       t.integer     :price,             null: false
       t.integer     :size,              null: false
-      t.text        :explanation,       null: false
       t.integer     :condition,         null: false, default: 0
       t.boolean     :deal_state,        null: false
       t.integer     :buyer
