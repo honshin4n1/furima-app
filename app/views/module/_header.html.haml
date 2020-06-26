@@ -5,8 +5,8 @@
         = image_tag('material/logo/logo.png', alt: 'フリマのアイコン', class: "logo_image")
     .tp__search-function
       = form_tag("#", method: "get", class: "search_form") do
-        = label_tag(:searchInput, "")
-        = text_field_tag(:searchInput, "キーワードから探す")
+        = label_tag("searchInput", "")
+        = text_field_tag("searchInput", nil, placeholder: "キーワードから探す")
         = button_tag("検索", id: "searchInput", class: "search_btn") do
           .search--icon
             = image_tag('material/icon/icon-search 1.png', alt: '検索アイコン')
