@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 20200619113051) do
     t.text     "introduction", limit: 65535,             null: false
     t.integer  "price",                                  null: false
     t.integer  "size",                                   null: false
-    t.text     "explanation",  limit: 65535,             null: false
     t.integer  "condition",                  default: 0, null: false
     t.boolean  "deal_state",                             null: false
     t.integer  "buyer"
