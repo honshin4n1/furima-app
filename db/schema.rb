@@ -85,12 +85,9 @@ ActiveRecord::Schema.define(version: 20200624073016) do
     t.string   "first_name_kana",  null: false
     t.string   "family_name_kana", null: false
     t.string   "introduction"
-    t.integer  "post_code"
-    t.string   "prefecture"
-    t.string   "city"
-    t.string   "house_number"
-    t.string   "building_name"
-    t.integer  "phone_number"
+    t.integer  "year"
+    t.integer  "month"
+    t.integer  "day"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
@@ -100,12 +97,12 @@ ActiveRecord::Schema.define(version: 20200624073016) do
     t.string   "family_name",      null: false
     t.string   "first_name_kana",  null: false
     t.string   "family_name_kana", null: false
-    t.integer  "post_code",        null: false
-    t.integer  "prefecture",       null: false
+    t.string   "post_code",        null: false
+    t.string   "prefecture",       null: false
     t.string   "city",             null: false
     t.string   "house_number",     null: false
     t.string   "building_name"
-    t.integer  "phone_number"
+    t.string   "phone_number"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
