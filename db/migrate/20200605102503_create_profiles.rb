@@ -18,7 +18,7 @@ class CreateProfiles < ActiveRecord::Migration[5.0]
       # t.string      :phone_number,      unique:true
       # ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-      # t.references  :user,              null: false, foreign_key: true
+      t.references  :user,              null: false, foreign_key: true
       t.timestamps
     end
   end
