@@ -5,7 +5,8 @@ level_1 = %w(レディース
             インテリア・住まい・小物
             本・音楽・ゲーム
             おもちゃ・ホビー・グッズ
-            コスメ・香水・美容)
+            コスメ・香水・美容
+            家電・スマホ・カメラ)
 level_1.each do |cat|
   Category.create(name: cat)
 end
@@ -133,4 +134,19 @@ level_2 = %w(ベースメイク
 # データを生成
 level_2.each do |cat|
   Category.find_by(name:"コスメ・香水・美容").children.create(name: cat)
+end
+# ーーーーーーーーーーーーーーーーーーーーー
+# <家電・スマホ・カメラ>
+level_2 = %w(スマートフォン/携帯電話
+            スマホアクセサリー
+            PC/ダブレット
+            カメラ
+            テレビ/映像機器
+            オーディオ機器
+            美容/健康
+            冷暖房/空調
+            生活家電)
+# データを生成
+level_2.each do |cat|
+  Category.find_by(name:"家電・スマホ・カメラ").children.create(name: cat)
 end
