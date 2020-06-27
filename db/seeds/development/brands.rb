@@ -1,5 +1,5 @@
 brands = %w(シャネル ナイキ ルイヴィトン シュプリーム アディダス)
-1.upto(brands.length) do |idx|
+0.upto(brands.length - 1) do |idx|
   Brand.create(
     name: brands[idx],
   )
