@@ -6,7 +6,9 @@ level_1 = %w(レディース
             本・音楽・ゲーム
             おもちゃ・ホビー・グッズ
             コスメ・香水・美容
-            家電・スマホ・カメラ)
+            家電・スマホ・カメラ
+            スポーツ・レジャー
+            ハンドメイド)
 level_1.each do |cat|
   Category.create(name: cat)
 end
@@ -149,4 +151,35 @@ level_2 = %w(スマートフォン/携帯電話
 # データを生成
 level_2.each do |cat|
   Category.find_by(name:"家電・スマホ・カメラ").children.create(name: cat)
+end
+# ーーーーーーーーーーーーーーーーーーーーー
+# <スポーツ・レジャー>
+level_2 = %w(ゴルフ
+            フィッシング
+            自転車
+            トレーニング/エクササイズ
+            野球
+            サッカー/フットサル
+            テニス
+            スノーボード
+            スキー
+            その他スポーツ
+            アウトドア)
+# データを生成
+level_2.each do |cat|
+  Category.find_by(name:"スポーツ・レジャー").children.create(name: cat)
+end
+# ーーーーーーーーーーーーーーーーーーーーー
+# <ハンドメイド>
+level_2 = %w(アクセサリー（女性用）
+            ファッション/小物
+            アクセサリー/時計
+            日用品/インテリア
+            趣味/おもちゃ
+            キッズ/ベビー
+            素材/材料
+            二次創作物)
+# データを生成
+level_2.each do |cat|
+  Category.find_by(name:"ハンドメイド").children.create(name: cat)
 end
