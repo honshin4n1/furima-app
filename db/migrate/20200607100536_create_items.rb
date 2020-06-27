@@ -5,8 +5,8 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.text        :introduction,      null: false
       t.integer     :price,             null: false
       t.integer     :size,              null: false
-      t.integer     :condition,         null: false, default: 0
-      t.boolean     :deal_state,        null: false
+      t.integer     :condition,         null: false
+      t.boolean     :deal_state,        null: false, default: 0   # 0 => が売り出し中、１=> 売り切れ
       t.integer     :buyer
       t.references  :user,             null: false, foreign_key: true
       t.references  :brand,            null: false, foreign_key: true
