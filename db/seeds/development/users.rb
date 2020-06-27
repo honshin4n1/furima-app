@@ -1,5 +1,5 @@
 nicknames = %w(Taro Jiro Hana John Mike)
-1.upto(nicknames.length) do |idx|
+0.upto(nicknames.length - 1) do |idx|
   User.create(
     nickname: nicknames[idx],
     email: "#{nicknames[idx]}@gmail.com",
