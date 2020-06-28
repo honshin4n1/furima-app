@@ -5,9 +5,6 @@
 // Aqwesomeアイコン
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
-@import "items/new";                 //商品出品ページ
-@import "items/show";                //商品詳細ページ
 // ---------------------------------------------------------
 // 共通パーツのCSS
 @import "module/header";
@@ -21,6 +18,7 @@
 //＊＊＊＊ 商品関連 ＊＊＊＊
 @import "items/index";    // トップページのビュー
 @import "items/new";      // 商品出品ページのビュー
+@import "items/show";                //商品詳細ページ
 @import "items/purchase"; // 商品購入確認ページのビュー
 // ---------------------------------------------------------
 //＊＊＊＊ ユーザー関連 ＊＊＊＊
