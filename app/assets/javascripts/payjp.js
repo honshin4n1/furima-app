@@ -7,19 +7,19 @@ document.addEventListener(
 
       //カード情報生成
       const card = {
-        card_number: document.getElementById("#").value,
-        secret_code: document.getElementById("#").value,
-        expiration_month: document.getElementById("#").value,
-        expiration_year: document.getElementById("#").value
+        card_number: document.getElementById("card_number").value,
+        secret_code: document.getElementById("secret_code").value,
+        expiration_month: document.getElementById("expiration_month").value,
+        expiration_year: document.getElementById("expiration_year").value
       }; //入力されたデータを取得します。
 
       //トークン生成
       Payjp.createToken(card, (status, response) => {
         if (status === 200) { //成功した場合
           $("#card_number").removeAttr("name");
-          $("#cvc").removeAttr("name");
-          $("#exp_month").removeAttr("name");
-          $("#exp_year").removeAttr("name"); //カード情報を自分のサーバにpostせず削除します
+          $("#secret_code").removeAttr("name");
+          $("#expiration_month").removeAttr("name");
+          $("#expiration_year").removeAttr("name"); //カード情報を自分のサーバにpostせず削除します
           $("#card_token").append(
             $('<input type="hidden" name="payjp-token">').val(response.id)
           ); //トークンを送信できるように隠しタグを生成
