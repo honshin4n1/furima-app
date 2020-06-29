@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    @products = Item.all
+    @products = Item.order(created_at: :DESC)
     @images = ItemImage.all
   end
 
