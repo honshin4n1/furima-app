@@ -10,5 +10,13 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show
   resources :logouts, only: :index
-  resources :cards, only: [:new, :create]
+
+  resources :cards, only: [:new, :show] do
+    collection do
+      post 'show'
+      post 'create'
+      post 'delete'
+    end
+  end
+
 end
