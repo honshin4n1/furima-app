@@ -1,16 +1,19 @@
 class CreateItems < ActiveRecord::Migration[5.0]
   def change
     create_table :items do |t|
-      t.string      :name,              null: false
-      t.text        :introduction,      null: false
-      t.integer     :price,             null: false
-      t.integer     :size,              null: false
-      t.integer     :condition,         null: false, default: 0
-      t.boolean     :deal_state,        null: false
+      t.string      :name,                      null: false
+      t.text        :introduction,              null: false
+      t.integer     :price,                     null: false
+      t.string      :size,                      null: false
+      t.string      :condition,                 null: false
+      t.boolean     :deal_state,                null: false, default: 0   # 0 => が売り出し中、１=> 売り切れ
       t.integer     :buyer
-      t.references  :user,             null: false, foreign_key: true
-      t.references  :brand,            null: false, foreign_key: true
-      t.references  :category,         null: false, foreign_key: true
+      t.references  :user,                      null: false, foreign_key: true
+      t.references  :brand,                     foreign_key: true
+      t.references  :category,                  null: false, foreign_key: true
+      t.integer     :prefecture_id,             null: false
+      t.integer     :preparation_day_id,        null: false
+      t.integer     :postage_payer_id,          null: false
       t.timestamps
     end
   end
