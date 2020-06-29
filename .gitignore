@@ -21,6 +21,3 @@ config/secrets.yml
 
 # .DS_Store banished!
 .DS_Store
-
-# データベース構築データ（データベースの破損の恐れあり）
-schema.rb
