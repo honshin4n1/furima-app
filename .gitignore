@@ -23,4 +23,4 @@ config/secrets.yml
 .DS_Store
 
 # データベース構築データ（データベースの破損の恐れあり）
-schema.rb
+/db/schema.rb
