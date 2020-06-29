@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
 
   def index
+    @products = Item.all
+    @images = ItemImage.all
   end
 
   def new
