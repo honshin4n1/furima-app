@@ -24,7 +24,11 @@
           %ul.brandTree
             -#カテゴリー一覧をli要素で書き出す。Ancestry gemについて調べる
     %ul.tp__right-container
-      %li.tp__right-container__item.tp__right-container__item--login
-        = link_to 'ログイン', new_user_session_path, id: "loginBtn"
-      %li.tp__right-container__item.tp__right-container__item--new
-        = link_to '新規会員登録', new_user_registration_path, id: "newBtn"
+      - if user_signed_in?
+        %li.tp__right-container__item.tp__right-container__item--login
+          = link_to 'マイページ', "/users/#{current_user.id}", id: "loginBtn"
+      - else
+        %li.tp__right-container__item.tp__right-container__item--login
+          = link_to 'ログイン', new_user_session_path, id: "loginBtn"
+        %li.tp__right-container__item.tp__right-container__item--new
+          = link_to '新規会員登録', new_user_registration_path, id: "newBtn"
