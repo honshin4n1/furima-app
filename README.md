@@ -5,12 +5,11 @@
 |introduction| text | null:false|
 |price| integer |null: false|
 |size| string |null: false|
-|condition| integer | default: 0, null: false|
-|explanation| text | null: false|
-|deal_state| boolean |  null: false, default: false |
+|condition| string | null: false|
+|deal_state| boolean | default: 0, null: false, default: false |
 |buyer | integer | - |
 |user_id| reference | null: false, foreign_key: true|
-|brand_id | references | null: false, foreign_key: true|
+|brand_id | references | foreign_key: true|
 |category_id |references|null: false, foreign_key: true|
 ### Association
  - has_many: comments, dependent: destroy
