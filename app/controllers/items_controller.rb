@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
 
   def index
-    @products = Item.order(created_at: :DESC)
+    #売れてない商品だけ@productsに格納する
+    @products = Item.where(deal_state: 0).order(created_at: :DESC)
     @images = ItemImage.all
   end
 
