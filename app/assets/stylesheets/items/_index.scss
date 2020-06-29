@@ -203,14 +203,16 @@
       }
     }
     .product__lists{
-      width: 780px;
+      width: 1000px;
       margin: 26px auto;
       display: flex;
       justify-content: space-around;
+      flex-direction: row;
+      flex-wrap: wrap;
       .product__list{
-        width: 220;
+        width: 220px;
         display: inline-block;
-        float: left;
+        margin-top: 20px;
         a{
           background-color: #fff;
           display: inline-block;
