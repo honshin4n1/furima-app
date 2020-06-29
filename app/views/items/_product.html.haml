@@ -1,0 +1,17 @@
+.product__list
+  -# リンク先は商品詳細ページのURL
+  = link_to item_path(product.id), id: "item_id", class: "item_link" do
+    %figure.product__list--image
+      = image_tag(@images.find_by(item_id:product.id).image)
+    .product__list--body
+      %h3.name 
+        = product.name
+      .details
+        %ul
+          %li 
+            = product.price
+            円
+          %li
+            = icon('fas',"star", class: 'star_icon')
+            0
+        %p (税込み)
