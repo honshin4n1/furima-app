@@ -12,8 +12,13 @@ prices = %w(1000 98000 32000 40000 4000)
     deal_state: false,
     user_id:rand(1..5),
     brand_id:rand(1..5),
-    category_id:rand(10..90)
+    category_id:rand(10..90),
+    prefecture_id: rand(1..47),
+    preparation_day_id: rand(1..3),
+    postage_payer_id: rand(1..2)
   )
 end
+
+Item.create(name: "商品",introduction: "説明文",price: 10000,size:"43 mm x 99 mm x 99 mm",condition: "新品同様",deal_state: false,user_id:rand(1..5),brand_id:rand(1..5),category_id:rand(10..90),prefecture_id: rand(1..47),preparation_day_id: rand(1..3),postage_payer_id: rand(1..2))
 
 
