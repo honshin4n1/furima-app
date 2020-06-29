@@ -7,6 +7,7 @@
   .tp__header{
     height: 100px;
     width: 100%;
+    background-color: #ffffff;
   }
   .tp__main{
     background-color: #f8f8f8;
@@ -14,7 +15,7 @@
   #appBanner{
     position: relative;
     padding: 100px 40px;
-    background-image: url("material/pict/bg-appBanner-pict.jpg");
+    background-image: image-url("material/pict/bg-appBanner-pict.jpg");
     background-size: cover;
     background-position: center;
   }

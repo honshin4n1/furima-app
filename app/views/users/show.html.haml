@@ -12,7 +12,7 @@
 
   .userpage
     = link_to "#",class: "userpage-box"  do
-      %img{src:"/assets/light.jpg",style:"user-select: auto;"}
+      = image_tag ("light.jpg")
       %H2.userpage-box-name
         test
       .userpage-box__number
@@ -29,7 +29,7 @@
         やることリスト
     .info-content
       .info-content__list
-        %img{src:"/assets/small-logo.png"}
+        = image_tag ("small-logo.png")
         .info-content__list__body
           .info-content__list__body__text
             お買い物に使える！1,000円分のポイントが貰えるキャンペーン開催中！今すぐ参加しよう♪
@@ -55,7 +55,7 @@
         過去の取引
     .purchased-content
       .purchased-content__list
-        %img{src:"/assets/rspec.jpg"}
+        = image_tag ("rspec.jpg")
         .purchased-content__list__body
           .purchased-content__list__body__text
             「The RSpec Book/豊田 祐司, クイープ, David Cheli...」を購入しました。取引きが完了しました
