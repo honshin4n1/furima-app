@@ -66,23 +66,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end  
 
   def create
-    binding.pry
     @user = User.new(sign_up_params)
-    # @user = @user.build_profile(sign_up_params[:profile_attributes])
+    @user.build_profile(sign_up_params[:profile_attributes])
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
       render :new and return
     end
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
-    session["devise.regist_data"][:user]["profile_attributes"] = params[:user][:profile_attributes]
-    # session[:sign_up_params].marge!(session[:profile_attributes])
+    session[:profile_attributes] = sign_up_params[:profile_attributes]
     @sending_destination = @user.build_sending_destination
     render :new_sending_destination
   end
 
   def create_sending_destination
     @user = User.new(session["devise.regist_data"]["user"])
+    @profile = @user.build_profile(session[:profile_attributes])
     @sending_destination = SendingDestination.new(sending_destination_params)
     unless @sending_destination.valid?
       flash.now[:alert] = @sending_destination.errors.full_messages
@@ -90,7 +89,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     @user.build_sending_destination(@sending_destination.attributes)
     @user.save
+    @profile.save
     session["devise.regist_data"]["user"].clear
+    session[:profile_attributes].clear
     sign_in(:user, @user)
 
     redirect_to root_path
