@@ -19,7 +19,5 @@
 public/uploads/*
 config/secrets.yml
 
-
-
 # .DS_Store banished!
 .DS_Store

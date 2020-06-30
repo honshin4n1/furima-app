@@ -76,22 +76,8 @@
       = link_to "#", class: "new_items" do
         %h3.title 新規投稿商品
     .product__lists
-      -# ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-      -# ここはitemsテーブルが完成してから部分テンプレートを呼び出して複製する（renderメソッドのcollectionオプションを使用する）
-      -# リンク先は商品詳細ページのURL
-      .product__list
-        = link_to "#", id: "item_id", class: "item_link" do
-          %figure.product__list--image
-            = image_tag('material/items/a001.png')
-          .product__list--body
-            %h3.name product4
-            .details
-              %ul
-                %li 1000円
-                %li
-                  = icon('fas',"star", class: 'star_icon')
-                  0
-              %p (税込み)
+      -# 商品一覧を表示（最新順）
+      = render partial: "product", collection: @products
       -# ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 %section.pickupBrands.pickup__cont
   %h2.pc__title 
@@ -101,22 +87,8 @@
       = link_to "#", class: "new_items" do
         %h3.title 人気ブランド商品
     .product__lists
-      -# ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-      -# ここはitemsテーブルが完成してから部分テンプレートを呼び出して複製する（renderメソッドのcollectionオプションを使用する）
-      -# リンク先は商品詳細ページのURL
-      .product__list
-        = link_to "#", id: "item_id", class: "item_link" do
-          %figure.product__list--image
-            = image_tag('material/items/a001.png')
-          .product__list--body
-            %h3.name product4
-            .details
-              %ul
-                %li 1000円
-                %li
-                  = icon('fas',"star", class: 'star_icon')
-                  0
-              %p (税込み)
+      -# 商品一覧を表示（最新順）--余裕があればブランド名の人気順に表示するようにする--
+      = render partial: "product", collection: @products
       -# ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 
