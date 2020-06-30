@@ -58,12 +58,11 @@
           -# 送料込み
           -# - else
           -# 着払い
-      .item_center
-        .item_center_user
       -# ログイン済みの時には購入画面へ進むが、そうでない場合はサインインページに移動
       - if user_signed_in? == true then
         - if current_user.id == @item.user.id then
-          = button_to "商品情報の編集", {controller: 'items', action: 'edit'}, {method: :get, class: 'succession_btn'}
+          = button_to "商品情報の編集", {controller: 'items', action: 'edit'}, {method: :get, class: 'succession_btn', id: "edit"}
+          = button_to "出品を取りやめる", {controller: 'items', action: 'destroy'}, {method: :get, class: 'succession_btn', id: "destroy"}
         - else
           %label.button_to
             %button{type: "sumit", class: "succession_btn"} 購入画面に進む
