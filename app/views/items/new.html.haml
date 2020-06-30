@@ -51,11 +51,10 @@
           .item_category_box_square__input
             %select{name: "category"}
               %option{value: ""} 選択してください
-              %option{value: "レディース"} レディース
-              %option{value: "メンズ"} メンズ
-              %option{value: "ベビー・キッズ"} ベビー・キッズ
-              %option{value: "インテリア・住まい・小物"} インテリア・住まい・小物
-              %option{value: "本・音楽・ゲーム"} 本・音楽・ゲーム
+              - 1.upto(10) do |idx|
+                %option{value: idx}
+                  = @category.find(idx).name
+
         .item_brand_box_square  
           .text_form  
             %a.label
