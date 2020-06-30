@@ -9,7 +9,7 @@
       .details
         %ul
           %li 
-            = product.price
+            = (BigDecimal(product.price.to_s) * BigDecimal("1.1")).ceil
             円
           %li
             = icon('fas',"star", class: 'star_icon')
