@@ -76,9 +76,6 @@
         }
       }
     }
-    .item_center{
-      height: 50px;
-    }
     .button_to{
       display: flex;
       .succession_btn{
@@ -88,11 +85,13 @@
         font-size: 24px;
         border-radius: 4px;
         color: #fff;
-        margin: 0 auto;
+        margin-top: 10px;
         background-color: #3CCACE;
         border: 0;
         cursor: pointer;
       }
+      #edit{background-color: royalblue;}
+      #destroy{background-color: red;}
     }
     .item_detail_show{
       padding: 32px 0;
