@@ -109,9 +109,9 @@ ActiveRecord::Schema.define(version: 20200619113051) do
     t.string   "first_name_kana",  null: false
     t.string   "family_name_kana", null: false
     t.string   "introduction"
-    t.integer  "year"
-    t.integer  "month"
-    t.integer  "day"
+    t.integer  "year",             null: false
+    t.integer  "month",            null: false
+    t.integer  "day",              null: false
     t.integer  "user_id",          null: false
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
