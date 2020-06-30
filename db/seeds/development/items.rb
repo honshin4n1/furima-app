@@ -1,5 +1,5 @@
 names = %w(ハトムギ化粧水 ipohne10 Echo_Dot 長財布 ワンピース カードヒーロー システム設計の原則 ダークチョコレート)
-introductions = %w(めっちゃいい
+introductions = %w(※製造終了品につき品薄となっていますので、お早めにどうぞ。こちらの商品お値下げ不可です。<<<商品説明>>>保湿力に優れた12種類の美容成分をふんだんに配合したとろみのある液が、角質層の奥深くまで、しっかりとうるおいを届けます。エクトイン・ヒアルロン酸Na・アルギニン・クレアチンなど配合。無香料・ノンアルコール
                   感動した
                   今が買い時
                   経年劣化により味が出てます
@@ -19,7 +19,7 @@ prices = %w(1000 98000 32000 40000 4000 1200 3000 2900)
     deal_state: false,
     user_id:rand(1..5),
     brand_id:rand(1..5),
-    category_id:rand(10..90),
+    category_id:rand(11..90),
     prefecture_id: rand(1..47),
     preparation_day_id: rand(1..3),
     postage_payer_id: rand(1..2)
