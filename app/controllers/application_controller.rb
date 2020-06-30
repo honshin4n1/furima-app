@@ -1,10 +1,13 @@
 class ApplicationController < ActionController::Base
-  before_action :basic_auth, if: :production?
   protect_from_forgery with: :exception
+  before_action :basic_auth, if: :production?
+  before_action :configure_permitted_parameters, if: :devise_controller?
   layout :layout_by_resource
 
-  protected
 
+  
+  protected
+  
   def layout_by_resource
     if devise_controller?
       "nothing"
@@ -12,6 +15,11 @@ class ApplicationController < ActionController::Base
       "application"
     end
   end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, profile_attributes: [:first_name, :family_name, :first_name_kana, :family_name_kana, :year, :month, :day]])
+  end
+
 
   private
 

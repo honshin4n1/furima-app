@@ -6,69 +6,61 @@
     .user-information-registration__text
       発送元・お届け先住所登録
     .user-information-registration__form
-      %form#registration-form
+      = form_for @sending_destination do |f|
+        = render "devise/shared/error_messages", resource: @sending_destination
         .form-group
-          %label.label-name
-            お名前
+          = f.label "お名前", class: "label-name"
           %span.form-require
             必須
           %br/
           .form-group__set-input
-            %input{type: "text", name: "first_name", class: "input-half", placeholder: "例)鈴木"}
-            %input{type: "text", name: "family_name", class: "input-half", placeholder: "例)花子"}
+            = f.text_field :family_name, class: "input-half", placeholder: "例)鈴木"
+            = f.text_field :first_name, class: "input-half", placeholder: "例)花子"
         .form-group
-          %label.label-name
-            お名前カナ
+          = f.label "お名前カナ", class: "label-name"
           %span.form-require
             必須
           %br/
           .form-group__set-input
-            %input{type: "text", name: "first_name_kana", class: "input-half", placeholder: "例)スズキ"}
-            %input{type: "text", name: "family_name_kana", class: "input-half", placeholder: "例)ハナコ"}
+            = f.text_field :family_name_kana, class: "input-half", placeholder: "例)スズキ"
+            = f.text_field :first_name_kana, class: "input-half", placeholder: "例)ハナコ"
         .form-group
-          %label.label-name
-            郵便番号
+          = f.label :post_code, "郵便番号", class: "label-name"
           %span.form-require 
             必須
           %br/
-          %input{type: "text", name: "post_code", class: "input-normal", placeholder: "例) 810-0000", maxlength: "8", pattern: "\d{3}-\d{4}"}
+          = f.text_field :post_code, class: "input-normal", placeholder: "例) 810-0000", maxlength: "8"
         .form-group
-          %label.label-name 
-            都道府県
+          = f.label :prefecture, "都道府県", class: "label-name"
           %span.form-require
             必須
           %br/
-          %input{type: "text", name: "prefecture", class: "input-normal", placeholder: "例) 福岡県"}
+          = f.text_field :prefecture, class: "input-normal", placeholder: "例) 福岡県"
         .form-group
-          %label.label-name
-            市区町村
+          = f.label :city, "市区町村", class: "label-name"
           %span.form-require
             必須
           %br/
-          %input{type: "text", name: "city",class: "input-normal", placeholder: "例) 福岡市中央区"}
+          = f.text_field :city, class: "input-normal", placeholder: "例) 福岡市中央区"
         .form-group
-          %label.label-name
-            番地
+          = f.label :house_number, "番地", class: "label-name"
           %span.form-require
             必須
           %br/
-          %input{type: "text", name: "house_number", class: "input-normal", placeholder: "例) 天神1-1-1"}
+          = f.text_field :house_number, class: "input-normal", placeholder: "例) 天神1-1-1"
         .form-group
-          %label.label-name
-            建物名
+          = f.label :building_name, "建物名", class: "label-name"
           %span.form-arbitrary
             任意
           %br/
-          %input{type: "text", name: "building_name", class: "input-normal", placeholder: "例) 福ビル101"}
+          = f.text_field :building_name, class: "input-normal", placeholder: "例) 福ビル101"
         .form-group
-          %label.label-name
-            電話番号
+          = f.label :phone_number, "電話番号", class: "label-name"
           %span.form-arbitrary
             任意
           %br/
-          %input{type: "number", name: "phone_number", class: "input-normal", placeholder: "例) 09011112222"}
-        %button{type: "sumit", class: "registration-btn"}
-          登録する      
+          = f.number_field :phone_number, class: "input-normal", placeholder: "例) 09011112222"
+        = f.submit "登録する", class: "registration-btn"   
   .footer-containar
     .footer-containar__info
       %p.footer-containar__info__text
