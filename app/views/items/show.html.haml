@@ -60,9 +60,8 @@
           -# 着払い
       .item_center
         .item_center_user
-
-
       %button{type: "sumit", class: "item_buy_btn"} 購入画面に進む
+      -# = button_to "購入画面に進む", {controller: 'コントローラー名', action: 'アクション名', id: current_user.id}, {method: :get, class: 'item_buy_btn'}
       .item_detail_show
         %span.detail_show__text
           = @item.introduction
