@@ -60,8 +60,19 @@
           -# 着払い
       .item_center
         .item_center_user
-      %button{type: "sumit", class: "item_buy_btn"} 購入画面に進む
+      -# ログイン済みの時には購入画面へ進むが、そうでない場合はサインインページに移動
+      - if user_signed_in? == true then
+        - if current_user.id == @item.user.id then
+          = button_to "商品情報の編集", {controller: 'items', action: 'edit'}, {method: :get, class: 'succession_btn'}
+        - else
+          %label.button_to
+            %button{type: "sumit", class: "succession_btn"} 購入画面に進む
+      - else
+        = button_to "ログイン画面に進む", {controller: 'devise/sessions', action: 'new'}, {method: :get, class: 'succession_btn'}
+
+      -# コントローラーの設定が終わったら、上記のラベル要素とボタン要素はbutton_toに入れ替える。68行目
       -# = button_to "購入画面に進む", {controller: 'コントローラー名', action: 'アクション名', id: current_user.id}, {method: :get, class: 'item_buy_btn'}
+
       .item_detail_show
         %span.detail_show__text
           = @item.introduction
