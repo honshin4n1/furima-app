@@ -5,29 +5,25 @@
   .item_detail_contents
     .item_detail_contents__box
       %p.item_name
-        サッカーボール10個
-        -# = @item.name
+        = @item.name
       .item_square
         .item_square__photo
           .item_square__carousel{ id: 'main' }
-            -# = @item.images.each do |image|
-            -#   = image_tag image, class: 'image-carousel', size: '300x300'
-          .item_square__carousel_sub{id: 'sub'}
-            -# = @item.images.each do |image|
-            -#   = image_tag image, class: 'image_carousel_reserve', size: '60x60'
+            = image_tag @item.item_images[0].image, class: 'image-main'
+          .item_square__carousel{id: 'sub'}
+            - if @item.item_images.length > 1
+              - 1.upto(@item.item_images.length - 1) do |idx|
+                = image_tag @item.item_images[idx].image, class: 'image-sub'
         .item_square__text
           %table.item_square__table
             %tbody
               %tr
                 %th 出品者
                 %td
-                  -#  = link_to '/' do
-                  -#   = @user.nickname
-                  田中
+                  = @item.user.nickname
               %tr
                 %th カテゴリー
                 %td
-                  -# = @item.category
                   メンズ/トップス/Tシャツ
               %tr
                 %th ブランド
