@@ -24,36 +24,33 @@
               %tr
                 %th カテゴリー
                 %td
-                  メンズ/トップス/Tシャツ
+                  = @item.category.parent.name
+                  %br
+                  = @item.category.name
               %tr
                 %th ブランド
                 %td
-                  -# = @item.brand
-                  NIKE
+                  = @item.brand.name
               %tr
                 %th 商品の状態
                 %td
-                  -# = @item.condition
-                  新品・未使用
+                  = @item.condition
               %tr
                 %th 配送料の負担
                 %td
-                  -# = @item.postage_payr
-                  送料込
+                  = @item.postage_payer.name
               %tr
                 %th 配送元地域
                 %td
-                  -# = @item.prefecture
-                  福岡県
+                  = @item.prefecture.name
               %tr
                 %th 発送日の目安
                 %td
-                  -# = @item.preparation_day
-                  1~2日で発送
+                  = @item.preparation_day.name
       .item_price
         %span.item_price__bold
-          ¥1,000円
-        -# = @item.price
+          ¥
+          = (BigDecimal(@item.price.to_s) * BigDecimal("1.1")).ceil.to_s(:delimited)
         %span.item_price__tax 税込
         %span.item_price__fee 
           -# 送料込み
@@ -68,8 +65,7 @@
       %button{type: "sumit", class: "item_buy_btn"} 購入画面に進む
       .item_detail_show
         %span.detail_show__text
-          詳細内容です。
-          -# = @item.introduction
+          = @item.introduction
       .item_btn_box
         .item_btn_box__left
           %button{ type: 'button', name: 'like!'}
