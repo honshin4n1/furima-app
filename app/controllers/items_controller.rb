@@ -7,12 +7,12 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @category = Category.all
     # レイヤーを変更
     render layout: "nothing"
   end
 
   def create
-    
   end
 
   def show
@@ -20,9 +20,16 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
   def purchase
-
-
     # レイヤーを変更
     render layout: "nothing"
   end
