@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :cards, only: [:new, :show] do
     collection do
       post 'show'
-      post 'create'
+      post 'pay'
       post 'delete'
     end
   end

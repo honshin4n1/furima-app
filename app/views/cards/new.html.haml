@@ -19,7 +19,7 @@
       クレジットカード情報入力
     .card__content
       .card__content__form
-        = form_tag(cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+        = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
           .cards-number
             %label.card-info
               カード番号
@@ -92,7 +92,7 @@
                   セキュリティコード
                 %span.card-required
                   必須
-              = text_field_tag "secret_code", "", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "secret_code", class: 'credit-card-number'
+              = text_field_tag "secret_code", "", class: "secret_code", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "secret_code", class: 'credit-card-number'
 
           .what-securitycode
             .what-securitycode__text
@@ -103,4 +103,4 @@
 
           .card-button
             #card_token
-            = submit_tag "登録する", id: "card_token_submit", class: 'card-registration-btn'
+              = submit_tag "登録する", id: "card_token_submit", class: 'card-btn'
