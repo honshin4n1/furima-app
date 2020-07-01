@@ -62,7 +62,7 @@
       - if user_signed_in? == true then
         - if current_user.id == @item.user.id then
           = button_to "商品情報の編集", {controller: 'items', action: 'edit',id: @item.id}, {method: :patch, class: 'succession_btn', id: "edit"}
-          = button_to "出品を取りやめる", {controller: 'items', action: 'destroy',id: @item.id}, {method: :delete, class: 'succession_btn', id: "destroy"}
+          = button_to "出品を取りやめる", {controller: 'items', action: 'destroy',id: @item.id}, {method: :delete, class: 'succession_btn', id: "destroy", data: {confirm: "本当に削除しますか？"}}
         - else
           %label.button_to
             %button{type: "sumit", class: "succession_btn"} 購入画面に進む
