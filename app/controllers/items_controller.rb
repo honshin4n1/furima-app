@@ -19,8 +19,9 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Product.new(product_params)
-    if @item.save ==true then
+    # binding.pry
+    @item = Item.new(product_params)
+    if @item.save! ==true then
       redirect_to root_path
     else
       render :new, layout: "nothing"
@@ -61,7 +62,7 @@ class ItemsController < ApplicationController
       :preparation_day_id,
       :postage_payer_id,
       item_images_attributes: [:image]
-      )
+      ).merge(user_id: current_user.id)
   end
 
   def purchase
