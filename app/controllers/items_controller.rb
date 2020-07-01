@@ -10,14 +10,21 @@ class ItemsController < ApplicationController
     @category = Category.all
     @item = Item.new
     @item.item_images.new
-    if @item.save == true then
-      redirect_to root_path
+    if user_signed_in? == true then
+      #レイアウト変更
+      render layout: "nothing"
     else
-      render :new, layout: "nothing"
+      redirect_to root_path
     end
   end
 
   def create
+    @item = Product.new(product_params)
+    if @item.save ==true then
+      redirect_to root_path
+    else
+      render :new, layout: "nothing"
+    end
   end
 
   def show
@@ -40,19 +47,21 @@ class ItemsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name,
-                                    :price,
-                                    :introduction,
-                                    :size,
-                                    :condition,
-                                    :deal_state,
-                                    :user_id,
-                                    :brand_id,
-                                    :category_id,
-                                    :prefecture_id,
-                                    :preparation_day_id,
-                                    :postage_payer_id,
-                                    item_images_attributes: [:image])
+    params.require(:product).permit(
+      :name,
+      :price,
+      :introduction,
+      :size,
+      :condition,
+      :deal_state,
+      :user_id,
+      :brand_id,
+      :category_id,
+      :prefecture_id,
+      :preparation_day_id,
+      :postage_payer_id,
+      item_images_attributes: [:image]
+      )
   end
 
   def purchase
