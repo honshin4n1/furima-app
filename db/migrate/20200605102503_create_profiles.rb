@@ -6,9 +6,9 @@ class CreateProfiles < ActiveRecord::Migration[5.0]
       t.string      :first_name_kana,   null:false
       t.string      :family_name_kana,  null:false
       t.string      :introduction,      null:true
-      t.integer     :year,              null:true
-      t.integer     :month,             null:true
-      t.integer     :day,               null:true
+      t.integer     :year,              null:false
+      t.integer     :month,             null:false
+      t.integer     :day,               null:false
       # ---------プロフィール画面が完成したら必要--------------
       # t.integer     :post_code,         null:true
       # t.string      :prefecture,        null:true   #stringに修正

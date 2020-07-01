@@ -11,9 +11,9 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.references  :user,                      null: false, foreign_key: true
       t.references  :brand,                     foreign_key: true
       t.references  :category,                  null: false, foreign_key: true
-      t.integer     :prefecture_id,             null: false
-      t.integer     :preparation_day_id,        null: false
-      t.integer     :postage_payer_id,          null: false
+      t.integer     :prefecture_id,             null: false     #発送元地域
+      t.integer     :preparation_day_id,        null: false     #発送までの日数
+      t.integer     :postage_payer_id,          null: false     #配送料負担者
       t.timestamps
     end
   end
