@@ -10,13 +10,11 @@ class ItemsController < ApplicationController
     @category = Category.all
     @item = Item.new
     @item.item_images.new
-    if @item.save
+    if @item.save == true then
       redirect_to root_path
     else
-      render :new
+      render :new, layout: "nothing"
     end
-    # レイヤーを変更
-    render layout: "nothing"
   end
 
   def create
