@@ -28,7 +28,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @name = Item.find(params[:id]).name
+    @item = Item.find(params[:id])
+    @name = @item.name
+    @item.destroy
   end
 
   private
