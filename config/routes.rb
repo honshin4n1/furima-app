@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :new ,:create, :show]do
     member do
       get 'purchase'
+      post 'pay'
+      get 'done'
     end
   end
   resources :users, only: :show
