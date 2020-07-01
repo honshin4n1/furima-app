@@ -30,7 +30,7 @@ class CardsController < ApplicationController
 
   #PayjpとCardデータベースを削除します
   def delete 
-    card = Card.where(user_id: "1").first
+    card = Card.find_by(user_id: "1")
     if card.blank?
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]

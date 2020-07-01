@@ -25,9 +25,7 @@ document.addEventListener(
           ); //トークンを送信できるように隠しタグを生成
           document.inputForm.submit();
           alert("登録が完了しました"); //確認用
-          console.log("payjp-token");
         } else {
-          console.log(card);
           alert("カード情報が正しくありません。"); //確認用
         }
       });

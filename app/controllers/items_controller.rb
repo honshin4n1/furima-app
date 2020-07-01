@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  #before_action :set_item, only: [:show, :pay]
   require 'payjp'
 
   def index
@@ -50,12 +49,5 @@ class ItemsController < ApplicationController
   def done
   end
 
-  # def item_params
-  #   params.require(:item).permit(
-  #     :name,
-  #     :text,
-  #     :price,
-  #   ).merge(user_id: current_user.id)
-  # end
 
 end
