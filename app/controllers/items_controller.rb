@@ -21,8 +21,18 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+    @name = Item.find(params[:id]).name
+  end
+
   private
-  
+
   def purchase
     card = Card.find_by(user_id: current_user.id)
     #テーブルからpayjpの顧客IDを検索
