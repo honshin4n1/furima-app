@@ -27,6 +27,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item = Item.find(params[:id])
+    @name = @item.name
+    @item.destroy
   end
 
   def purchase
