@@ -16,10 +16,11 @@
 @import "module/side-bar";           //サイドバー
 // ---------------------------------------------------------
 //＊＊＊＊ 商品関連 ＊＊＊＊
-@import "items/index";    // トップページのビュー
-@import "items/new";      // 商品出品ページのビュー
+@import "items/index";               // トップページのビュー
+@import "items/new";                 // 商品出品ページのビュー
 @import "items/show";                //商品詳細ページ
-@import "items/purchase"; // 商品購入確認ページのビュー
+@import "items/purchase";            // 商品購入確認ページのビュー
+@import "items/destroy";            // 商品の削除完了ページのビュー
 // ---------------------------------------------------------
 //＊＊＊＊ ユーザー関連 ＊＊＊＊
 @import "users/registrations";
