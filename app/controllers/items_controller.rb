@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  require 'payjp'
 
   def index
     #売れてない商品だけ@productsに格納する
@@ -20,21 +21,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def edit
-  end
 
-  def update
-  end
 
-  def destroy
-    @item = Item.find(params[:id])
-    @name = @item.name
-    @item.destroy
-  end
-
-  def purchase
-    # レイヤーを変更
-    render layout: "nothing"
-  end
 
 end

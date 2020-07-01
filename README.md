@@ -61,7 +61,7 @@
 ## credit_cards(クレジットカード)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number |integer | null: false, unique: true|
+|card_number | bigint | null: false, unique: true|
 |expiration_year | integer | null: false|
 |expiration_month | integer | null: false|
 |secret_code| integer | null: false|

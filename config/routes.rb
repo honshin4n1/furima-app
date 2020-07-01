@@ -9,9 +9,26 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get 'purchase'
+      post 'pay'
+      get 'done'
     end
   end
   resources :users, only: :show
   resources :logouts, only: :index
-  resources :cards, only: [:new, :create]
+
+  resources :cards, only: [:new, :show] do
+    collection do
+      post 'show'
+      post 'pay'
+      post 'delete'
+    end
+  end
+
+  resources :purchase, only: :show do # 商品購入確認ページ
+    collection do
+      post 'pay'
+      get 'done'
+    end
+  end
+
 end
