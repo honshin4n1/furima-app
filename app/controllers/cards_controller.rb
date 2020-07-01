@@ -3,7 +3,7 @@ class CardsController < ApplicationController
 
   # カードの登録画面。登録ボタンを押すとcreateアクションへ。
   def new
-    card = Card.find_by(user_id: "1")
+    card = Card.find_by(user_id: "1") #current_user.id
     redirect_to action: "show" if card.present? #カード情報が存在していたらshowへ
   end
 
@@ -17,9 +17,9 @@ class CardsController < ApplicationController
       customer = Payjp::Customer.create(
         description: 'test', # 無くてもOK。PAY.JPの顧客情報に表示する概要です。
         card: params['payjp-token'], # 直前のnewアクションで発行され、送られてくるトークンをここで顧客に紐付けて永久保存します。
-        metadata: {user_id: "1"}
+        metadata: {user_id: "1"} #current_user.id
       )
-      @card = Card.new(user_id: "1", customer_id: customer.id, card_id: customer.default_card)
+      @card = Card.new(user_id: "1", customer_id: customer.id, card_id: customer.default_card) #current_user.id
       if @card.save
         redirect_to action: "show" #セーブできたらshowへ
       else
@@ -30,7 +30,7 @@ class CardsController < ApplicationController
 
   #PayjpとCardデータベースを削除します
   def delete 
-    card = Card.find_by(user_id: "1")
+    card = Card.find_by(user_id: "1") #current_user.id
     if card.blank?
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -43,7 +43,7 @@ class CardsController < ApplicationController
 
   #Cardのデータpayjpに送り情報を取り出します
   def show 
-    card = Card.find_by(user_id: "1")
+    card = Card.find_by(user_id: "1") #current_user.id
     if card.blank?
       redirect_to action: "new" #空ならnewへ
     else
