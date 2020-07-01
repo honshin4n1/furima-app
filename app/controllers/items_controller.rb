@@ -21,6 +21,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  private
+  
   def purchase
     card = Card.find_by(user_id: current_user.id)
     #テーブルからpayjpの顧客IDを検索
