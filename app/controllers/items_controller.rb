@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def purchase
-    card = Card.find_by(user_id: "1") #current_user.id
+    card = Card.find_by(user_id: current_user.id)
     #テーブルからpayjpの顧客IDを検索
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    card = Card.find_by(user_id: "1") #current_user.id
+    card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
     :amount => 1500, #@item.price,支払金額を入力（itemテーブル等に紐づけても良い）
