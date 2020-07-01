@@ -9,3 +9,5 @@
     ItemImage.create(image: "material/items/a00#{idx}-2.jpg", item_id: 1)
   end
 end
+
+item_images_attributes.create(image: "material/items/a006-1.jpg", item_id: 1)
