@@ -67,10 +67,6 @@
           = button_to "購入画面に進む", {controller: 'items', action: 'purchase', id: current_user.id}, {method: :get, class: 'item_buy_btn'}
       - else
         = button_to "ログイン画面に進む", {controller: 'devise/sessions', action: 'new'}, {method: :get, class: 'succession_btn'}
-
-      -# コントローラーの設定が終わったら、上記のラベル要素とボタン要素はbutton_toに入れ替える。67,68行目
-      
-
       .item_detail_show
         %span.detail_show__text
           = @item.introduction
