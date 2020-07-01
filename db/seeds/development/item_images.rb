@@ -10,4 +10,4 @@
   end
 end
 
-item_images_attributes.create(image: "material/items/a006-1.jpg", item_id: 1)
+# item_images_attributes.create(image: "material/items/a006-1.jpg", item_id: 1)
