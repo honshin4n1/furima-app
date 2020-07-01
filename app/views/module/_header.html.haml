@@ -1,7 +1,7 @@
 .tp__header__inner
   .tp__mainHeader
     %h1.tp__icon
-      = link_to "/", class: "logo_link" do
+      = link_to root_path, class: "logo_link" do
         = image_tag('material/logo/logo.png', alt: 'フリマのアイコン', class: "logo_image")
     .tp__search-function
       = form_tag("#", method: "get", class: "search_form") do
@@ -24,7 +24,13 @@
           %ul.brandTree
             -#カテゴリー一覧をli要素で書き出す。Ancestry gemについて調べる
     %ul.tp__right-container
-      %li.tp__right-container__item.tp__right-container__item--login
-        = link_to 'ログイン', "#", id: "loginBtn"
-      %li.tp__right-container__item.tp__right-container__item--new
-        = link_to '新規会員登録', "#", id: "newBtn"
+      - if user_signed_in?
+        %li.tp__right-container__item.tp__right-container__item--login
+          = link_to 'マイページ', "/users/#{current_user.id}", id: "loginBtn"
+      - else
+        %li.tp__right-container__item.tp__right-container__item--login
+          = link_to 'ログイン', new_user_session_path, id: "loginBtn"
+        %li.tp__right-container__item.tp__right-container__item--new
+          = link_to '新規会員登録', new_user_registration_path, id: "newBtn"
+          
+

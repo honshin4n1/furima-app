@@ -3,59 +3,21 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def index
+    #売れてない商品だけ@productsに格納する
+    # N＋１問題を解消するためにincludesメソッドを使ってimte_imagesテーブルの情報をインスタンス変数に格納
+    @products = Item.where(deal_state: 0).includes(:item_images).order(created_at: :DESC)
   end
 
   def new
+    @category = Category.all
     # レイヤーを変更
     render layout: "nothing"
   end
 
   def create
-    
   end
 
   def show
-    @item = Item.new
+    # item一個に対してはitem_imageのSQLは一つしか走らないのでincludeは不要
+    @item = Item.find(params[:id])
   end
-
-  def purchase
-    card = Card.where(user_id: "1").first #current_user.id
-    #テーブルからpayjpの顧客IDを検索
-    if card.blank?
-      #登録された情報がない場合にカード登録画面に移動
-      redirect_to controller: "cards", action: "new"
-    else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      #保管した顧客IDでpayjpから情報取得
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
-      @default_card_information = customer.cards.retrieve(card.card_id)
-
-    end
-    # レイヤーを変更
-    #render layout: "nothing"
-  end
-
-  def pay
-    card = Card.where(user_id: "1").first #current_user.id
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-    Payjp::Charge.create(
-    :amount => 1500, #@item.price,支払金額を入力（itemテーブル等に紐づけても良い）
-    :customer => card.customer_id, #顧客ID
-    :currency => 'jpy', #日本円
-  )
-  redirect_to action: 'done' #完了画面に移動
-  end
-
-  def done
-  end
-
-  # def item_params
-  #   params.require(:item).permit(
-  #     :name,
-  #     :text,
-  #     :price,
-  #   ).merge(user_id: current_user.id)
-  # end
-
-end

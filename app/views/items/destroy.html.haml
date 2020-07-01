@@ -1,0 +1,35 @@
+-# ユーザーマイページのビューを流用
+.nav-bar
+  %ol
+    %li.nav-var-merukari
+      =link_to "#", class: "nav-var-merukari-text" do
+        FURIMA
+    %i.fas.fa-chevron-right
+    %li.nav-ber-active
+      マイページ
+
+.mypagewrapper
+  =render 'module/side-bar'
+
+  .info
+    .info-box
+      .info-box__delete--notice
+        商品削除のお知らせ
+    .info-content
+      .info-content__list
+        = image_tag ("small-logo.png")
+        .info-content__list__body
+          .info-content__list__body__text--destroy
+            = "#{@name}の出品を取りやめました。"
+          .info-content__list__body__time
+            = link_to "#", class: "clock-icon" do
+              %i.far.fa-clock
+            .info-content__list__body__time__hour
+              = Time.zone.now.strftime("%Y年%m月%d日 %H時%M分")
+        = link_to "#", class: "nav_item"  do
+          %i.fas.fa-chevron-right
+
+    .info-list
+      = link_to root_path, class: "list_box__list__text" do 
+        商品一覧に戻る
+  

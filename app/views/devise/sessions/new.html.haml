@@ -20,13 +20,12 @@
           = icon('fab', 'apple', class: "icon-apple")
           Appleでログイン
       .login-form
-        %form
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .form-group
-            %input{type: "email", name: "email", class: "input-normal", placeholder: "メールアドレス", autocomplete: "email"}
+            = f.email_field :email, class: "input-normal", placeholder: "メールアドレス", autocomplete: "email"
           .form-group
-            %input{type: "password", name: "password",class: "input-normal", placeholder: "パスワード", autocomplete: "current-password"}
-          %button{type: "sumit", class: "registration-btn"}
-            ログイン
+            = f.password_field :password, class: "input-normal", placeholder: "パスワード", autocomplete: "current-password"
+          = f.submit "ログイン", class: "registration-btn"
   .footer-containar
     .footer-containar__info
       %p.footer-containar__info__text

@@ -1,0 +1,18 @@
+.product__list
+  -# リンク先は商品詳細ページのURL
+  = link_to item_path(product.id), id: "item_id", class: "item_link" do
+    %figure.product__list--image
+      -# 1つ目の画像を表示するようにする
+      = image_tag(product.item_images[0].image)
+    .product__list--body
+      %h3.name 
+        = product.name
+      .details
+        %ul
+          %li 
+            = (BigDecimal(product.price.to_s) * BigDecimal("1.1")).ceil
+            円
+          %li
+            = icon('fas',"star", class: 'star_icon')
+            0
+        %p (税込み)
