@@ -12,13 +12,28 @@
         = f.number_field :price
         %br
         商品の説明
-        = f.text_field :name
+        = f.text_field :introduction
         %br
         サイズ
-        = f.text_field :name
+        = f.text_field :size
         %br
         商品の状態
-        = f.text_field :name
+        = f.text_field :condition
+        %br
+        ブランド
+        = f.number_field :brand_id
+        %br
+        カテゴリー
+        = f.number_field :category_id
+        %br
+        発送元地域
+        = f.number_field :prefecture_id
+        %br
+        発送までの日数
+        = f.number_field :preparation_day_id
+        %br
+        配送料負担の情報
+        = f.number_field :postage_payer_id
         %br
         = f.fields_for :item_images do |i|
           = i.file_field :image
