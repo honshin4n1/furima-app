@@ -43,7 +43,7 @@ class CardsController < ApplicationController
 
   #Cardのデータpayjpに送り情報を取り出します
   def show 
-    card = Card.where(user_id: "1").first
+    card = Card.find_by(user_id: "1")
     if card.blank?
       redirect_to action: "new" #空ならnewへ
     else
