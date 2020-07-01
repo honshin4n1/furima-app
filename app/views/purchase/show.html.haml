@@ -1,0 +1,40 @@
+.nav-bar
+  %ol
+    %li.nav-var
+      =link_to "/", class: "nav-var-text" do
+        FURIMA
+    %i.fas.fa-chevron-right
+    %li.nav-ber-active
+      購入確認ページ
+
+.mypagewrapper
+  =render 'module/side-bar'
+
+  .card
+    .card__title
+      購入を確定しますか？
+
+
+    .card__content
+      .card__content__form
+        %br
+          = image_tag ("＃")
+        %br
+          ハトムギ化粧水
+        %br
+          ¥ 1,000 (税込み)送料込み
+        %br
+          支払い金額：¥1,000
+        %br 支払い方法：クレジットカード決済
+        - if @default_card_information.blank?
+          %br /
+        - else
+          -#以下カード情報を表示
+          = "**** **** **** " + @default_card_information.last4
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
+        %br
+        = form_tag(action: :pay, method: :post) do
+          .card-button
+            %button.card-btn 購入する
