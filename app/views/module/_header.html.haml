@@ -1,7 +1,7 @@
 .tp__header__inner
   .tp__mainHeader
     %h1.tp__icon
-      = link_to "/", class: "logo_link" do
+      = link_to root_path, class: "logo_link" do
         = image_tag('material/logo/logo.png', alt: 'フリマのアイコン', class: "logo_image")
     .tp__search-function
       = form_tag("#", method: "get", class: "search_form") do

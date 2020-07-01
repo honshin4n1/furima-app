@@ -1,0 +1,28 @@
+.nav-bar
+  %ol
+    %li.nav-var
+      =link_to "/", class: "nav-var-text" do
+        FURIMA
+    %i.fas.fa-chevron-right
+    %li.nav-ber-active
+      購入完了ページ
+
+.mypagewrapper
+  =render 'module/side-bar'
+
+  .card
+    .card__title
+      購入が完了しました！
+
+
+    .card__content
+      .card__content__form
+        %br
+          = image_tag ("＃")
+        %br 
+          ハトムギ化粧水
+        %br 
+          ¥1,500(送料込み)
+          .card-button
+            =link_to "/", class: "card-btn" do
+              戻る
