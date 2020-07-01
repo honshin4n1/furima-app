@@ -64,13 +64,12 @@
           = button_to "商品情報の編集", {controller: 'items', action: 'edit',id: @item.id}, {method: :patch, class: 'succession_btn', id: "edit"}
           = button_to "出品を取りやめる", {controller: 'items', action: 'destroy',id: @item.id}, {method: :delete, class: 'succession_btn', id: "destroy", data: {confirm: "本当に削除しますか？"}}
         - else
-          %label.button_to
-            %button{type: "sumit", class: "succession_btn"} 購入画面に進む
+          = button_to "購入画面に進む", {controller: 'items', action: 'purchase', id: current_user.id}, {method: :get, class: 'item_buy_btn'}
       - else
         = button_to "ログイン画面に進む", {controller: 'devise/sessions', action: 'new'}, {method: :get, class: 'succession_btn'}
 
       -# コントローラーの設定が終わったら、上記のラベル要素とボタン要素はbutton_toに入れ替える。67,68行目
-      -# = button_to "購入画面に進む", {controller: 'コントローラー名', action: 'アクション名', id: current_user.id}, {method: :get, class: 'item_buy_btn'}
+      
 
       .item_detail_show
         %span.detail_show__text
