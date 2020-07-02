@@ -26,24 +26,25 @@ prices = %w(1000 98000 32000 40000 4000 1200 3000 2900)
 #   )
 # end
 
-
-Item.create!({
-  name: "test商品",
-  introduction: "保存できているかい？",
-  price: 1000,
-  size:"43 mm x 99 mm x 99 mm",
-  condition: "新品同様",
-  deal_state: false,
-  user_id:rand(1..5),
-  brand_id:rand(1..5),
-  category_id:rand(11..90),
-  prefecture_id: rand(1..47),
-  preparation_day_id: rand(1..3),
-  postage_payer_id: rand(1..2),
-  item_images_attributes: [
-    {
-      image: File.open(Rails.root.join("public/uploads/item_image/image/2/test1.jpg")),
-      item_id: 1
-    }
-  ]
-})
+0.upto(names.length - 1) do |idx|
+  Item.create!({
+    name: names[idx],
+    introduction: introductions[idx],
+    price: prices[idx],
+    size:"43 mm x 99 mm x 99 mm",
+    condition: "新品同様",
+    deal_state: false,
+    user_id:rand(1..5),
+    brand_id:rand(1..5),
+    category_id:rand(11..90),
+    prefecture_id: rand(1..47),
+    preparation_day_id: rand(1..3),
+    postage_payer_id: rand(1..2),
+    item_images_attributes: [
+      {
+        image: File.open(Rails.root.join("public/uploads/item_image/image/#{idx + 1}/a00#{idx + 1}.jpg")),
+        item_id: idx + 1
+      }
+    ]
+  })
+end
