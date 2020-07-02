@@ -1,8 +1,8 @@
+#itemsで画像を一緒に保存
 table_names = %w(users
                 brands
                 categories
                 items
-                item_images
                 profiles
                 sending_destinations
                 comments
