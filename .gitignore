@@ -17,7 +17,7 @@
 .byebug_history
 
 #Carrywaveで投稿された画像はGitHubで保存しない。
-public/uploads/*
+# public/uploads/*
 
 # .DS_Store banished!
 .DS_Store
