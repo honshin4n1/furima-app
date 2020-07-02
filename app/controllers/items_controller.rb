@@ -19,7 +19,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @item = Item.new(product_params)
     if @item.save! == true then
       redirect_to root_path
