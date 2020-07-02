@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
   def create
     # binding.pry
     @item = Item.new(product_params)
-    if @item.save! ==true then
+    if @item.save! == true then
       redirect_to root_path
     else
       render :new, layout: "nothing"
