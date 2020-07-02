@@ -34,6 +34,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
@@ -43,26 +44,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @name = @item.name
     @item.destroy
-  end
-
-  private
-
-  def product_params
-    params.require(:item).permit(
-      :name,
-      :price,
-      :introduction,
-      :size,
-      :condition,
-      :deal_state,
-      :user_id,
-      :brand_id,
-      :category_id,
-      :prefecture_id,
-      :preparation_day_id,
-      :postage_payer_id,
-      item_images_attributes: [:image]
-      ).merge(user_id: current_user.id)
   end
 
   def purchase
@@ -96,6 +77,28 @@ class ItemsController < ApplicationController
 
   def done
   end
+  
+
+  private
+
+  def product_params
+    params.require(:item).permit(
+      :name,
+      :price,
+      :introduction,
+      :size,
+      :condition,
+      :deal_state,
+      :user_id,
+      :brand_id,
+      :category_id,
+      :prefecture_id,
+      :preparation_day_id,
+      :postage_payer_id,
+      item_images_attributes: [:image]
+      ).merge(user_id: current_user.id)
+  end
+
 
 
 
