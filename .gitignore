@@ -16,8 +16,10 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-public/uploads/*
-config/secrets.yml
+#Carrywaveで投稿された画像はGitHubで保存しない。
+# public/uploads/*
 
 # .DS_Store banished!
 .DS_Store
+
+config/secrets.yml

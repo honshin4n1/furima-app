@@ -9,11 +9,23 @@ class ItemsController < ApplicationController
 
   def new
     @category = Category.all
-    # レイヤーを変更
-    render layout: "nothing"
+    @item = Item.new
+    @item.item_images.new
+    if user_signed_in? == true then
+      #レイアウト変更
+      render layout: "nothing"
+    else
+      redirect_to root_path
+    end
   end
 
   def create
+    @item = Item.new(product_params)
+    if @item.save! == true then
+      redirect_to root_path
+    else
+      render :new, layout: "nothing"
+    end
   end
 
   def show
@@ -33,6 +45,25 @@ class ItemsController < ApplicationController
     @item.destroy
   end
 
+  private
+
+  def product_params
+    params.require(:item).permit(
+      :name,
+      :price,
+      :introduction,
+      :size,
+      :condition,
+      :deal_state,
+      :user_id,
+      :brand_id,
+      :category_id,
+      :prefecture_id,
+      :preparation_day_id,
+      :postage_payer_id,
+      item_images_attributes: [:image]
+      ).merge(user_id: current_user.id)
+  end
 
   def purchase
     card = Card.find_by(user_id: current_user.id)
