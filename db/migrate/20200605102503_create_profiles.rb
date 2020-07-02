@@ -10,7 +10,7 @@ class CreateProfiles < ActiveRecord::Migration[5.0]
       t.integer     :month,             null:false
       t.integer     :day,               null:false
       # ---------プロフィール画面が完成したら必要--------------
-      # t.integer     :post_code,         null:true
+      # t.string     :post_code,         null:true
       # t.string      :prefecture,        null:true   #stringに修正
       # t.string      :city,              null:true
       # t.string      :house_number,      null:true

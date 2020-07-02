@@ -1,16 +1,19 @@
 ## items(商品)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|name| string | null: false)|
-|introduction| text | null:false|
-|price| integer |null: false|
-|size| string |null: false|
-|condition| string | null: false|
-|deal_state| boolean | default: 0, null: false, default: false |
-|buyer | integer | - |
-|user_id| reference | null: false, foreign_key: true|
-|brand_id | references | foreign_key: true|
-|category_id |references|null: false, foreign_key: true|
+|name|string| null: false)|
+|introduction|text| null:false|
+|price|integer|null: false|
+|size|string|null: false|
+|condition|string|null: false|
+|deal_state|boolean| default: 0, null: false, default: false |
+|buyer|integer| - |
+|user_id|reference|null: false, foreign_key: true|
+|brand_id|references| foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
+|prefecture_id|integer|null: false|
+|preparation_day_id|integer|null: false|
+|postage_payer_id|integer|null: false|
 ### Association
  - has_many: comments, dependent: destroy
  - has_many: item_images, dependent: destroy
@@ -27,9 +30,9 @@
 ## users（会員）テーブル
 |Column|Type|Options|
 |------|----|-------|
-|password| string | null: false|
-|email| string | null: false, unique: true, index:true|
-|nickname| string | null: false |
+|nickname|string|null: false, unique: true, index:true|
+|email|string|null: false, unique: true, index:true|
+|password|string|null: false|
 ### Association
  - has_many: comments, dependent: destroy
  - has_many: favorites
@@ -43,29 +46,27 @@
 ## sending_destinations(配送目的地)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|first_name| string | null :false|
-|family_name | string | null: false|
-|first_name_kana| string | null: false|
-|family_name_kana| string | null: false|
-|post_code| integer | null: false|
-|prefecture| string| null: false|
-|city| string |null:false|
-|house_number| string | null: false|
-|building_name| string| - |
-|phone_number| integer | unique: true|
-| user_id| references  | null: false, foreign_key: true|
+|first_name|string|null :false|
+|family_name|string|null: false|
+|first_name_kana|string|null: false|
+|family_name_kana|string|null: false|
+|post_code|string|null: false|
+|prefecture|string|null: false|
+|city|string|null:false|
+|house_number|string|null: false|
+|building_name|string| - |
+|phone_number|string|unique: true|
+|user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
 
-## credit_cards(クレジットカード)テーブル
+## cards(クレジットカード)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number | bigint | null: false, unique: true|
-|expiration_year | integer | null: false|
-|expiration_month | integer | null: false|
-|secret_code| integer | null: false|
-|user_id | references  | null: false, foreign_key: true|
+|card_id|string|null: false|
+|customer_id|string|null: false|
+|user_id|integer| null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -85,7 +86,7 @@ belongs_to: item
 |Column|Type|Options|
 |------|----|-------|
 |postage_payer|string|null: false|
-|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
 ### Association
 belongs_to: item
 
@@ -101,18 +102,21 @@ belongs_to: item
 ## profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|first_name| string | null: false|
-|family_name| string | null: false |
-|first_name_kana| string | null: false |
-|family_name_kana| string | null: false |
-|introduction| string | null: true |
-|post_code| integer | null: true |
-|prefecture| integer | null: true |
-|city| string | null: true |
-|house_number| string | null: true |
-|building_name| string | null: true |
-|phone_number| integer | unique: true |
-|user_id|references|null: false, foreign_key: true|
+|first_name|string|null: false|
+|family_name|string|null: false|
+|first_name_kana|string|null: false|
+|family_name_kana|string|null: false|
+|introduction|string|null: true|
+|yaer|integer|null: false|
+|month|integer|null: false|
+|day|integer|null: false|
+<!-- |post_code|string|null: true|
+|prefecture|string|null: true|
+|city|string|null: true|
+|house_number|string|null: true|
+|building_name|string|null: true|
+|phone_number|string|unique: true|
+|user_id|references|null: false, foreign_key: true| -->
 ### Association
 belongs_to: user
 
@@ -151,7 +155,7 @@ belongs_to: item
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestry| string | null: false|
+|ancestry|string|null: false|
 ### Association
 - has_many :items
 - has_ancestry
