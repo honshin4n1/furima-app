@@ -12,29 +12,31 @@
           = image_tag "#", class: "item-info__img-box__img", alt: "#商品画像"
         .item-info__text
           %P.item-info__text__name
-            商品名
+            ハトムギ化粧水
           %span.item-info__text__postage-payer
             送料込み (税込み)
           %span.item-info__text__price
-            ¥5000
+            ¥1,100
     .group-container
       .payment
         %P.payment__title
           支払い金額
         %P.payment__price
-          ¥5000
+          ¥1,100
     .group-container
       .method-of-payment
         %p.method-of-payment__title
           支払い方法
           = link_to "#", class: "method-of-payment__title__change" do
             変更する >
-        %p.method-of-payment__card
-          クレジットカード
-        %p.method-of-payment__number
-          ************0000
-        %p.method-of-payment__date
-          有効期限 04/24
+          - if @default_card_information.blank?
+            %br /
+          - else
+            -#以下カード情報を表示
+            = "**** **** **** " + @default_card_information.last4
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
         = image_tag "#", class: "method-of-payment__logo", alt: "カードロゴ"
     .group-container
       .delivery-address
@@ -49,7 +51,7 @@
         %p.buyer-name
           フリマ太郎
     .group-container
-      %form
+      = form_tag(action: :pay, method: :post) do
         %button{type: "sumit", class: "purchase-btn"}
           購入する
   .footer-containar

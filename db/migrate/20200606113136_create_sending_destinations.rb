@@ -10,9 +10,11 @@ class CreateSendingDestinations < ActiveRecord::Migration[5.0]
       t.string     :city,             null: false
       t.string     :house_number,     null: false
       t.string     :building_name
-      t.string     :phone_number,     unique: true
+      t.string     :phone_number,     null: true
       t.references :user,             null: false, foreign_key: true
       t.timestamps
     end
+
+    add_index :sending_destinations, :phone_number,  unique: true
   end
 end
