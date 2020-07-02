@@ -24,11 +24,4 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :purchase, only: :show do # 商品購入確認ページ
-    collection do
-      post 'pay'
-      get 'done'
-    end
-  end
-
 end
