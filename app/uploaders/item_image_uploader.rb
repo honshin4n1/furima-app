@@ -3,6 +3,7 @@ class ItemImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
   process resize_to_fit: [300, 300]
+  process quality: 90
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
