@@ -1,0 +1,72 @@
+= form_for @item do |f|
+  .item_pictures{id:"item_box"}
+    %rabel.text_title 出品画像
+    %b.must 必須
+    %br
+    %i.upload_picture ※最大10枚までアップロードできます
+    %br
+    = f.fields_for :item_images do |i|
+      = i.file_field :image 
+      %br
+  .item_naem_explanation{id:"item_box"}
+    %rabel.text_title 商品名 
+    %b.must 必須
+    %br
+    = f.text_field :name, placeholder: "40文字まで"
+    %br
+    %rabel.text_title 商品の説明
+    %b.must 必須
+    %br
+    = f.text_area :introduction, placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)商品の説明(必須 1,000文字以内)(色、素材、重さ、定価、注意点など) 例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。 "
+  .item_detail{id:"item_box"}
+    %h6.rabel 商品詳細
+    %br
+    %rabel.text_title ブランド
+    %b.optional 任意
+    %br
+    = f.collection_select :brand_id, Brand.all, :id, :name, prompt: "選択してください"
+    %br
+    %rabel.text_title カテゴリー
+    %b.must 必須
+    %br
+    = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt:"選択してください"}
+    %br
+    %rabel.text_title 商品の状態
+    %b.must 必須
+    %br
+    = f.select :condition, ['新品、未使用', '未使用に近い','目立った傷や汚れなし', 'やや傷や汚れあり', '傷や汚れあり', '全体的に状態が悪い'],include_blank: "選択してください"
+    %br
+    %rabel.text_title サイズ
+    %b.must 必須
+    %br
+    = f.text_field :size
+    %br
+  .about_delivery{id:"item_box"}
+    %h6.rabel 配送について
+    %br
+    %rabel.text_title 発送元地域
+    %b.must 必須
+    %br
+    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択してください"
+    %br
+    %rabel.text_title 発送までの日数
+    %b.must 必須
+    %br
+    = f.collection_select :preparation_day_id, PreparationDay.all, :id, :name, prompt: "選択してください"
+    %br
+    %rabel.text_title 配送料負担の情報
+    %b.must 必須
+    %br
+    = f.collection_select :postage_payer_id, PostagePayer.all, :id, :name, prompt: "選択してください"
+  .item_price{id:"item_box"}
+    %h6.rabel 価格 (¥300〜9,999,999)
+    %br
+    %rabel.text_title 価格
+    %b.must 必須
+    %br
+    = f.number_field :price
+    %br
+  .submit_box{id:"item_box"}
+    = f.submit '商品を出品する', class: 'form__submit'
+    %br
+    = link_to "戻る", root_path, clas: "root__link"
