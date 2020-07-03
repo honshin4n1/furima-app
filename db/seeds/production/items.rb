@@ -10,7 +10,7 @@ introductions = %w(※製造終了品につき品薄となっていますので�
 prices = %w(1000 98000 32000 40000 4000 1200 3000 2900)
 
 0.upto(names.length - 1) do |idx|
-  Item.create(
+  Item.create!({
     name: names[idx],
     introduction: introductions[idx],
     price: prices[idx],
@@ -22,8 +22,13 @@ prices = %w(1000 98000 32000 40000 4000 1200 3000 2900)
     category_id:rand(11..90),
     prefecture_id: rand(1..47),
     preparation_day_id: rand(1..3),
-    postage_payer_id: rand(1..2)
-  )
+    postage_payer_id: rand(1..2),
+    item_images_attributes: [
+      {
+        image: File.open(Rails.root.join("public/uploads/item_image/a00#{idx + 1}.jpg")),
+        item_id: idx + 1
+      }
+    ]
+  })
 end
-
 
