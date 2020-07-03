@@ -11,6 +11,10 @@
           = image.file_field :image, class: 'js-file'
           %br
           %span.js-remove 削除
+  -# .item_naem_explanation{id:"item_box"}
+  -#   = f.fields_for :item_images do |i|
+  -#     = i.file_field :image 
+  -#     %br
   .item_naem_explanation{id:"item_box"}
     %rabel.text_title 商品名 
     %b.must 必須
