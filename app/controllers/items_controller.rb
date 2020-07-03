@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  require 'payjp'
+  # require 'payjp'
 
   def index
     #売れてない商品だけ@productsに格納する
