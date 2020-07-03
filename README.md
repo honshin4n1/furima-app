@@ -5,12 +5,12 @@
 |introduction|text| null:false|
 |price|integer|null: false|
 |size|string|null: false|
-|condition|string|null: false|
 |deal_state|boolean| default: 0, null: false, default: false |
 |buyer|integer| - |
 |user_id|reference|null: false, foreign_key: true|
 |brand_id|references| foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
+|condition_id|integer|null: false|
 |prefecture_id|integer|null: false|
 |preparation_day_id|integer|null: false|
 |postage_payer_id|integer|null: false|

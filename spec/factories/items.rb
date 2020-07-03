@@ -4,7 +4,7 @@ FactoryBot.define do
     introduction          {"エアマックス95 イエロー"}
     price                 {"50000"}
     size                  {"27.5"}
-    condition             {"未使用に近い"}
+    condition_id          {"1"}
     deal_state            {"default"}
     buyer                 {""}
     prefecture_id         {"40"}

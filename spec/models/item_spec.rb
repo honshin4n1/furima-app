@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Item do
   describe '#create' do
     # 1
-    it "name、introduction、price、size、condition、deal_state、prefecture_id、preparation_day_id、postage_payer_id、が存在すれば登録できること" do
+    it "name、introduction、price、size、condition_id、deal_state、prefecture_id、preparation_day_id、postage_payer_id、が存在すれば登録できること" do
       item = build(:item)
       expect(item).to be_valid
     end
@@ -37,10 +37,10 @@ describe Item do
     end
 
      # 6
-     it "conditionがない場合は登録できないこと" do
-      item = build(:item, condition: nil)
+     it "condition_idがない場合は登録できないこと" do
+      item = build(:item, condition_id: nil)
       item.valid?
-      expect(item.errors[:condition]).to include("can't be blank")
+      expect(item.errors[:condition_id]).to include("can't be blank")
     end
 
      # 7
