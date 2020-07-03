@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   require 'payjp'
   before_action :set_product, except: [:index, :new, :create]
+  before_action :set_url_path, only: [:new, :create, :edit, :update]
 
   def index
     #売れてない商品だけ@productsに格納する
@@ -105,6 +106,10 @@ class ItemsController < ApplicationController
 
   def set_product
     @item = Item.find(params[:id])
+  end
+
+  def set_url_path
+    @url = request.fullpath
   end
 
 end
