@@ -5,6 +5,7 @@
     %br
     %i.upload_picture ※最大10枚までアップロードできます
     %br
+<<<<<<< HEAD
     #exhibition-image-box
       = f.fields_for :item_images do |image|
         .js-file_group{ data:{index:"#{image.index}"}}
@@ -12,6 +13,12 @@
           %br
           %span.js-remove 削除
   .item_naem_explanation{id:"item_box"}
+=======
+    = f.fields_for :item_images do |i|
+      = i.file_field :image 
+      %br
+  .item_name_explanation{id:"item_box"}
+>>>>>>> master
     %rabel.text_title 商品名 
     %b.must 必須
     %br
@@ -42,7 +49,8 @@
     %rabel.text_title サイズ
     %b.must 必須
     %br
-    = f.text_field :size
+    = f.select :size, ['指定なし', 'XL','L', 'M', 'S', 'XS'],include_blank: "選択してください"
+    -# = f.text_field :size
     %br
   .about_delivery{id:"item_box"}
     %h6.rabel 配送について
@@ -63,12 +71,14 @@
     = f.collection_select :postage_payer_id, PostagePayer.all, :id, :name, prompt: "選択してください"
   .item_price{id:"item_box"}
     %h6.rabel 価格 (¥300〜9,999,999)
-    %br
-    %rabel.text_title 価格
-    %b.must 必須
-    %br
-    = f.number_field :price
-    %br
+    .item_price__rabelform
+      %br
+      %rabel.text_title 価格
+      %b.must 必須
+      %br
+    .item_price__inputform  
+      = f.number_field :price, class: 'price__input'
+      %br
   .submit_box{id:"item_box"}
     = f.submit '商品を出品する', class: 'form__submit'
     %br
