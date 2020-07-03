@@ -12,6 +12,6 @@ class Item < ApplicationRecord
   belongs_to_active_hash :postage_payer
   accepts_nested_attributes_for :item_images, allow_destroy: true
 
-  validates :name, :introduction, :price, :size, :condition, :deal_state,
+  validates :name, :introduction, :price, :size, :condition,
             :prefecture_id, :preparation_day_id, :postage_payer_id, presence: true
 end
