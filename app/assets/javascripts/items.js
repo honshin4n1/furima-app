@@ -24,6 +24,6 @@ $(document).on('turbolinks:load', ()=> {
   $('#exhibition-image-box').on('click', '.js-remove', function() {
     $(this).parent().remove();
     // 画像入力欄が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+    if ($('.js-file').length == 0) $('#exhibition-image-box').append(buildFileField(fileIndex[0]));
   });
 });
