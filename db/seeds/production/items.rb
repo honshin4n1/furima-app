@@ -25,7 +25,7 @@ prices = %w(1000 98000 32000 40000 4000 1200 3000 2900)
     postage_payer_id: rand(1..2),
     item_images_attributes: [
       {
-        image: File.open("#{Rails.root}/public/uploads/item_image/a00#{idx + 1}.jpg")),
+        image: File.open("#{Rails.root}/public/uploads/item_image/a00#{idx + 1}.jpg"),
         item_id: idx + 1
       }
     ]
