@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
   end
 
   def new
-    # @category = Category.all
     @item = Item.new
     @item.item_images.new
     if user_signed_in? == true then
