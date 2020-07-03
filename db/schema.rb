@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(version: 20200629031933) do
     t.string   "condition",                                        null: false
     t.boolean  "deal_state",                       default: false, null: false
     t.integer  "buyer"
-    t.integer  "user_id",                                          null: false
     t.integer  "brand_id"
     t.integer  "category_id",                                      null: false
     t.integer  "prefecture_id",                                    null: false
@@ -90,7 +89,6 @@ ActiveRecord::Schema.define(version: 20200629031933) do
     t.datetime "updated_at",                                       null: false
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
-    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
   create_table "postage_payers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -170,7 +168,6 @@ ActiveRecord::Schema.define(version: 20200629031933) do
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
-  add_foreign_key "items", "users"
   add_foreign_key "postage_payers", "items"
   add_foreign_key "preparation_days", "items"
   add_foreign_key "profiles", "users"
