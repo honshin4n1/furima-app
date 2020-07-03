@@ -5,7 +5,6 @@
     %br
     %i.upload_picture ※最大10枚までアップロードできます
     %br
-<<<<<<< HEAD
     #exhibition-image-box
       = f.fields_for :item_images do |image|
         .js-file_group{ data:{index:"#{image.index}"}}
@@ -13,12 +12,6 @@
           %br
           %span.js-remove 削除
   .item_naem_explanation{id:"item_box"}
-=======
-    = f.fields_for :item_images do |i|
-      = i.file_field :image 
-      %br
-  .item_name_explanation{id:"item_box"}
->>>>>>> master
     %rabel.text_title 商品名 
     %b.must 必須
     %br
