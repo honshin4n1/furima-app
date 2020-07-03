@@ -35,9 +35,19 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @category = Category.all
+   
+    #レイアウト変更
+    render layout: "nothing"
   end
 
   def update
+    @item = Item.find(params[:id])
+    if @item.update(product_params)
+      redirect_to root_path
+    else
+      render :edit, layout: "nothing"
+    end
   end
 
   def destroy
@@ -89,7 +99,6 @@ class ItemsController < ApplicationController
       :size,
       :condition,
       :deal_state,
-      :user_id,
       :brand_id,
       :category_id,
       :prefecture_id,
