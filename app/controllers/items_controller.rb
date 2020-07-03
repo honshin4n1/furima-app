@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-  # require 'payjp'
+  require 'payjp'
+  before_action :set_product, except: [:index, :new, :create]
 
   def index
     #売れてない商品だけ@productsに格納する
@@ -29,21 +30,16 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # item一個に対してはitem_imageのSQLは一つしか走らないのでincludeは不要
-    @item = Item.find(params[:id])
   end
 
   def edit
-    @item = Item.find(params[:id])
     @category = Category.all
-   
     #レイアウト変更
     render layout: "nothing"
   end
 
   def update
-    @item = Item.find(params[:id])
-    if @item.update(product_params)
+    if @item.update_attributes(product_params)
       redirect_to root_path
     else
       render :edit, layout: "nothing"
@@ -51,7 +47,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @name = @item.name
     @item.destroy
   end
@@ -106,6 +101,10 @@ class ItemsController < ApplicationController
       :postage_payer_id,
       item_images_attributes: [:image]
       ).merge(user_id: current_user.id)
+  end
+
+  def set_product
+    @item = Item.find(params[:id])
   end
 
 end
