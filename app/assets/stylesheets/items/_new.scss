@@ -1,14 +1,11 @@
 .item_input_form_box{
-  .new_item{
-    .must{
-      margin-left: 10px;
-    }
-  }
+  width: 700px;
+  background-color: #fff;
+  margin: 0 auto;
 }
 
 // inputForm.html.hamlのcss
 .item_pictures{
-  margin: 0 auto;
   padding: 40px 40px 0 40px;
 }
 
@@ -59,7 +56,6 @@
 }
 
 .item_price{
-  margin: 0 auto;
   height: 150px;
   &__rabelform{
     float: left;
@@ -67,13 +63,17 @@
   &__inputform{
     float: right;
   }
-  .price__input{
-    height: 44px;
-    width: 350px;
-    margin-right: 4px;
-    border-radius: 4px;
-    border: 1px solid #ccc;    
-  }
+}
+
+.price__input{
+  height: 44px;
+  width: 350px;
+  margin-right: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;    
+}
+.about_delivery{
+  padding: 10px 40px 0 40px;
 }
 
 .submit_box{
@@ -118,6 +118,7 @@ select{
   color: #fff;
   font-size: 12px;
   vertical-align: top;
+  margin: 10px;
 }
 
 .optional{
@@ -130,7 +131,5 @@ select{
 }
 
 #item_box{
-  margin: 0 auto;
   padding: 40px 40px 0 40px;
-  width: 700px;
 }
