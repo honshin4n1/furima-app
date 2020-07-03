@@ -25,11 +25,20 @@
     %b.optional 任意
     %br
     = f.collection_select :brand_id, Brand.all, :id, :name, prompt: "選択してください"
-    %br
-    %rabel.text_title カテゴリー
-    %b.must 必須
-    %br
-    = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt:"選択してください"}
+    -# %br
+    -# %rabel.text_title カテゴリー
+    -# %b.must 必須
+    -# %br
+    -# = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt:"選択してください"}
+  .listing-form-box
+    .listing-item-detail__category
+      = f.label 'カテゴリー', class: 'listing-default__label'
+      %span.listing-default--require 必須
+      .listing-select-wrapper
+        .listing-select-wrapper__box
+          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt:"選択してください"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+          %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+
     %br
     %rabel.text_title 商品の状態
     %b.must 必須
