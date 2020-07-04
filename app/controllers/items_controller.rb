@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    # @item.item_images.build
+    @item.item_images.build
     @category = Category.all
     #レイアウト変更
     render layout: "nothing"

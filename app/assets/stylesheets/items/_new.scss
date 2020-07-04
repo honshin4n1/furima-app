@@ -5,11 +5,46 @@
 }
 
 // inputForm.html.hamlのcss
-.item_pictures{
+
+.item_pictures_image_box{
   padding: 40px 40px 0 40px;
+  display: flex;
 }
 
-.item_name_explanation{
+#previews{
+  height: 160px;
+  width: 50%;
+  background-color: #f4f4f4;
+  border: #ddd dashed 1px;
+  border-radius: 4px;
+  img{
+    width: 110px;
+    height: 110px;
+  }
+}
+
+#exhibition-image-box{
+  .js-file_group{
+    .js-file{
+      // display: none;
+    }
+    .js-remove{
+      // color: #00b0ff;
+      // line-height: 50px;
+      // border: 1px solid #eee;
+      // cursor: pointer;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+.item_naem_explanation{
   input{
     height: 100%;
     border-radius: 4px;

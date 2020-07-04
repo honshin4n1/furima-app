@@ -16,7 +16,7 @@ $(function(){
                           <i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
                         </div>
                       </div>`;
-    $('.listing-item-detail__category').append(childSelectHtml);
+    $('.listing-product-detail__category').append(childSelectHtml);
   }
 
   // 親カテゴリー選択後のイベント

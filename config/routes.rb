@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :new ,:create, :show, :destroy] do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
-      get 'get_category_grandchildren', defaults: { format: 'json' }
     end
     member do
       get 'purchase'
