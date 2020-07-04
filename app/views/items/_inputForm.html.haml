@@ -5,16 +5,22 @@
     %br
     %i.upload_picture ※最大10枚までアップロードできます
     %br
+    #previews
+      - if @item.persisted?
+        - @item.item_images.each_with_index do |image, i|
+          = image_tag image.image.url, data: { index: i }, width: "100", height: "100"    
     #exhibition-image-box
       = f.fields_for :item_images do |image|
         .js-file_group{ data:{index:"#{image.index}"}}
           = image.file_field :image, class: 'js-file'
           %br
           %span.js-remove 削除
-  -# .item_naem_explanation{id:"item_box"}
-  -#   = f.fields_for :item_images do |i|
-  -#     = i.file_field :image 
-  -#     %br
+        - if @item.persisted?
+          = image.check_box :_destroy, data:{ index: image.index }, class: "hidden-destroy"
+        - if @item.persisted?
+          .js-file_group{ data: {index: "#{@item.item_images.count}"}}
+            = file_field_tag :image, name: "item[item_images_attributes][#{@item.item_images.count}][image]", class: 'js-file'
+            .js-remove 削除
   .item_naem_explanation{id:"item_box"}
     %rabel.text_title 商品名 
     %b.must 必須
@@ -79,8 +85,12 @@
       %br
     .item_price__inputform  
       = f.number_field :price, class: 'price__input'
+      円
       %br
   .submit_box{id:"item_box"}
-    = f.submit '商品を出品する', class: 'form__submit'
+    - if @url.include?("edit") == true then
+      = f.submit '編集を確定する', class: 'form__submit'
+    - else
+      = f.submit '商品を出品する', class: 'form__submit'
     %br
     = link_to "戻る", root_path, clas: "root__link"
