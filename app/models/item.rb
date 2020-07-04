@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  has_many :item_images
+  has_many :item_images, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :evaluations
   has_many :favorites
@@ -13,6 +13,6 @@ class Item < ApplicationRecord
   belongs_to_active_hash :condition
   accepts_nested_attributes_for :item_images, allow_destroy: true
 
-  validates :name, :introduction, :price, :size, :condition,
+  validates :name, :introduction, :price, :size, :condition_id,
             :prefecture_id, :preparation_day_id, :postage_payer_id, presence: true
 end

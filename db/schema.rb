@@ -148,7 +148,6 @@ ActiveRecord::Schema.define(version: 20200703111449) do
     t.integer  "user_id",          null: false
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.index ["phone_number"], name: "index_sending_destinations_on_phone_number", unique: true, using: :btree
     t.index ["user_id"], name: "index_sending_destinations_on_user_id", using: :btree
   end
 

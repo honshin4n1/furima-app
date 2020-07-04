@@ -3,9 +3,103 @@
     = link_to "/", class: "header-containar__link" do
       = image_tag "material/logo/logo.png", class: "header-containar__link__logo-img", alt: "FURIMA logo"
 
-  .item_input_form_box
-    = render "inputForm"
-    
+    = form_for @item do |f|
+      .item_pictures
+        %rabel.text_title 出品画像
+        %b.must 必須
+        %br
+        %i.upload_picture ※最大10枚までアップロードできます
+        %br
+        #previews
+          - if @item.persisted?
+            - @item.item_images.each_with_index do |image, i|
+              = image_tag image.image.url, data: { index: i }, width: "100", height: "100"    
+        #exhibition-image-box
+          = f.fields_for :item_images do |image|
+            .js-file_group{ data:{index:"#{image.index}"}}
+              = image.file_field :image, class: 'js-file'
+              %br
+              %span.js-remove 削除
+            - if @item.persisted?
+              = image.check_box :_destroy, data:{ index: image.index }, class: "hidden-destroy"
+            - if @item.persisted?
+              .js-file_group{ data: {index: "#{@item.item_images.count}"}}
+                = file_field_tag :image, name: "item[item_images_attributes][#{@item.item_images.count}][image]", class: 'js-file'
+                .js-remove 削除
+      .item_naem_explanation{id:"item_box"}
+        %rabel.text_title 商品名 
+        %b.must 必須
+        %br
+        = f.text_field :name, placeholder: "40文字まで"
+        %br
+        %rabel.text_title 商品の説明
+        %b.must 必須
+        %br
+        = f.text_area :introduction, placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)商品の説明(必須 1,000文字以内)(色、素材、重さ、定価、注意点など) 例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。 "
+      .item_detail{id:"item_box"}
+        %h6.rabel 商品詳細
+        %br
+        %rabel.text_title ブランド
+        %b.optional 任意
+        %br
+        = f.collection_select :brand_id, Brand.all, :id, :name, prompt: "選択してください"
+
+      .listing-form-box
+        .listing-item-detail__category
+          = f.label 'カテゴリー', class: 'listing-default__label'
+          %rabel.listing-default--require 必須
+          .listing-select-wrapper
+            = f.collection_select :category_id, Category.all, :id, :name, {prompt:"#{@item.category.parent.name}"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+            %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+
+        %br
+        %rabel.text_title 商品の状態
+        %b.must 必須
+        %br
+        = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "選択してください"
+        %br
+        %rabel.text_title サイズ
+        %b.must 必須
+        %br
+        = f.text_field :size, class: "size-input"
+        %br
+        
+      .about_delivery{id:"item_box"}
+        %h6.rabel 配送について
+        %br
+        %rabel.text_title 発送元地域
+        %b.must 必須
+        %br
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択してください"
+        %br
+        %rabel.text_title 発送までの日数
+        %b.must 必須
+        %br
+        = f.collection_select :preparation_day_id, PreparationDay.all, :id, :name, prompt: "選択してください"
+        %br
+        %rabel.text_title 配送料負担の情報
+        %b.must 必須
+        %br
+        = f.collection_select :postage_payer_id, PostagePayer.all, :id, :name, prompt: "選択してください"
+      .item_price{id:"item_box"}
+        %h6.rabel 価格 (¥300〜9,999,999)
+        .item_price__rabelform
+          %br
+          %rabel.text_title 価格
+          %b.must 必須
+          %br
+        .item_price__inputform  
+          = f.number_field :price, class: 'price__input'
+          円
+          %br
+      .submit_box{id:"item_box"}
+        - if @url.include?("edit") == true then
+          = f.submit '編集を確定する', class: 'form__submit'
+        - else
+          = f.submit '商品を出品する', class: 'form__submit'
+        %br
+        = link_to "戻る", root_path, clas: "root__link"
+  
   .footer-containar
     .footer-containar__info
       %p.footer-containar__info__text
