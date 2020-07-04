@@ -34,6 +34,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    # @item.item_images.build
     @category = Category.all
    
     #レイアウト変更
@@ -42,7 +43,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    if @item.update(product_params)
+    if @item.update(update_product_params)
       redirect_to root_path
     else
       render :edit, layout: "nothing"
@@ -101,15 +102,33 @@ class ItemsController < ApplicationController
       :price,
       :introduction,
       :size,
-      :condition,
       :deal_state,
       :brand_id,
       :category_id,
       :prefecture_id,
       :preparation_day_id,
       :postage_payer_id,
+      :condition_id,
       item_images_attributes: [:image]
       ).merge(user_id: current_user.id)
   end
 
+  def update_product_params
+    params.require(:item).permit(
+      :id,
+      :name,
+      :price,
+      :introduction,
+      :size,
+      :deal_state,
+      :user_id,
+      :brand_id,
+      :category_id,
+      :prefecture_id,
+      :preparation_day_id,
+      :postage_payer_id,
+      :condition_id,
+      item_images_attributes: [:image, :_destroy]
+      )
+  end
 end
