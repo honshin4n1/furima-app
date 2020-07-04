@@ -5,7 +5,6 @@ FactoryBot.define do
     price                 {"50000"}
     size                  {"27.5"}
     condition_id          {"1"}
-    deal_state            {"default"}
     buyer                 {""}
     prefecture_id         {"40"}
     preparation_day_id    {"2"}
