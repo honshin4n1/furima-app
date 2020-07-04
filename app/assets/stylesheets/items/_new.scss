@@ -7,6 +7,12 @@
 // inputForm.html.hamlのcss
 .item_pictures{
   padding: 40px 40px 0 40px;
+  #previews{}
+  #exhibition-image-box{
+    .js-file_group{
+
+    }
+  }
 }
 
 #item_box{
