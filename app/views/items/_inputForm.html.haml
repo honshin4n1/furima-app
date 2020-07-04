@@ -14,15 +14,15 @@
         .js-file_group{ data:{index:"#{image.index}"}}
           = image.label :image, "画像を挿入"
           = image.file_field :image, class: 'js-file', style: "display:none;"
-          -# = image.file_field :image, class: 'js-file'
           %br
           %span.js-remove 削除
         - if @item.persisted?
           = image.check_box :_destroy, data:{ index: image.index }, class: "hidden-destroy"
-        - if @item.persisted?
-          .js-file_group{ data: {index: "#{@item.item_images.count}"}}
-            = file_field_tag :image, name: "item[item_images_attributes][#{@item.item_images.count}][image]", class: 'js-file'
-            .js-remove 削除
+      - if @item.persisted?
+        .js-file_group{ data: {index: "#{@item.item_images.count}"}}
+          = label_tag "image", "画像を挿入"
+          = file_field_tag :image, name: "item[item_images_attributes][#{@item.item_images.count}][image]", class: 'js-file', style: "display:none;"
+          .js-remove 削除
   .item_naem_explanation{id:"item_box"}
     %rabel.text_title 商品名 
     %b.must 必須
