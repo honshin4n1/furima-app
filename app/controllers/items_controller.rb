@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
   require 'payjp'
-
   before_action :set_product, except: [:index, :new, :create, :get_category_children]
   before_action :set_url_path, only: [:new, :create, :edit, :update]
 
