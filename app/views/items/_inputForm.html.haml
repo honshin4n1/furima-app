@@ -83,17 +83,17 @@
     %b.must 必須
     %br
     = f.collection_select :postage_payer_id, PostagePayer.all, :id, :name, prompt: "選択してください"
-  .item_price{id:"item_box"}
-    %h6.rabel 価格 (¥300〜9,999,999)
-    .item_price__rabelform
+  .item_price_box{id:"item_box"}
+    %h5.rabel_price 価格 (¥300〜9,999,999)
+    .item_price_box__rabelform
       %br
       %rabel.text_title 価格
       %b.must 必須
       %br
-    .item_price__inputform  
+    .item_price_box__inputform  
       = f.number_field :price, class: 'price__input'
-      円
-      %br
+    .item_price_box__japanese
+      %span ￥
   .submit_box{id:"item_box"}
     - if @url.include?("edit") == true then
       = f.submit '編集を確定する', class: 'form__submit'
