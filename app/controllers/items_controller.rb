@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  # require 'payjp'
+  require 'payjp'
 
   def index
     #売れてない商品だけ@productsに格納する
@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @category = Category.all
     @item = Item.new
     @item.item_images.new
     if user_signed_in? == true then
@@ -55,6 +54,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @name = @item.name
     @item.destroy
+  end
+
+  def get_category_children
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @category_children = Category.find(params[:parent_name]).children
   end
 
   def purchase
