@@ -1,9 +1,8 @@
 class ItemsController < ApplicationController
   require 'payjp'
 
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create, :get_category_children]
   before_action :set_url_path, only: [:new, :create, :edit, :update]
-
   def index
     #売れてない商品だけ@productsに格納する
     # N＋１問題を解消するためにincludesメソッドを使ってimte_imagesテーブルの情報をインスタンス変数に格納
@@ -34,14 +33,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    # @item.item_images.build
-    @category = Category.all
     #レイアウト変更
     render layout: "nothing"
   end
 
   def update
-    if @item.update_attributes(product_params)
+    if @item.update_attributes(update_product_params)
       redirect_to root_path
     else
       render :edit, layout: "nothing"
@@ -92,9 +89,8 @@ class ItemsController < ApplicationController
 
   private
 
-  def update_product_params
+  def product_params
     params.require(:item).permit(
-      :id,
       :name,
       :price,
       :introduction,
@@ -106,8 +102,27 @@ class ItemsController < ApplicationController
       :preparation_day_id,
       :postage_payer_id,
       :condition_id,
-      item_images_attributes: [:image, :_destroy]
+      item_images_attributes: [:image]
       ).merge(user_id: current_user.id)
+  end
+
+  def update_product_params
+    params.require(:item).permit(
+      :id,
+      :name,
+      :price,
+      :introduction,
+      :size,
+      :deal_state,
+      :user_id,
+      :brand_id,
+      :category_id,
+      :prefecture_id,
+      :preparation_day_id,
+      :postage_payer_id,
+      :condition_id,
+      item_images_attributes: [:image, :_destroy, :id]
+      )
   end
 
   def set_product
