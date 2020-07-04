@@ -96,12 +96,14 @@
     #edit{background-color: royalblue;}
     #destroy{background-color: red;}
 }
+
 .item_detail_show{
   padding: 16px 0;
   &__btn_box{
     height: 50px;
   }
 }
+
 .item_btn_box{
   width: 100%;
   &__left{
@@ -129,6 +131,17 @@
       font-weight: bold;
     }
   }
+}
+
+.item_buy_btn{
+  width: 100%;
+  line-height: 50px;
+  font-size: 24px;
+  border-radius: 4px;
+  color: #fff;
+  margin-top: 10px;
+  background-color: #3CCACE;
+  border: 0;
 }
 
 .far.fa-flag{
