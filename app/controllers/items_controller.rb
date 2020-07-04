@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   require 'payjp'
+
   before_action :set_product, except: [:index, :new, :create]
   before_action :set_url_path, only: [:new, :create, :edit, :update]
 
@@ -10,7 +11,6 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @category = Category.all
     @item = Item.new
     @item.item_images.new
     if user_signed_in? == true then
@@ -50,6 +50,11 @@ class ItemsController < ApplicationController
   def destroy
     @name = @item.name
     @item.destroy
+  end
+
+  def get_category_children
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @category_children = Category.find(params[:parent_name]).children
   end
 
   def purchase
