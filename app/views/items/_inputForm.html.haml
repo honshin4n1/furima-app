@@ -8,11 +8,13 @@
     #previews
       - if @item.persisted?
         - @item.item_images.each_with_index do |image, i|
-          = image_tag image.image.url, data: { index: i }, width: "100", height: "100"    
+          = image_tag image.image.url, data: { index: i }, width: "100", height: "100"
     #exhibition-image-box
       = f.fields_for :item_images do |image|
         .js-file_group{ data:{index:"#{image.index}"}}
-          = image.file_field :image, class: 'js-file'
+          = image.label :image, "画像を挿入"
+          = image.file_field :image, class: 'js-file', style: "display:none;"
+          -# = image.file_field :image, class: 'js-file'
           %br
           %span.js-remove 削除
         - if @item.persisted?
@@ -44,8 +46,13 @@
       = f.label 'カテゴリー', class: 'listing-default__label'
       %rabel.listing-default--require 必須
       .listing-select-wrapper
-        = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt:"選択してください"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-        %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+        - if @url.include?("edit") == true then
+          = f.collection_select :category_id, Category.where.not(ancestry: nil), :id, :name, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+          %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+        - else
+          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt:"選択してください"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+          %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+        
 
     %br
     %rabel.text_title 商品の状態
