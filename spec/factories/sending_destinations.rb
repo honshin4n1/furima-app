@@ -9,7 +9,7 @@ FactoryBot.define do
     city                {"福岡市中央区"}
     house_number        {"中洲1-1-1"}
     building_name       {"ビル8F"}
-    phone_number        {"09000000000"}
+    phone_number        {"09000009999"}
     association :user
   end
 end

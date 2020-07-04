@@ -68,7 +68,6 @@ describe SendingDestination do
      it "post_codeが000-0000のタイプであれば登録できること" do
       sending_destination = build(:sending_destination, post_code: "800-1000")
       expect(sending_destination).to be_valid
-      
     end
 
      # 11
@@ -76,11 +75,15 @@ describe SendingDestination do
       sending_destination = build(:sending_destination, post_code: "8001000")
       sending_destination.valid?
       expect(sending_destination.errors[:post_code]).to include("is invalid")
-
-      
      end
 
      # 12
+    it "phone_numberが存在しなくても登録できること" do
+      sending_destination = build(:sending_destination, phone_number: nil)
+      expect(sending_destination).to be_valid
+    end
+
+     # 13
      it "重複したphone_numberが存在する場合は登録できないこと" do
       sending_destination = create(:sending_destination)
       another_sending_destination = build(:sending_destination, phone_number: sending_destination.phone_number)
