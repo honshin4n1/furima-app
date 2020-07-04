@@ -82,7 +82,6 @@ ActiveRecord::Schema.define(version: 20200703111449) do
     t.text     "introduction",       limit: 65535,                 null: false
     t.integer  "price",                                            null: false
     t.string   "size",                                             null: false
-    t.string   "condition",                                        null: false
     t.boolean  "deal_state",                       default: false, null: false
     t.integer  "buyer"
     t.integer  "user_id",                                          null: false
@@ -91,6 +90,7 @@ ActiveRecord::Schema.define(version: 20200703111449) do
     t.integer  "prefecture_id",                                    null: false
     t.integer  "preparation_day_id",                               null: false
     t.integer  "postage_payer_id",                                 null: false
+    t.integer  "condition_id",                                     null: false
     t.datetime "created_at",                                       null: false
     t.datetime "updated_at",                                       null: false
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
