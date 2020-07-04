@@ -15,7 +15,7 @@ prices = %w(1000 98000 32000 40000 4000 1200 3000 2900)
     introduction: introductions[idx],
     price: prices[idx],
     size:"43 mm x 99 mm x 99 mm",
-    condition: rand(1..6),
+    condition_id: rand(1..6),
     deal_state: false,
     user_id:rand(1..5),
     brand_id:rand(1..5),
