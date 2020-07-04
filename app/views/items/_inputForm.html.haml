@@ -12,7 +12,7 @@
     #exhibition-image-box
       = f.fields_for :item_images do |image|
         .js-file_group{ data:{index:"#{image.index}"}}
-          = image.label :image, "画像を挿入0"
+          = image.label :image, "画像を挿入"
           = image.file_field :image, class: 'js-file', style: "display:none;"
           -# = image.file_field :image, class: 'js-file'
           %br
