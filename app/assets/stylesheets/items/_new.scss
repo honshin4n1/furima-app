@@ -64,18 +64,26 @@
   padding: 10px 40px 0 40px;
 }
 
-.item_price{
-  height: 150px;
+.item_price_box{
+  padding: 40px 40px 0 40px;
+  width: 700px;
   &__rabelform{
     float: left;
   }
   &__inputform{
     float: right;
   }
+  &__japanese{
+    float: right;
+    line-height: 44px;
+    span{
+      font-size: 20px;
+    }
+  }
 }
 
 .price__input{
-  height: 44px;
+  height: 100%;
   width: 350px;
   margin-right: 4px;
   border-radius: 4px;
@@ -86,7 +94,7 @@
 }
 
 .submit_box{
-  height: 170px;
+  height: 100%;
   padding: 0 160px;
   text-align: center;
   .form__submit{
