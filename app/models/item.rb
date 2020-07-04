@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  has_many :item_images
+  has_many :item_images, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :evaluations
   has_many :favorites
