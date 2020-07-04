@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
   require 'payjp'
 
+  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_url_path, only: [:new, :create, :edit, :update]
+
   def index
     #売れてない商品だけ@productsに格納する
     # N＋１問題を解消するためにincludesメソッドを使ってimte_imagesテーブルの情報をインスタンス変数に格納
@@ -28,22 +31,17 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # item一個に対してはitem_imageのSQLは一つしか走らないのでincludeは不要
-    @item = Item.find(params[:id])
   end
 
   def edit
-    @item = Item.find(params[:id])
     # @item.item_images.build
     @category = Category.all
-   
     #レイアウト変更
     render layout: "nothing"
   end
 
   def update
-    @item = Item.find(params[:id])
-    if @item.update(update_product_params)
+    if @item.update_attributes(product_params)
       redirect_to root_path
     else
       render :edit, layout: "nothing"
@@ -51,7 +49,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @name = @item.name
     @item.destroy
   end
@@ -75,8 +72,7 @@ class ItemsController < ApplicationController
       @default_card_information = customer.cards.retrieve(card.card_id)
 
     end
-    # レイヤーを変更
-    #render layout: "nothing"
+
   end
 
   def pay
@@ -96,23 +92,6 @@ class ItemsController < ApplicationController
 
   private
 
-  def product_params
-    params.require(:item).permit(
-      :name,
-      :price,
-      :introduction,
-      :size,
-      :deal_state,
-      :brand_id,
-      :category_id,
-      :prefecture_id,
-      :preparation_day_id,
-      :postage_payer_id,
-      :condition_id,
-      item_images_attributes: [:image]
-      ).merge(user_id: current_user.id)
-  end
-
   def update_product_params
     params.require(:item).permit(
       :id,
@@ -121,7 +100,6 @@ class ItemsController < ApplicationController
       :introduction,
       :size,
       :deal_state,
-      :user_id,
       :brand_id,
       :category_id,
       :prefecture_id,
@@ -129,6 +107,15 @@ class ItemsController < ApplicationController
       :postage_payer_id,
       :condition_id,
       item_images_attributes: [:image, :_destroy]
-      )
+      ).merge(user_id: current_user.id)
   end
+
+  def set_product
+    @item = Item.find(params[:id])
+  end
+
+  def set_url_path
+    @url = request.fullpath
+  end
+  
 end

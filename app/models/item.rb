@@ -13,6 +13,6 @@ class Item < ApplicationRecord
   belongs_to_active_hash :condition
   accepts_nested_attributes_for :item_images, allow_destroy: true
 
-  validates :name, :introduction, :price, :size, :condition_id, :prefecture_id,
-            :preparation_day_id, :postage_payer_id, presence: true
+  validates :name, :introduction, :price, :size, :condition,
+            :prefecture_id, :preparation_day_id, :postage_payer_id, presence: true
 end
