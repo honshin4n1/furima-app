@@ -34,6 +34,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    # @item.item_images.build
     @category = Category.all
     #レイアウト変更
     render layout: "nothing"
@@ -71,8 +72,7 @@ class ItemsController < ApplicationController
       @default_card_information = customer.cards.retrieve(card.card_id)
 
     end
-    # レイヤーを変更
-    #render layout: "nothing"
+
   end
 
   def pay
@@ -92,20 +92,21 @@ class ItemsController < ApplicationController
 
   private
 
-  def product_params
+  def update_product_params
     params.require(:item).permit(
+      :id,
       :name,
       :price,
       :introduction,
       :size,
-      :condition,
       :deal_state,
       :brand_id,
       :category_id,
       :prefecture_id,
       :preparation_day_id,
       :postage_payer_id,
-      item_images_attributes: [:image]
+      :condition_id,
+      item_images_attributes: [:image, :_destroy]
       ).merge(user_id: current_user.id)
   end
 
@@ -116,5 +117,5 @@ class ItemsController < ApplicationController
   def set_url_path
     @url = request.fullpath
   end
-
+  
 end

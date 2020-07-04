@@ -10,6 +10,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :preparation_day
   belongs_to_active_hash :postage_payer
+  belongs_to_active_hash :condition
   accepts_nested_attributes_for :item_images, allow_destroy: true
 
   validates :name, :introduction, :price, :size, :condition,

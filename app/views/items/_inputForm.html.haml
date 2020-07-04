@@ -46,17 +46,17 @@
       .listing-select-wrapper
         = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt:"選択してください"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
         %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
-        
+
     %br
     %rabel.text_title 商品の状態
     %b.must 必須
     %br
-    = f.select :condition, ['新品、未使用', '未使用に近い','目立った傷や汚れなし', 'やや傷や汚れあり', '傷や汚れあり', '全体的に状態が悪い'],include_blank: "選択してください"
+    = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "選択してください"
     %br
     %rabel.text_title サイズ
     %b.must 必須
     %br
-    = f.text_field :size
+    = f.text_field :size, class: "size-input"
     %br
     
   .about_delivery{id:"item_box"}
