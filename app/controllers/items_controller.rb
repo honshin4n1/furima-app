@@ -74,7 +74,7 @@ class ItemsController < ApplicationController
     card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
-    :amount => @item.price, #支払金額を入力
+    :amount => (BigDecimal(@item.price.to_s) * BigDecimal("1.1")).ceil, #支払金額を入力
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
     )
