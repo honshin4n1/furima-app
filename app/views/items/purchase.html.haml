@@ -19,13 +19,13 @@
           %span.item-info__text__postage-payer
             (税込み)
           %span.item-info__text__price
-            = "¥#{@item.price}"
+            = "¥#{(BigDecimal(@item.price.to_s) * BigDecimal("1.1")).ceil.to_s(:delimited)}"
     .group-container
       .payment
         %P.payment__title
           支払い金額
         %P.payment__price
-          = "¥#{@item.price}"
+          = "¥#{(BigDecimal(@item.price.to_s) * BigDecimal("1.1")).ceil.to_s(:delimited)}"
     .group-container
       .method-of-payment
         %p.method-of-payment__title
