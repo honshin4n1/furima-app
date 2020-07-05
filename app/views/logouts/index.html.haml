@@ -15,7 +15,7 @@
   =render 'module/side-bar'
 
   .logout
-    %form{action: "#", class: "logout-form"}
+    %form{class: "logout-form"}
       .logout-content
         %button{type: "sumit", class: "logout-btn"}
           = link_to 'ログアウト', destroy_user_session_path, method: :delete
