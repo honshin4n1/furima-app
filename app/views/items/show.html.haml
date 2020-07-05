@@ -29,7 +29,10 @@
             %tr
               %th ブランド
               %td
-                = @item.brand.name
+                - if @item.brand.nil? == true then
+                  ブランドは選択されていません
+                - else
+                  = @item.brand.name
             %tr
               %th 商品の状態
               %td
