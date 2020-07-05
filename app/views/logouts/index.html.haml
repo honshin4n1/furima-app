@@ -17,5 +17,5 @@
   .logout
     .logout-form
       .logout-content
-        %button{type: "sumit", class: "logout-btn"}
-          = link_to 'ログアウト', destroy_user_session_path, method: :delete
+        = form_tag(destroy_user_session_path, method: :delete, class: "logout-btn-text") do
+          %button.logout-btn ログアウト
