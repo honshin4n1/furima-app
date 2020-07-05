@@ -12,11 +12,11 @@
     #exhibition-image-box
       = f.fields_for :item_images do |image|
         .js-file_group{ data:{index:"#{image.index}"}}
-          = image.label :image, "画像を挿入"
+          = image.label :image, "画像を挿入", class: "image-label"
           = image.file_field :image, class: 'js-file', style: "display:none;"
           -# = image.file_field :image, class: 'js-file'
           %br
-          %span.js-remove 削除
+          -# %span.js-remove 削除
         - if @item.persisted?
           = image.check_box :_destroy, data:{ index: image.index }, class: "hidden-destroy"
         - if @item.persisted?
