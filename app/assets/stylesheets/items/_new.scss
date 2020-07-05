@@ -7,9 +7,40 @@
 // inputForm.html.hamlのcss
 .item_pictures{
   padding: 40px 40px 0 40px;
-  #previews{}
+  #previews{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
   #exhibition-image-box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     .js-file_group{
+      text-align: center;
+      margin: 7px;
+      background-color: #3CCACE;
+        color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 2px;
+        cursor: pointer;
+      
+      .image-label{
+        cursor: pointer;
+      }
+      .js-removez{
+        background-color: #3CCACE;
+        color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 2px;
+        cursor: pointer;
+
+      }
+      .js-file{
+        display: none;
+      }
 
     }
   }
