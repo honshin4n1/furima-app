@@ -1,12 +1,12 @@
 $(document).on('turbolinks:load', function(){
   // 画像ファイルの選択用のinputを生成する関数
   const buildFileField = (index)=> {
-    const html = `<div data-index="${index}" class="js-file_group">
-                    <label for="item_item_images_attributes_${index}_image">画像を挿入</label>
+    const html = `<div class="js-file_group" data-index="${index}">
+                    <label class="image-label" for="item_item_images_attributes_${index}_image">画像を挿入</label>
                     <input class="js-file" type="file" style="display:none;"
                     name="item[item_images_attributes][${index}][image]"
                     id="item_item_images_attributes_${index}_image"><br>
-                    <div class="js-remove">削除</div>
+                    <span class="js-remove">削除</div>
                   </div>`;
     return html;
   }
@@ -38,7 +38,7 @@ $(document).on('turbolinks:load', function(){
     } else {  // 新規画像追加の処理
       $('#previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
-      $('#exhibition-image-box').append(buildFileField(fileIndex[0]));
+      $('.button_group').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
@@ -57,7 +57,7 @@ $(document).on('turbolinks:load', function(){
     $(`img[data-index="${targetIndex}"]`).remove();
 
     // 画像入力欄が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#exhibition-image-box').append(buildFileField(fileIndex[0]));
+    if ($('.js-file').length == 0) $('.button_group').append(buildFileField(fileIndex[0]));
   });
 
 });
