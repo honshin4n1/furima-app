@@ -9,35 +9,42 @@
     .group-container
       .item-info
         .item-info__img-box
-          = image_tag "#", class: "item-info__img-box__img", alt: "#商品画像"
+          = image_tag @item.item_images[0].image, class: "item-info__img-box__img", alt: "#商品画像"
         .item-info__text
           %P.item-info__text__name
-            ハトムギ化粧水
+            = @item.name
+            %br
+            *送料*>>
+            = @item.postage_payer.name
           %span.item-info__text__postage-payer
-            送料込み (税込み)
+            (税込み)
           %span.item-info__text__price
-            ¥1,100
+            = "¥#{@item.price}"
     .group-container
       .payment
         %P.payment__title
           支払い金額
         %P.payment__price
-          ¥1,100
+          = "¥#{@item.price}"
     .group-container
       .method-of-payment
         %p.method-of-payment__title
           支払い方法
           = link_to "#", class: "method-of-payment__title__change" do
             変更する >
-          - if @default_card_information.blank?
-            %br /
-          - else
-            -#以下カード情報を表示
-            = "**** **** **** " + @default_card_information.last4
-            - exp_month = @default_card_information.exp_month.to_s
-            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-            = exp_month + " / " + exp_year
-        = image_tag "#", class: "method-of-payment__logo", alt: "カードロゴ"
+        %p.method-of-payment__card
+          クレジットカード
+      - if @default_card_information.blank?
+        %br /
+      - else
+        -#以下カード情報を表示
+        %p.method-of-payment__number
+          = "**** **** **** " + @default_card_information.last4
+        %p.method-of-payment__date
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
+        -# = image_tag "#", class: "method-of-payment__logo", alt: "カードロゴ"
     .group-container
       .delivery-address
         %p.delivery-address__title
@@ -45,11 +52,18 @@
           = link_to "#", class: "delivery-address__title__change" do
             変更する >
         %p.buyer-post-code
-          〒810-0000
+          = current_user.sending_destination.post_code
         %p.buyer-address
-          都道府県 市区町村 番地 建物名
+          = current_user.sending_destination.prefecture
+          = current_user.sending_destination.city
+          = current_user.sending_destination.house_number
+          = current_user.sending_destination.building_name
+          %br
+          = current_user.sending_destination.phone_number
         %p.buyer-name
-          フリマ太郎
+          %br
+          = current_user.sending_destination.family_name + current_user.sending_destination.first_name
+         
     .group-container
       = form_tag(action: :pay, method: :post) do
         %button{type: "sumit", class: "purchase-btn"}

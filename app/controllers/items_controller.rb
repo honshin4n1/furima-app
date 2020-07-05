@@ -67,20 +67,18 @@ class ItemsController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
       @default_card_information = customer.cards.retrieve(card.card_id)
-
     end
-
   end
 
   def pay
     card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
-    :amount => 1100, #@item.price,支払金額を入力（itemテーブル等に紐づけても良い）
+    :amount => @item.price, #支払金額を入力
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
-  )
-  redirect_to action: 'done' #完了画面に移動
+    )
+    redirect_to action: 'done' #完了画面に移動
   end
 
   def done
@@ -136,5 +134,5 @@ class ItemsController < ApplicationController
   def set_url_path
     @url = request.fullpath
   end
-  
+
 end
