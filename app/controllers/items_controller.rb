@@ -47,6 +47,7 @@ class ItemsController < ApplicationController
   def destroy
     @name = @item.name
     @item.destroy
+    
   end
 
   def get_category_children
@@ -125,7 +126,11 @@ class ItemsController < ApplicationController
   end
 
   def set_product
-    @item = Item.find(params[:id])
+    if Item.find_by(id: params[:id]) == nil
+      redirect_to root_path
+    else
+      @item = Item.find(params[:id])
+    end
   end
 
   def set_url_path
