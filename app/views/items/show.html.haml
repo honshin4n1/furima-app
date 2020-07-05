@@ -66,7 +66,7 @@
           = button_to "商品情報の編集", {controller: 'items', action: 'edit',id: @item.id}, {method: :get, class: 'succession_btn', id: "edit"}
           = button_to "出品を取りやめる", {controller: 'items', action: 'destroy',id: @item.id}, {method: :delete, class: 'succession_btn', id: "destroy", data: {confirm: "本当に削除しますか？"}}
         - else
-          = button_to "購入画面に進む", {controller: 'items', action: 'purchase', id: current_user.id}, {method: :get, class: 'item_buy_btn'}
+          = button_to "購入画面に進む", {controller: 'items', action: 'purchase', id: @item.id}, {method: :get, class: 'item_buy_btn'}
       - else
         = button_to "ログイン画面に進む", {controller: 'devise/sessions', action: 'new'}, {method: :get, class: 'succession_btn'}
       .item_detail_show
