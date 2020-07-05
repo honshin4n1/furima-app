@@ -21,7 +21,7 @@
             = image.check_box :_destroy, data:{ index: image.index }, class: "hidden-destroy"
         - if @item.persisted?
           .js-file_group{ data: {index: "#{@item.item_images.count}"}}
-            = label_tag "image", "画像を挿入"
+            = label_tag "image", "画像を挿入", class: "image-label"
             = file_field_tag :image, name: "item[item_images_attributes][#{@item.item_images.count}][image]", class: 'js-file', style: "display:none;"
             %span.js-remove 削除
   .item_naem_explanation{id:"item_box"}
