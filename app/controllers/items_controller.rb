@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
 
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-    @category_children = Category.find(params[:parent_name]).children
+    @category_children = Category.find(params[:parent_id]).children
   end
 
   def purchase
