@@ -63,6 +63,13 @@ describe User do
       user.valid?
       expect(user.errors[:password]).to include("is too short (minimum is 7 characters)")
     end
+
+     # 10
+     it "emailがxxx@xxxであれば登録できないこと" do
+      user = build(:user, email: "xxx@xxx")
+      user.valid?
+      expect(user.errors[:email]).to include("is invalid")
+    end
   end
 end
 
