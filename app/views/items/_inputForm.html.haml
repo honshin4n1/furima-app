@@ -48,12 +48,11 @@
       %rabel.listing-default--require 必須
       .listing-select-wrapper
         - if @url.include?("edit") == true then
-          = f.collection_select :category_id, Category.where.not(ancestry: nil), :id, :name, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-          %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt:"選択してください"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+          = f.collection_select :category_id, Category.where(ancestry: @item.category.parent.id), :id, :name, {prompt:"選択してください"}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
         - else
           = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt:"選択してください"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-          %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
-        
+
 
     %br
     %rabel.text_title 商品の状態
