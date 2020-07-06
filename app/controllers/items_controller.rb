@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    binding.pry
     @item = Item.new(product_params)
     #カテゴリーが入力されているか確認.空の場合文字列が格納されている
     if product_params[:category_id].is_a? String then
