@@ -21,7 +21,13 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(product_params)
-    if @item.save == true then
+    #カテゴリーが入力されているか確認.空の場合文字列が格納されている
+    if product_params[:category_id].is_a? String then
+      render :new, layout: "nothing"
+    #子供カテゴリーが選択されているか確認
+    elsif Category.find(product_params[:category_id]).ancestry.nil? == true then
+      render :new, layout: "nothing"
+    elsif @item.save == true then
       redirect_to root_path
     else
       render :new, layout: "nothing"
