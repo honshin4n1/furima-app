@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
     if @item.save == true then
       redirect_to root_path
     else
-      render :new, layout: "nothing"
+      redirect_to new_item_path
     end
   end
 
