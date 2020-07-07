@@ -74,9 +74,9 @@ class ItemsController < ApplicationController
     card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
-    :amount => (BigDecimal(@item.price.to_s) * BigDecimal("1.1")).ceil, #支払金額を入力
-    :customer => card.customer_id, #顧客ID
-    :currency => 'jpy', #日本円
+      :amount => (BigDecimal(@item.price.to_s) * BigDecimal("1.1")).ceil, #支払金額を入力
+      :customer => card.customer_id, #顧客ID
+      :currency => 'jpy', #日本円
     )
     @item.update_attributes(deal_state: 1) #取引終了のflagを立てる
     redirect_to action: 'done' #完了画面に移動
@@ -102,7 +102,7 @@ class ItemsController < ApplicationController
       :postage_payer_id,
       :condition_id,
       item_images_attributes: [:image]
-      ).merge(user_id: current_user.id)
+    ).merge(user_id: current_user.id)
   end
 
   def update_product_params
@@ -121,7 +121,7 @@ class ItemsController < ApplicationController
       :postage_payer_id,
       :condition_id,
       item_images_attributes: [:image, :_destroy, :id]
-      )
+    )
   end
 
   def set_product
